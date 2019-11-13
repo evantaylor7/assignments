@@ -1,0 +1,20 @@
+h1{
+    color: blue
+}
+body{
+    background: black
+}
+.box{
+    background: darkred;
+    padding: 10px;
+    margin: solid 10px black;
+    width: 200pt;
+    height: 100pt;
+    display: inline-block
+}
+*{
+    box-sizing: border-box
+}
+div{
+    b
+}
