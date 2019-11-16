@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    font-size: 0px
+}
+.all-box{
+    height: 526px;
+    width: 774px
+}
+
+.pink{
+    background-color: #F5C6D6;
+    height: 127px;
+    width: 756px;
+    margin: 7px
+}
+
+.purp{
+    background-color: #EE2E84;
+    height: 115px;
+    width: 179px;
+    display: inline-block;
+    margin: 7px 6px 7px 7px
+}
+
+.blue{
+    background-color: #85CFD8;
+    height: 115px;
+    width: 369px;
+    display: inline-block;
+    margin: 7px 8px
+}
+
+.green{
+    background-color: #8DC63F;
+    height: 123px;
+    width: 564px;
+    border: solid white 7px;
+    display: inline-block
+}
+
+.orange{
+    background-color: #E76E34;
+    height: 122px;
+    width: 203px;
+    border: solid white 7px;
+    display: inline-block
+}
