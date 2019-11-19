@@ -56,7 +56,18 @@ var result = fib(11)
 console.log(result)
 
 
-// function myStr(string){
-//     for(var i = 0; i)
-// }
-// myStr("asdflksjldfkssjaslljsklldsdfdllds")
+function letterCounter(string){
+    // make a counter, counts our characters
+    var max = 0
+    var maxChar
+    var array = string.split("")
+    for(var i = 0; i < string.length; i++){
+        var char = array[i]
+        if (string.split(char).length > max){
+            max = string.split(char).length;
+            maxChar = char;
+        }
+    }
+    console.log(maxChar);
+}
+letterCounter("slddfkjjslalddksllsdkdalkjddss")

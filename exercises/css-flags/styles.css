@@ -1,0 +1,203 @@
+.france{
+    height: 390px;
+    width: 590px;
+    border: solid lightblue 5px;
+    margin: 20px
+}
+.france1{
+    width: 197px;
+    height: 100%;
+    background-color: rgb(0, 38, 133);
+    display: inline-block
+}
+.france2{
+    width: 197px;
+    height: 100%;
+    background-color: rgb(255, 39, 53);
+    display: inline-block;
+    position: relative;
+    left: 192px
+}
+.germany{
+    height: 349px;
+    width: 600px;
+    background-color: black;
+    margin: 20px
+}
+.germany1{
+    height: 116px;
+    width: 100%;
+    background-color: rgb(235, 11, 19);
+    position: relative;
+    top: 116px
+}
+.germany2{
+    height: 117px;
+    width: 100%;
+    background-color: rgb(255, 197, 55);
+    position: relative;
+    top: 116px
+}
+.mada{
+    height: 386px;
+    width: 590px;
+    border: solid lightblue 5px;
+    margin: 20px
+}
+.mada1{
+    height: 50%;
+    width: 388px;
+    background-color: rgb(255, 55, 50); 
+    position: relative;
+    left: 202px
+}
+.mada2{
+    height: 50%;
+    width: 388px;
+    background-color: rgb(0, 113, 57);
+    position: relative;
+    left: 202px
+}
+.swiss{
+    height: 580px;
+    width: 581px;
+    margin: 20px;
+    background-color: rgb(255, 13, 22)
+}
+.swiss1{
+    height: 364px;
+    width: 110px;
+    background-color: white;
+    position: relative;
+    left: 235px;
+    top: 109px
+}
+.swiss2{
+    height: 110px;
+    width: 364px;
+    background-color: white;
+    position: relative;
+    left: 109px;
+    bottom: 126px
+}
+.sweden{
+    height: 363px;
+    width: 579px;
+    background-color: rgb(0, 97, 153);
+    margin: 20px
+}
+.sweden1{
+    height: 100%;
+    width: 75px;
+    background-color: rgb(255, 195, 54);
+    position: relative;
+    left: 181px
+}
+.sweden2{
+    height: 75px;
+    width: 100%;
+    background-color: rgb(255, 195, 54);
+    position: relative;
+    bottom: 219px
+}
+.gambia{
+    height: 396px;
+    width: 590px;
+    border: solid lightblue 5px;
+    margin: 20px
+}
+.gambia1{
+    background-color: rgb(217, 21, 38);
+    height: 129px;
+    width: 100%;
+}
+.gambia2{
+    background-color: rgb(0, 32, 124);
+    height: 86px;
+    width: 100%;
+    position: relative;
+    top: 25px
+}
+.gambia3{
+    background-color: rgb(39, 106, 44);
+    height: 129px;
+    width: 100%;
+    position: relative;
+    top: 52px
+}
+.tonga{
+    height: 300px;
+    width: 592px;
+    background-color: rgb(202, 10, 16);
+    border: solid lightblue 5px;
+    margin: 20px
+}
+.tonga1{
+    height: 146px;
+    width: 244px;
+    background-color: white
+}
+.tonga2{
+    height: 109px;
+    width: 37px;
+    background-color: rgb(202, 10, 16);
+    position: relative;
+    bottom: 127px;
+    left: 104px
+}
+.tonga3{
+    height: 37px;
+    width: 109px;
+    background-color: rgb(202, 10, 16);
+    position: relative;
+    bottom: 200px;
+    left: 66px
+}
+.japan{
+    height: 398px;
+    width: 592px;
+    border: solid lightblue 5px;
+    margin: 20px
+}
+.japan1{
+    border-radius: 50%;
+    height: 234px;
+    width: 233px;
+    background-color: rgb(195, 11, 42);
+    position: relative;
+    top: 82px;
+    left: 179px
+}
+.greece{
+    height: 397px;
+    width: 588px;
+    background-color: rgb(0, 86, 161);
+    border: solid lightblue 5px;
+    margin: 20px
+}
+.greece1{
+    height: 43px;
+    width: 100%;
+    background-color: white;
+    position: relative;
+    top: 312px
+}
+.greece2{
+    height: 43px;
+    width: 100%;
+    background-color: white;
+    position: relative;
+    top: 181px
+}
+/* .greece3{
+    height: 43px;
+    background-color: white;
+}
+.greece4{
+    height: 43px;
+    background-color: white;
+}
+.greece5{
+    height: 43px;
+    background-color: white;
+} */
