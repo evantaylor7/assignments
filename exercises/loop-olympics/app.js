@@ -111,33 +111,6 @@ console.log(occupation)
 // 1.
 console.log("Gold")
 console.log("**1**")
-// nestArray1 = []
-// nestArray2 = []
-// nestArray3 = []
-// for(var i = 0; i < 1; i++){
-//     for(var i = 0; i < 1; i++){
-//         nestArray1.push(i, i, i)
-//         nestArray2.push(i, i, i)
-//         nestArray3.push(i, i, i)
-//     }
-// }
-// console.log(nestArray1, nestArray2, nestArray3)
-
-// nested for loop:
-// for(var i = 0; i < 10; i++){
-//     var myArray = []
-//     myArray.push(i)
-//     console.log(myArray)
-//     for(var j = 0; j < myArray.length; j++){
-//         console.log(j)
-//     }
-// }
-// var multiArr = [[1,2,3],[4,5,6]]
-// for(var i = 0; i < multiArr.length; i++){
-//     for (var j = 0; j < multiArr[i].length - 1; j++){
-//         console.log(j)
-//     }
-// }
 for(var i = 0; i < 1; i++){
     var myArray = []
     myArray.push(i, i, i)
@@ -145,17 +118,6 @@ for(var i = 0; i < 1; i++){
         console.log(myArray)
     }
 }
-// NOT FINISHED
-// console.log("could also be")
-// grid
-// for(var i = 0; i < 3; i++){
-//     var myArray = []
-//     for(var j = 0; j < 3; j++){
-//         myArray.push(0)
-//     }
-//     myArray.push
-// }
-// console.log(myArray)
 
 // 2.
 console.log("**2**")
@@ -178,20 +140,15 @@ for(var i = 0; i < 3; i++){
 }
 
 // 4.
-console.log("**4**")
-// for(var i = 0; i < 3; i++){
+// console.log("**4**")
+// var result = ([x, x, x], [x, x, x], [x, x, x])
+// console.log(result)
+// for(var i = 0; i < 1; i++){
 //     var myArray = []
-//     var x = myArray[i]
-//     myArray.push(myArray[i], myArray[i], myArray[i])
+//     var x = i
+//     myArray.push(x)
 //     for(var j = 0; j < 1; j++){
 //         console.log(myArray)
 //     }
 // }
-for(var i = x; i = x; i++){
-    var myArray = []
-    var x = myArray[i]
-    myArray.push(x)
-    for(var j = x; j < myArray.length; j++){
-        console.log(myArray)
-    }
-}
+// ^ does not work

@@ -1,0 +1,23 @@
+input{
+    max-width: 50px;
+    margin-top: 50px
+}
+form{
+    margin-left: 10px
+}
+.add-answer{
+    margin-left: 10px;
+    color: blue
+}
+.subtract-answer{
+    margin-left: 10px;
+    color: green
+}
+.product{
+    margin-left: 10px;
+    color: purple
+}
+button{
+    color: darkred;
+    background-color: tan
+}
