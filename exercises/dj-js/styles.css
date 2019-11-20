@@ -1,0 +1,12 @@
+#dj-box{
+    height: 100pt;
+    width: 100pt;
+    border: solid blueviolet 3pt;
+    float: top;
+    position: relative;
+    margin-left: 50%;
+    margin-top: 20%
+}
+.forTo{
+    margin-top: 800px;
+}

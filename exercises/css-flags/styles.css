@@ -189,15 +189,93 @@
     position: relative;
     top: 181px
 }
-/* .greece3{
+.greece3{
     height: 43px;
+    width: 366px;
     background-color: white;
+    position: relative;
+    top: 45px;
+    left: 222px
 }
 .greece4{
     height: 43px;
+    width: 366px;
     background-color: white;
+    position: relative;
+    bottom: 86px;
+    left: 222px
 }
 .greece5{
-    height: 43px;
+    height: 230px;
+    width: 43px;
+    position: relative;
+    bottom: 172px;
+    left: 90px;
     background-color: white;
-} */
+}
+.greece6{
+    height: 45px;
+    width: 222px;
+    position: relative;
+    bottom: 316px;
+    background-color: white;
+}
+.niger{
+    height: 507px;
+    width: 592px;
+    border: solid lightblue 5px;
+    margin: 20px
+}
+.niger1{
+    height: 165px;
+    width: 100%;
+    background-color: rgb(238, 72,38)
+}
+.niger2{
+    height: 142px;
+    width: 142px;
+    border-radius: 50%;
+    background-color: rgb(238, 72, 38);
+    position: relative;
+    left: 221px;
+    top: 13px
+}
+.niger3{
+    height: 165px;
+    width: 100%;
+    background-color: rgb(0, 164, 56);
+    position: relative;
+    top: 35px
+}
+.maldives{
+    height: 397px;
+    width: 591px;
+    background-color: rgb(222, 21, 48);
+    margin: 20px
+}
+.mal1{
+    height: 193px;
+    width: 387px;
+    background-color: rgb(0, 113, 57);
+    position: relative;
+    top: 103px;
+    left: 103px
+}
+.mal2{
+    height: 132px;
+    width: 132px;
+    border-radius: 50%;
+    background-color: white;
+    position: relative;
+    left: 249px;
+    bottom: 60px
+}
+.mal3{
+    height: 132px;
+    width: 132px;
+    border-radius: 50%;
+    background-color: rgb(0, 113, 57);
+    position: relative;
+    left: 275px;
+    bottom: 192px
+}
