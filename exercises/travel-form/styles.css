@@ -1,0 +1,21 @@
+form{
+    display: flex;
+    flex-direction: column;
+}
+input{
+    max-width: 60pt;
+}
+#age{
+    max-width: 25pt;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    color: darkcyan
+}
+select{
+    max-width: 120px;
+}
+button{
+    max-width: 120pt;
+}

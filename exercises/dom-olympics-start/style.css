@@ -3,14 +3,16 @@
     align-items: center;
     flex-direction: column;
 }
-.sub-title {
-    position: relative;
-    display: inline
+#subHead {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 .name {
     color: peachpuff;
-    position: relative;
-    display: inline
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
 }
 
 .messages {
