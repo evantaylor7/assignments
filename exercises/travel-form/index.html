@@ -9,17 +9,46 @@
 </head>
 <body>
     <h1>Northeast Airlines</h1>
-    <form>
-        First Name: <input type="text" name="first-name"/>
-        Last Name: <input type="text" name="last-name"/>
-        Age: <input type="number" id="age"/>
-        <radio name="gender"></radio>
-        <select id="location">
-            <option value="newfoundland">Newfoundland</option>
-            <option value="greenland">Greenland</option>
-            <option value="iceland">Iceland</option>
-        </select>
-        <radio name="diet"></radio>
+    <form action="" name="userForm">
+        <label for="first name">First Name:</label>
+        <input type="text" name="firstName"/>
+        <br>
+        <label for="last name">Last Name:</label>
+        <input type="text" name="lastName"/>
+        <br>
+        <label for="age">Age:</label>
+        <input type="number" id="age"/>
+        <br>
+        <div class="genderQuestion">
+            <label for="gender">Gender:</label>
+            <label for="male">Male</label>
+            <input type="radio" name="gender" value="male">
+            <label for="female">Female</label>
+            <input type="radio" name="gender" value="female">
+            <label for="no answer">Prefer not to answer</label>
+            <input type="radio" name="gender" value="no answer">
+        </div>
+        <br>
+        <div name="destination">
+            <label for="destination">Destination:</label>
+            <select name="destination">
+                <option value="none selected">Please Select:</option>
+                <option value="newfoundland">Newfoundland</option>
+                <option value="greenland">Greenland</option>
+                <option value="iceland">Iceland</option>
+            </select>
+        </div>
+        <br>
+        <div class="diet">
+            <label for="diet">Dietary Restrictions:</label>
+            <label for="vegetarian">Vegetarian</label>
+            <input type="checkbox" name="diet" value="vegetarian"></input>
+            <label for="vegan">Vegan</label>
+            <input type="checkbox" name="diet" value="vegan"></input>
+            <label for="gluten free">Gluten Free</label>
+            <input type="checkbox" name="diet" value="gluten free"></input>
+        </div>
+        <br>
         <button>Submit User Information</button>
     </form>
 

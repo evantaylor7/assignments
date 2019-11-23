@@ -1,0 +1,30 @@
+h1 {
+    text-align: center;
+    background-color: lightsteelblue
+}
+
+.one {
+    background-color: lightcyan
+}
+
+.two {
+    background-color: lightgreen
+}
+
+.three {
+    background-color: lightseagreen
+}
+
+img {
+    max-width: 100%
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav > p:hover {
+    cursor: pointer;
+    color: blue
+}

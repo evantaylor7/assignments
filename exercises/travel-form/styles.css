@@ -19,3 +19,6 @@ select{
 button{
     max-width: 120pt;
 }
+input{
+    margin-right: 10px
+}
