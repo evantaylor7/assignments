@@ -1,0 +1,239 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+.home {
+    background-image: url("https://images.unsplash.com/photo-1523214463772-54cd4251e790?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2253&q=80");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contact {
+    background-image: url("https://i.pinimg.com/originals/fc/77/a7/fc77a7d9f693cf3f4670a51c599e1512.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: helvetica, arial, sans-serif;
+    background-repeat: no-repeat;
+}
+
+.about {
+    background-image: url("https://www.petmd.com/sites/default/files/sidenecked-mud-turtle.jpg");
+    background-size: 100%;
+    background-color: black;
+    font-family: helvetica, arial, sans-serif;
+    background-repeat: no-repeat;
+}
+
+.about-blurb:hover {
+    color: white;
+    cursor: auto;
+}
+
+nav {
+    position: fixed;
+    margin: 10px;
+    background-color: rgba(3, 99, 112, 0.747);
+    border-radius: 5px;
+}
+
+a {
+    margin: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 13pt;
+    display: inline-block;
+}
+
+a:hover, p:hover, h3:hover {
+    color: cyan;
+    cursor: pointer;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 50px;
+    text-shadow: 3px 3px rgb(8, 192, 192), 0 3px white;
+    font-size: 50pt
+}
+
+.about-head {
+    color: white;
+    text-shadow: none;
+    background-color: rgba(255, 255, 255, 0.137);
+    border-radius: 5px;
+    width: 250px;
+    margin: auto;
+    margin-top: 5px;
+    height: 100px;
+    padding: 0;
+    padding-top: 10px
+
+}
+
+.about-blurb {
+    color: white;
+    font-size: 30pt;
+    margin: 50px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.137);
+    border-radius: 5px;
+}
+
+.nav-contact {
+    position: static
+}
+.contact-head {
+    text-shadow: none;
+    padding-top: 0;
+    background-color: rgba(3, 99, 112, 0.747);
+    width: 300px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 5px;
+}
+
+.contact-form {
+    text-align: center;
+    margin: auto;
+    margin-top: 5px;
+    background-color: rgba(3, 99, 112, 0.747);
+    border-radius: 5px;
+    width: 300px;
+}
+
+#age-input {
+    width: 35px
+}
+
+#state-input {
+    width: 100px
+}
+
+.sub-header {
+    margin-top: 60vh;
+    text-align: center;
+    background-color: rgba(252, 252, 252, 0.671);
+    border: solid cyan 2px;
+    margin-left: 5px;
+    margin-right: 5px;
+} 
+
+.turtles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: rgba(255, 255, 255, 0.671);
+    border: solid cyan 2px;
+    margin: 5px
+}
+
+h3, .price {
+    text-align: center;
+}
+
+.turtle-box {
+    align-self: center;
+    justify-self: center;
+    width: 300px;
+    margin: 10px;
+    grid-gap: 5px;
+}
+
+.turtle-box:hover {
+    cursor: pointer;
+    color: darkcyan;
+}
+
+.turtle-imgs {
+    width: 300px;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: rgba(3, 99, 112, 0.747);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px
+}
+
+p, label {
+    margin: 10px;
+    text-decoration: none;
+    font-size: 13pt;
+}
+
+input {
+    width: 200px
+}
+
+.contact-subscribe {
+    width: 10px
+}
+
+button {
+    width: 50px;
+    height: 20px;
+}
+
+.subscribe {
+    background-color: rgba(54, 18, 185, 0.582);
+    color: rgb(155, 16, 16);
+    text-align: center;
+    text-shadow: 2px 1px 1px black
+}
+
+@media only screen and (max-width: 985px){
+    .turtles {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 665px){
+    nav {
+        display: inline-block;
+        width: 97%;
+        text-align: center;
+    }
+
+    a {
+        display: inline-block;
+        text-align: center;
+    }
+    
+    .turtles {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .turtleBox {
+        width: 80%;
+        justify-self: center;
+        text-align: center;
+    }
+
+    .turtleImgs {
+        width: 80%;
+    }
+
+    .column1 {
+        width: 50%
+    }
+
+    .column2 {
+        width: 50%
+    }
+
+    .subscribe {
+        display: block;
+        margin-top: 20%;
+        margin: 0
+    }
+
+    .about-blurb {
+        font-size: 25pt
+    }
+}

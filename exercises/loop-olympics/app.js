@@ -139,16 +139,17 @@ for(var i = 0; i < 3; i++){
     }
 }
 
-// 4.
+4.
 // console.log("**4**")
 // var result = ([x, x, x], [x, x, x], [x, x, x])
 // console.log(result)
 // for(var i = 0; i < 1; i++){
 //     var myArray = []
 //     var x = i
-//     myArray.push(x)
+//     myArray.push(result)
 //     for(var j = 0; j < 1; j++){
-//         console.log(myArray)
+//         console.log(toString(myArray))
 //     }
 // }
-// ^ does not work
+
+// not sure how to do this
