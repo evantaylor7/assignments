@@ -3,16 +3,8 @@
     align-items: center;
     flex-direction: column;
 }
-#subHead {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
 .name {
     color: peachpuff;
-    display: flex;
-    flex-direction: row;
-    margin-right: 10px;
 }
 
 .messages {

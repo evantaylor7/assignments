@@ -111,45 +111,45 @@ console.log(occupation)
 // 1.
 console.log("Gold")
 console.log("**1**")
-for(var i = 0; i < 1; i++){
+for(var i = 0; i < 3; i++){
     var myArray = []
-    myArray.push(i, i, i)
-    for(var j = 0; j < myArray.length; j++){
-        console.log(myArray)
+    for(var j = 0; j < 1; j++){
+        myArray.push(j, j, j)
     }
+    console.log(myArray)
 }
 
 // 2.
 console.log("**2**")
 for(var i = 0; i < 3; i++){
     var myArray = []
-    myArray.push(i, i, i)
-    for(var j = 0; j < 1; j++){
-        console.log(myArray)
+    for(var j = 0; j < 3; j++){
+        myArray.push(i)
     }
+    console.log(myArray)
 }
 
 // 3. 
-console.log("**3**")
+console.log("**2**")
 for(var i = 0; i < 3; i++){
     var myArray = []
-    myArray.push(0, 1, 2)
-    for(var j = 0; j < 1; j++){
-        console.log(myArray)
+    for(var j = 0; j < 3; j++){
+        myArray.push(j)
     }
+    console.log(myArray)
 }
 
 4.
-// console.log("**4**")
-// var result = ([x, x, x], [x, x, x], [x, x, x])
-// console.log(result)
-// for(var i = 0; i < 1; i++){
-//     var myArray = []
-//     var x = i
-//     myArray.push(result)
-//     for(var j = 0; j < 1; j++){
-//         console.log(toString(myArray))
-//     }
-// }
-
-// not sure how to do this
+console.log("**4**")
+function nestedArray(num){
+    let newArray = [];
+    let x = "x"
+    for(let i = 0; i < num; i++){
+        newArray.push([]);
+        for(let j = 0; j < num; j++){
+            newArray[i][j] = x;
+        }
+    }
+    return newArray
+}
+console.log(nestedArray(3));
