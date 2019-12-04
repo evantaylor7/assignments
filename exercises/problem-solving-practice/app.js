@@ -1,3 +1,4 @@
+// 1.
 function largest(myArray){
     
     for(let i = 0; i < myArray.length; i++){
@@ -8,11 +9,12 @@ function largest(myArray){
 console.log(largest([3, 5, 2, 8, 1]))
 console.log(largest([234, 237, 626, 2342, 2112]))
 
-function lettersWithStrings(array2, char){
+// 2.
+function lettersWithStrings(myArray, char){
     let arr = []
-    for(let i = 0; i < array2.length; i++){
-        if (array2[i].includes(char)) {
-            arr.push(array2[i])
+    for(let i = 0; i < myArray.length; i++){
+        if (myArray[i].includes(char)) {
+            arr.push(myArray[i])
         }
     }
     return arr
@@ -20,7 +22,7 @@ function lettersWithStrings(array2, char){
 console.log(lettersWithStrings(["#3", "$$$", "C%4!", "Hey!"], "!"))
 console.log(lettersWithStrings(["and", "farm", "lice", "pick", "apple"], "a"))
 
-
+// 3.
 function isDivisible(num1, num2){
     if(num1 % num2 === 0){
         return true
