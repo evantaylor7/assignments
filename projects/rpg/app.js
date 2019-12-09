@@ -30,7 +30,7 @@ const enemies = [{
     type: "overly-friendly hipster",
     health: 30,
     healthChange: 30,
-    catchphrase: "utters unintelligible liberal garble",
+    catchphrase: "'Hey man, you want some of my kombucha? It\'s homebrewed.'",
     finishingMove: "throws his fixie at you, making you stumble and fall onto the ground. Then he smothers you to death with his satchel.",
     itemDrop: "satchel"
 }]
@@ -40,7 +40,6 @@ function gameComplete(){
     if(player.items.includes("satchel") && player.items.includes("hair pin") && player.items.includes("butterknife")){
         console.log("You have collected all of the items! You win!")
         const keepPlaying = readline.keyInYN("Do you want to keep playing?")
-
         if(keepPlaying){
             walk()
         } else {
@@ -65,63 +64,66 @@ function generateEnemy() {
     } else if (enemyChoice === 1) {
         console.log("\n\tIt's a " + enemies[enemyChoice].type + " with " + enemies[enemyChoice].health + " HP. She says " + enemies[enemyChoice].catchphrase)
     }
-    userMove()
-    function userMove() {
-        const choice = readline.keyInSelect(combatChoices, "\tHow do you respond?")
-        if (choice === 0) {
-            console.log("\n\tYou decide to attack the enemy")
-            userAttack()
-            if(enemies[enemyChoice].healthChange > 0){
-                enemyAttack()
-            } else {
-                console.log("\nYou defeated the " + enemies[enemyChoice].type + "! You gain 20 HP.")
-                player.health = player.health + 20
-                enemies[enemyChoice].healthChange = enemies[enemyChoice].health
-                const itemChance = generateRandomChance(2)
-                if(itemChance === 0){
-                    player.items.push(enemies[enemyChoice].itemDrop)
-                    console.log("You picked up the " + enemies[enemyChoice].type + "\'s " + enemies[enemyChoice].itemDrop)
-                }
-                gameComplete()
+    userMove(enemyChoice)
+    
+}
+
+function userMove(enemyChoice) {
+    const choice = readline.keyInSelect(combatChoices, "\tHow do you respond?")
+    if (choice === 0) {
+        console.log("\n\tYou decide to attack the enemy")
+        userAttack(enemyChoice)
+        if(enemies[enemyChoice].healthChange > 0){
+            enemyAttack(enemyChoice)
+        } else {
+            console.log("\nYou defeated the " + enemies[enemyChoice].type + "! You gain 20 HP.")
+            player.health = player.health + 20
+            enemies[enemyChoice].healthChange = enemies[enemyChoice].health
+            const itemChance = generateRandomChance(2)
+            if(itemChance === 0){
+                player.items.push(enemies[enemyChoice].itemDrop)
+                console.log("You picked up the " + enemies[enemyChoice].type + "\'s " + enemies[enemyChoice].itemDrop)
             }
-        } else if (choice === 2){
-            console.log(player)
-            userMove()
-        } else if (choice === 1) {
-            console.log("\n\tYou try to run away")
-            const runChance = generateRandomChance(2)
-            if(runChance === 0){
-                console.log("\tbut the " + enemies[enemyChoice].type + " " + enemies[enemyChoice].finishingMove)
-                console.log("\n\t--GAME OVER--")
-                process.exit()
-            } else if(runChance === 1){
-                console.log("\tand you somehow escape")
-            }
-        } else {
-            console.log("\n\tYou die of old age.")
-            process.exit()
-        } 
-    }
-    function userAttack(){
-        const attackPower = generateRandomChance(100)
-        const enemyHealth = Math.max(0, enemies[enemyChoice].healthChange -= attackPower)
-        if(enemyChoice === 1) {
-            console.log("\tYou damage the " + enemies[enemyChoice].type + " by " + attackPower + " HP. Her health is reduced to " + enemyHealth + "!")
-        } else {
-            console.log("\tYou damage the " + enemies[enemyChoice].type + " by " + attackPower + " HP. His health is reduced to " + enemyHealth + "!")
+            gameComplete()
         }
-    }
-    function enemyAttack(){
-        const enemyAttack = generateRandomChance(80)
-        player.health = player.health - enemyAttack
-        console.log("\nThe " + enemies[enemyChoice].type + " punches you in the gut, dealing " + enemyAttack + " damage points.")
-        if(player.health < 1){
-            console.log("The " + enemies[enemyChoice].type + " " + enemies[enemyChoice].finishingMove)
-            console.log("--GAME OVER--")
+    } else if (choice === 2){
+        console.log(player)
+        userMove(enemyChoice)
+    } else if (choice === 1) {
+        console.log("\n\tYou try to run away")
+        const runChance = generateRandomChance(2)
+        if(runChance === 0){
+            console.log("\tbut the " + enemies[enemyChoice].type + " " + enemies[enemyChoice].finishingMove)
+            console.log("\n\t--GAME OVER--")
             process.exit()
-        } else {
-            userMove()
+        } else if(runChance === 1){
+            console.log("\tand you somehow escape")
         }
+    } else {
+        console.log("\n\tYou die of old age.")
+        process.exit()
+    } 
+}
+
+function userAttack(enemyChoice){
+    const attackPower = generateRandomChance(100)
+    const enemyHealth = Math.max(0, enemies[enemyChoice].healthChange -= attackPower)
+    if(enemyChoice === 1) {
+        console.log("\tYou damage the " + enemies[enemyChoice].type + " by " + attackPower + " HP. Her health is reduced to " + enemyHealth + "!")
+    } else {
+        console.log("\tYou damage the " + enemies[enemyChoice].type + " by " + attackPower + " HP. His health is reduced to " + enemyHealth + "!")
+    }
+}
+function enemyAttack(enemyChoice){
+    const enemyAttack = generateRandomChance(80)
+    player.health = player.health - enemyAttack
+    console.log("\nThe " + enemies[enemyChoice].type + " punches you in the gut, dealing " + enemyAttack + " damage points.")
+    if(player.health < 1){
+        console.log("The " + enemies[enemyChoice].type + " " + enemies[enemyChoice].finishingMove)
+        console.log("--GAME OVER--")
+        process.exit()
+    } else {
+        userMove(enemyChoice)
     }
 }
 function generateRandomChance(chance) {
