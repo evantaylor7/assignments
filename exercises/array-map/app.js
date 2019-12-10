@@ -52,7 +52,7 @@ console.log(namesOnly([
 //     }
 // })
 
-// even simpler:
+// using es6:
 const oldEnough = arr => arr.map(arr => arr.age >= 18 ? arr.name + " can go to the Matrix." : arr.name + " is under age!!")
 console.log(oldEnough([
     {

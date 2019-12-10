@@ -14,4 +14,4 @@ button.addEventListener("click", function(){
 
 tracker.textContent = clicks
 
-// extra credit = countdown timer
+// (to do) extra credit = countdown timer
