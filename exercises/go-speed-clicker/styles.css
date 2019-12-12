@@ -2,9 +2,22 @@
     text-align: center;
     margin: auto;
     color: darkcyan;
-    font-size: 30pt
+    font-size: 30pt;
 }
 
 .button {
     text-align: center;
+}
+
+#counter-div {
+    display: block;
+    width: 150px;
+    background-color: darkcyan;
+    border-radius: 10px
+}
+
+h3, h2 {
+    text-align: center;
+    color: white;
+    padding: 5px
 }
