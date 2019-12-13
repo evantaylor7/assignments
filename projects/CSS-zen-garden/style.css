@@ -112,7 +112,7 @@ main > div > h2 {
 }
 
 .green-background {
-    background-color: rgba(138,188,159,0.5);
+    background-color: rgba(138, 188, 159, 0.5);
     margin-left: -50px;
     margin-right: -50px;
     padding-left: 50px;
@@ -120,7 +120,7 @@ main > div > h2 {
     padding-top: 30px;
     background-image: url(http://www.csszengarden.com/214/contours.png), url(http://www.csszengarden.com/214/gridlines.png), url(http://www.csszengarden.com/214/bamboo.png);
     background-attachment: scroll, scroll, fixed;
-    background-size: auto auto cover
+    background-size: auto, auto, cover
 }
 
 footer {
