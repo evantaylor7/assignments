@@ -88,26 +88,16 @@ console.log(combineAnimals(realAnimals, magicalAnimals, mysteriousAnimals))
 //     }, 1)
 //   }
 
-const product = (a, b, c, d, e) => {  
-    const numbers = [a,b,c,d,e]
-    return numbers.reduce((acc, number) => {
-        console.log(acc)
-        return acc * number;
-    }, 1)
-}
-product(/*3, 6, 2, 7, 4*/)
-// not sure ^
+const product = (...numbers) => numbers.reduce((acc, number) => acc * number, 1)
+console.log(product(3, 6, 2, 7, 4))
 
 //2.
 // function unshift(array, a, b, c, d, e) {  
 //     return [a, b, c, d, e].concat(array);
 // }
 
-const unshift = (array, a, b, c, d, e) => {  
-    return [a, b, c, d, e].concat(array)
-}
-// console.log(unshift(2, 4, 3, 6, 5))
-// not sure ^
+const unshift = (array, ...rest) => [...array, ...rest]
+console.log(unshift([1, 7, 8, 9], 2, 4, 3, 6, 5))
 
 
 // Write some destructuring code to help this function out. Use object literals to simplify it:
@@ -125,11 +115,10 @@ const unshift = (array, a, b, c, d, e) => {
 
 const populatePeople = names => {
     return names.map(name => {
-        name.split(" ")
-        [firstName, lastName] = name
-        return `First Name: ${firstName}, Last Name: ${lastName}`
+
+        const newArray = name.split(" ")
+        const [firstName, lastName] = newArray
+        return {firstName, lastName}
     })
 }
-
-// console.log(populatePeople(["Frank Peterson", "Suzy Degual", "Liza Jones"]))
-// nope
+console.log(populatePeople(["Frank Peterson", "Suzy Degual", "Liza Jones"]))

@@ -29,7 +29,7 @@ a:hover {
     background-image: url(http://www.csszengarden.com/214/contours.png), url(http://www.csszengarden.com/214/gridlines.png), url(http://www.csszengarden.com/214/huntington.jpg);
     background-size: auto, auto, cover;
     background-repeat: repeat, repeat, no-repeat;
-    /* margin-top: 10px solid #1a5952; wtfdoesn'tthiswork */
+    /* margin-top: 10px solid #1a5952; doesn't work */
     color: white;
     font-family: 'Julius Sans One', sans-serif;
     text-align: center;
@@ -81,7 +81,24 @@ nav {
     cursor: pointer
 }
 
-main {
+.download {
+    display: none
+}
+
+.downloadables {
+    color: rgb(152, 170, 70);
+    font-family: "Julius Sans One", sans-serif;
+    transition: .3s;
+    padding: 6px
+}
+
+.downloadables:hover {
+    background-color: darkcyan;
+    color: white;
+    text-decoration: none;
+}
+
+.first-part, .green-background, .third-part {
     margin: 30px;
     padding: 20px;
     font-weight: 100;
@@ -89,32 +106,21 @@ main {
     margin-top: 1px
 }
 
-main > p {
+.para {
     margin-top: 10px;
     font-size: 10pt
 }
 
-main > div > p {
-    margin-top: 10px;
-    font-size: 10pt
-}
-
-main > h2 {
+.sections {
     margin: 10px 0px 10px 0px;
     font-weight: 100;
-    font-size: 13pt;
-}
-
-main > div > h2 {
-    margin: 10px 0px 10px 0px;
-    font-weight: 100;
-    font-size: 13pt;
+    font-size: 15pt;
+    font-family: "Julius Sans One", sans-serif
 }
 
 .green-background {
     background-color: rgba(138, 188, 159, 0.5);
-    margin-left: -50px;
-    margin-right: -50px;
+    margin: 0;
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 30px;
@@ -161,13 +167,77 @@ i {
 }
 
 .others {
-    height: 300px;
+    height: 320px;
     background-color: rgb(233, 242, 238);
+    margin-left:-94px
+}
+
+#the-break {
+    display: none
+}
+
+.others-list, .resource-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 5%
+}
+
+li {
+    list-style: none;
+}
+
+.other-item {
+    height: 60px;
+    border-top: solid lightgrey 1px;
+    width: 100%;
+    padding-top: 25px;
+    padding: 18px 0 3px 90px;
+}
+
+#other-item-one {
+    border-top: none
+}
+
+.titles, .resource {
+    text-transform: uppercase;
+    color: rgb(141, 140, 140);
+    font-family: "Julius Sans One", sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    transition: .5s
+}
+
+.titles:hover {
+    color: darkcyan;
+    text-decoration: none;
+}
+
+.names {
+    color: rgb(94, 94, 94);
+    font-weight: 900;
+    transition: .5s;
+    font-size: .8em;
+}
+
+.names:hover, .resource:hover {
+    color: darkcyan;
+    text-decoration: none;
 }
 
 .resources {
-    height: 250px;
-    background-color: rgba(138, 188, 159, 0.5)
+    height: 154px;
+    background-color: rgba(138, 188, 159, 0.5);
+    border-top: solid darkcyan 1px;
+    margin-left: -94px
+}
+
+.resource-item {
+    padding: 15px 0 15px 90px;
+    border-bottom: solid rgb(182, 182, 182) 1px;
+}
+
+#last-resource {
+    border-bottom: none
 }
 
 
@@ -193,5 +263,137 @@ i {
 @media only screen and (min-width: 600px){
     .enso {
         width: 80px;
+    }
+}
+
+@media only screen and (min-width: 1130px){
+    body {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .download {
+        display: block
+    }
+    
+    .sections {
+        font-size: 2em;
+    }
+
+    header {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    header > nav {
+        grid-column: 2 / 3;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.1);
+        margin: 0;
+    }
+
+    .nav-hover {
+        margin-top: 80px;
+        color: white;
+        font-size: 17pt;
+        background-color: rgba(255, 255, 255, 0.404);
+    }
+
+    .nav-hover:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+        color: white
+    }
+
+    .first-part {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        margin: 40px;
+        margin-left: 100px;
+    }
+
+    .green-background {
+        grid-row: 3 / 4;
+        grid-column: 1 / 2;
+        padding-left: 118px;
+        margin: 0;
+        
+    }
+
+    .third-part {
+        grid-column: 1 / 2;
+
+        margin-left: 96px;
+    }
+
+    .para {
+        font-size: 1.0em;
+        line-height: 24pt;
+    }
+
+    .by {
+        height: 290px
+    }
+
+    .by > p {
+        font-size: 2.0em;
+        padding: 120px;
+        margin-top: -32px;
+        line-height: 48pt;
+    }
+
+    .others {
+        grid-column: 2 / -1;
+        grid-row: 2 / 3;
+        height: 100%;
+        background-color: rgba(223, 234, 228, 0.7);
+        font-size: 1.2em;
+        padding-top: 50px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .other-item {
+        padding: 22px 0 16px 5px
+    }
+
+    #the-break {
+        display: block
+    }
+
+    .others-list {
+        display: block;
+        margin-left: 30px
+    }
+
+    footer {
+        grid-column: 1 / -1
+    }
+
+    .resources {
+        grid-column: 2 / -1;
+        grid-row: 3 / 4;
+        height: 100%;
+        background-color: rgba(138, 188, 159, 0.6);
+        margin-left: 0;
+        background-image: url(http://www.csszengarden.com/214/contours.png), url(http://www.csszengarden.com/214/gridlines.png), url(http://www.csszengarden.com/214/bamboo.png);
+        background-attachment: scroll, scroll, fixed;
+        background-size: auto, auto, cover
+    }
+
+    .resource-list {
+        display: block;
+        padding: 0;
+        margin: 0
+    }
+
+    .resrouce {
+        padding-left: 0
+    }
+
+    .extra-box {
+        background-color: rgba(223, 234, 228, 0.7);
+        grid-column: 2 / -1;
+        margin-top: -21px
     }
 }
