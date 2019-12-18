@@ -169,7 +169,8 @@ i {
 .others {
     height: 320px;
     background-color: rgb(233, 242, 238);
-    margin-left:-94px
+    margin-left:-94px;
+    padding-left: 90px
 }
 
 #the-break {
@@ -190,8 +191,7 @@ li {
     height: 60px;
     border-top: solid lightgrey 1px;
     width: 100%;
-    padding-top: 25px;
-    padding: 18px 0 3px 90px;
+    padding: 20px 0 5px 0;
 }
 
 #other-item-one {
@@ -354,7 +354,7 @@ li {
     }
 
     .other-item {
-        padding: 22px 0 16px 5px
+        padding: 22px 0 16px 0
     }
 
     #the-break {

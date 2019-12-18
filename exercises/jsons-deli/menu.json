@@ -1,0 +1,76 @@
+{
+    "appetizers": [
+        {
+            "name": "Hot Wings",
+            "ingredients": ["chicken wings", "hot sauce", "carrot strips", "celery sticks"],
+            "description": "Classic hot wings, hot sauce can be subbed out for medium or mild sauce.",
+            "price": 9.99
+        },
+        {
+            "name": "JSON Potstickers",
+            "ingredients": ["wonton", "pork", "cabbage", "garlic", "soy sauce"],
+            "description": "Our delicious potstickers are made from scratch here at the deli with the freshest ingredients.",
+            "price": 10.99
+        }
+    ],
+    "cold sandwiches": [
+        {
+            "name": "Pesto Turkey",
+            "ingredients": ["sliced turkey", "provolone", "mayonnaise", "pesto", "lettuce", "slice tomato", "red onion", "french bread"],
+            "description": "The pesto turkey cold sam is made from fresh ingredients and is quite scrumptious.",
+            "price": 12.99
+        },
+        {
+            "name": "Red Pepper Roast Beef",
+            "ingredients": ["roasted red pepper", "sliced roast beef", "grain mustard", "mayonnaise", "arugula", "goat cheese", "ciabatta bread"],
+            "description": "The Roast Beef is our best selling sandwich. It's absolutely delicious.",
+            "price": 12.99
+        }
+    ],
+    "hot sandwiches": [
+        {
+            "name": "Reuben",
+            "ingredients": ["corned beef", "housemade thousand island", "sauerkraut", "sliced pickles", "rye bread", "swiss cheese"],
+            "description": "The classic reuben is grilled to perfection with the finest ingredients",
+            "price": 13.99
+        },
+        { 
+            "name": "Customizable Burger",
+            "ingredients": {
+                "standard": ["1/4 lb beef patty", "lettuce", "sliced tomato", "white onion", "sliced pickles", "mayonnaise"], 
+                "choice of cheese": ["swiss", "provolone", "cheddar"], 
+                "optional": ["red onion", "ketchup", "mustard", "grain mustard", "housemade thousand island", "fried egg", "guacamole"]
+            },
+            "description": "Our Burger is the best in town, cooked to perfection, with delicious ingredients and fully customizable.",
+            "price": 14.99
+        }
+    ],
+    "desserts": [
+        {
+            "name": "Mint Chocolate Mousse",
+            "ingredients": ["chocolate", "cream", "egg", "sugar", "whipped cream", "mint"],
+            "description": "Our mousse is made from scratch in house, with the perfect amount of mint added.",
+            "price": 11.99
+        },
+        {
+            "name": "Mochi",
+            "ingredients": ["rice flour", "sugar", "coconut milk", "green tea extract", "chocolate"],
+            "description": "Delicious mochi ice cream (ice cream wrapped in a rice paste) in either green tea or chocolate flavor.",
+            "price": 10.99
+        }
+    ],
+    "drinks": [
+        {
+            "name": "Coffee",
+            "ingredients": ["ground coffee beans", "hot water"],
+            "description": "Coffee made from locally roasted beans.",
+            "price": 2.99
+        },
+        {
+            "name": "JSON shake",
+            "ingredients": ["peanut butter", "banana", "dates", "hemp seeds", "almond milk", "flax"],
+            "description": "This delicious, nutty smoothie has lots of fiber and seeds to help your gut health.",
+            "price": 6.99
+        }
+    ]
+}
