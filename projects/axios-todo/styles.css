@@ -1,0 +1,69 @@
+body {
+    background-color: rgb(39, 121, 146);
+}
+
+#list-box {
+    background-color: white ;
+    border: solid rgb(6, 8, 146) 2px;
+    border-radius: 3px;
+    width: 700px;
+    margin: auto;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    text-align: center
+}
+
+button {
+    transition: color .5s, background-color .5s
+}
+
+button:hover {
+    background-color: darkcyan;
+    color: white;
+    border-radius: 5px;
+}
+
+.title {
+    width: 215px
+}
+
+.price {
+    width: 70px
+}
+
+img {
+    width: 350px;
+}
+
+.list-div {
+    background-color: rgb(221, 194, 143);
+    margin: 10px 40px;
+    border-radius: 30px 0 30px 0;
+    padding: 1px;
+    padding-bottom: 5px;
+    transition: background-color 1s
+}
+
+.list-div:hover {
+    background-color: rgb(252, 228, 185)
+}
+
+
+@media only screen and (max-width: 700px){
+    #list-box {
+        width: 500px
+    }
+}
+
+@media only screen and (max-width: 500px){
+    #list-box {
+        width: 450px
+    }
+}
