@@ -57,8 +57,30 @@ const getAbsSum = arr => {
 	}
 	return sum
 }
-console.log(getAbsSum([2, -1, -3, 4, 8])) // -> 18
-console.log(getAbsSum([-1])) // -> 1
-console.log(getAbsSum([-1, -3, -5, -4, -10, 0])) // -> 23
-console.log(getAbsSum([8, 9, 10, 32, 101, -10])) // -> 170
-console.log(getAbsSum([500])) // -> 500
+// console.log(getAbsSum([2, -1, -3, 4, 8])) // -> 18
+// console.log(getAbsSum([-1])) // -> 1
+// console.log(getAbsSum([-1, -3, -5, -4, -10, 0])) // -> 23
+// console.log(getAbsSum([8, 9, 10, 32, 101, -10])) // -> 170
+// console.log(getAbsSum([500])) // -> 500
+
+
+// 1/3/20
+// fix this broken code:
+// function checkEquals(arr1, arr2) {
+// if (arr1 === arr2) {
+// 	return true
+//    } else {
+// 	return false
+//    }
+//   }
+function checkEquals (arr1, arr2) {
+	if (arr1.toString() === arr2.toString()) {
+  	return true 
+  } else {
+  	return false
+  }
+}
+console.log(checkEquals([1, 2], [1, 3])) // -> false
+console.log(checkEquals([1, 2], [1, 2])) // -> true
+console.log(checkEquals([4, 5, 6], [4, 5, 6])) // -> true
+console.log(checkEquals([4, 7, 6], [4, 5, 6])) // -> false
