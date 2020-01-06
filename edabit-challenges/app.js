@@ -46,6 +46,7 @@ function factorial(z) {
 
 // 1/2/20
 // Take an array of integers (positive or negative or both) and return the sum of the absolute value of each element:
+
 const getAbsSum = arr => {
 	let sum = 0
 	for(i = 0; i < arr.length; i++){
@@ -66,6 +67,7 @@ const getAbsSum = arr => {
 
 // 1/3/20
 // fix this broken code:
+
 // function checkEquals(arr1, arr2) {
 // if (arr1 === arr2) {
 // 	return true
@@ -80,7 +82,33 @@ function checkEquals (arr1, arr2) {
   	return false
   }
 }
-console.log(checkEquals([1, 2], [1, 3])) // -> false
-console.log(checkEquals([1, 2], [1, 2])) // -> true
-console.log(checkEquals([4, 5, 6], [4, 5, 6])) // -> true
-console.log(checkEquals([4, 7, 6], [4, 5, 6])) // -> false
+// console.log(checkEquals([1, 2], [1, 3])) // -> false
+// console.log(checkEquals([1, 2], [1, 2])) // -> true
+// console.log(checkEquals([4, 5, 6], [4, 5, 6])) // -> true
+// console.log(checkEquals([4, 7, 6], [4, 5, 6])) // -> false
+
+
+// 1/5/20
+// Given a total due and an array representing the amount of change in your pocket, determine whether or not you are able to pay for the item. Change is represented in the following order: quarters, dimes, nickels, pennies.
+
+// function changeEnough(change, amountDue) {
+// 	let total = (change[0] * .25) + (change[1] * .1) + (change[2] * .05) + (change[3] * .01)
+// 	if(total >= amountDue){
+// 		return true
+// 	} else {
+// 		return false
+// 	}
+// }
+
+// more concise:
+const changeEnough = (change, amountDue) => {
+	let total = (change[0] * .25) + (change[1] * .1) + (change[2] * .05) + (change[3] * .01)
+	return (total >= amountDue)
+}
+console.log(changeEnough([2, 100, 0, 0], 14.11)) // -> false
+console.log(changeEnough([0, 0, 20, 5], 0.75)) // -> true
+console.log(changeEnough([30, 40, 20, 5], 12.55)) // -> true
+console.log(changeEnough([10, 0, 0, 50], 13.85)) // -> false
+console.log(changeEnough([1, 0, 5, 219], 19.99)) // -> false
+console.log(changeEnough([1, 0, 2555, 219], 127.75)) // -> true
+console.log(changeEnough([1, 335, 0, 219], 35.21)) // -> true
