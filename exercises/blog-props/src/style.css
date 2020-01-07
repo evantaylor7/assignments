@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    font-family: 'Lora', 'Times New Roman', serif
+}
+
+.navLinks, .leftLink{
+    text-decoration: none;
+    color: white;
+    transition: color .4s
+}
+
+.navLinks:hover, .leftLink:hover {
+    color: rgb(218, 218, 218)
+}
+
+.navBar {
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr 1fr 1fr 1fr;
+    padding-top: 20px;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial
+}
+
+.leftLink {
+    margin-right: 40%;
+    font-size: 20px
+}
+
+.navLinks {
+    font-size: 13px
+}
+
+.header {
+    text-align: center;
+    color: white;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://blackrockdigital.github.io/startbootstrap-clean-blog/img/home-bg.jpg");
+    background-color: grey;
+    background-position: center;
+    background-size: cover;
+    height: 530px
+}
+
+.title {
+    margin-top: 160px;
+    font-size: 90px
+}
+
+.subTitle {
+    margin-top: -58px;
+    font-size: 25px
+}
+
+.blogs {
+    width: 733px;
+    margin: auto
+}
+
+hr {
+    opacity: .2
+}
+
+.blogTitle {
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.blogSub {
+    font-size: 30px;
+    font-weight: 200;
+    margin-top: -16px
+}
+
+.blogTitles {
+    transition: all .3s
+}
+
+.blogTitles:hover {
+    color: rgb(0, 122, 148);
+    cursor: pointer
+}
+
+.authorDate {
+    font-style: italic;
+    color: grey;
+    margin-top: -18px;
+    margin-bottom: 30px
+}
+
+.authors {
+    text-decoration: none;
+    color: black;
+    transition: all .3s
+}
+
+.authors:hover {
+    text-decoration: underline;
+    color: rgb(0, 122, 148);
+}
+
+.footer {
+    text-align: center;
+    height: 240px;
+    margin-top: 80px
+}
+
+.footNote {
+    color: grey;
+    font-size: 15px;
+    padding-top: 140px
+}

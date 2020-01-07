@@ -1,0 +1,22 @@
+.friendCard {
+    text-align: center
+}
+
+body {
+    background-color: rgb(156, 187, 189);
+}
+
+.page {
+    width: 300px;
+    margin: auto;
+    background-color: rgb(235, 235, 235);
+}
+
+p {
+    margin: 0;
+    
+}
+
+h1 {
+    text-align: center;
+}
