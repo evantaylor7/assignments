@@ -11,7 +11,55 @@
     justify-content: center
 }
 
+.buttonContainer {
+    display: flex;
+    width: 440px;
+}
+
 .button {
-    width: 20px;
+    width: 40px;
+    height: 40px;
     margin: auto;
+    border-radius: 5px;
+}
+
+.button1:hover {
+    color: white;
+    background-color: black;
+    border-radius: 5px
+}
+
+.button2:hover {
+    background: linear-gradient(purple 50%, white 50%);
+    border-radius: 5px
+}
+
+.button3:hover {
+    background: linear-gradient(45deg, blue 50%, white 50%);
+    border-radius: 5px
+}
+
+.button4:hover {
+    background: linear-gradient(135deg, white 50%, blue 50%);
+    border-radius: 5px
+}
+
+.button5:hover {
+    background: linear-gradient(135deg, green 50%, white 50%);
+    border-radius: 5px
+}
+
+.button6:hover {
+    background: linear-gradient(45deg, white 50%, pink 50%);
+    border-radius: 5px
+}
+
+.button7:hover {
+    background: linear-gradient(135deg, white 50%, orange 50%);
+    border-radius: 5px
+}
+
+.button8:hover {
+    background: linear-gradient(45deg, red 50%, white 50%);
+    border-radius: 5px
 }
