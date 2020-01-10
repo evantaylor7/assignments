@@ -6,7 +6,7 @@ class App extends React.Component {
         super()
         this.state = {
             colors: ["white", "white", "white", "white"],
-            oldColors: ["white", "white", "white", "white"]
+            // oldColors: ["white", "white", "white", "white"]
         }
     }
 

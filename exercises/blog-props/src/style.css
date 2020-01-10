@@ -51,7 +51,8 @@ body {
 
 .blogs {
     width: 733px;
-    margin: auto
+    margin: auto;
+    margin-top: 80px
 }
 
 hr {
@@ -106,4 +107,52 @@ hr {
     color: grey;
     font-size: 15px;
     padding-top: 140px
+}
+
+@media only screen and (max-width: 1200px){
+    .blogs {
+        width: 605px
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .header {
+        height: 440px
+    }
+
+    .title {
+        margin-top: 140px;
+        font-size: 60px
+    }
+    
+    .subTitle {
+        margin-top: -30px;
+    }
+
+    .blogs {
+        width: 510px
+    }
+
+}
+
+@media only screen and (max-width: 990px){
+    .navBar {
+        background-color: white;
+    }
+
+    .navLinks, .leftLink{
+        color: black;
+        padding: 4px
+    }
+
+    .leftLink {
+        padding-bottom: 10px;
+        margin-top: -5px
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .blogs {
+        width: 95%
+    }
 }
