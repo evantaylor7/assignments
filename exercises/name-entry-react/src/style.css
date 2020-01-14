@@ -1,0 +1,15 @@
+.page {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.list {
+    list-style: none;
+    margin-right: 40px;
+    font-size: 25pt;
+    
+}
+
+.preview {
+    height: 30px
+}
