@@ -1,7 +1,8 @@
 .form {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 25px;
+    grid-gap: 18px;
+    padding: 15px;
 }
 
 input, textarea {
@@ -16,7 +17,7 @@ input, textarea {
     border-radius: 8px
 }
 
-.textArea {
+.textarea {
     grid-column: 1 / -1;
     height: 100px
 }
@@ -31,8 +32,50 @@ input, textarea {
     display: block
 }
 
+.badge {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0;
+    padding: 15px;
+    border: solid black 2px;
+    width: 750px;
+    height: 300px;
+    margin: auto;
+    padding: 18px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+p {
+    margin: 10px;
+}
+
+.badgeTitleBox {
+    grid-column: 1 / -1;
+    margin-bottom: 20px
+}
+
+.badgeTitle {
+    margin: -20px;
+    padding-left: 15px;
+    padding-top: 3px;
+    border-radius: 5px;
+    height: 30px;
+    background-color: rgb(97, 97, 97);
+    color: whitesmoke;
+    font-size: 22px
+}
+
+.textareaBadge {
+    grid-row: 5 / 15;
+    grid-column: 1 / -1;
+    border: solid black 2px;
+    height: 150px;
+    padding: 5px;
+}
+
 @media only screen and (max-width: 900px){
-    .formContainer {
+    .formContainer, .badge {
         width: 80%
     }
 }
