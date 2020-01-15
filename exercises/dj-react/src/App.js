@@ -6,7 +6,6 @@ class App extends React.Component {
         super()
         this.state = {
             colors: ["white", "white", "white", "white"],
-            // oldColors: ["white", "white", "white", "white"]
         }
     }
 
@@ -25,9 +24,6 @@ class App extends React.Component {
 
     handleClick2 = () => {
         this.setState(prevState => {
-            // (below) was trying to change color back to the color it was before...
-            // prevState.colors[0] = prevState.colors[0] !== "purple" ? "purple" : prevState.colors[0]
-            // prevState.colors[1] = prevState.colors[1] !== "purple" ? "purple" : prevState.colors[1]
             prevState.colors[0] = "purple"
             prevState.colors[1] = "purple"
             return {colors: prevState.colors}
