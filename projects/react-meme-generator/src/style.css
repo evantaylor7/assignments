@@ -1,0 +1,97 @@
+body {
+    margin: 0
+}
+
+.container {
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: rgb(165, 217, 221);
+    font-family: sans-serif, impact;
+}
+
+.header > h1 {
+    margin-right: 20px
+}
+
+.header > img {
+    width: 200px
+}
+
+.memeBox {
+    margin: 10px
+}
+
+.memeBox > input {
+    height: 30px;
+    width: 300px;
+}
+
+.memeBox > button {
+    margin-left: 10px;
+    background-color: rgb(165, 217, 221);
+    height: 40px;
+    border-radius: 5px;
+}
+
+.meme {
+    width: 500px;
+    margin: auto
+}
+
+.meme > img {
+    max-width: 500px;
+}
+
+.meme > h2 {
+    position: absolute;
+    text-transform: uppercase;
+    width: 500px;
+    text-align: center;
+    color: white;
+    font-family: sans-serif, impact;
+    text-shadow: 2px 2px 2px black;
+}
+
+.bottomText {
+    margin-top: -50px
+}
+
+@media only screen and (max-width: 500px){
+    .meme > img {
+        max-width: 400px;
+    }
+}
+
+@media only screen and (max-width: 401px){
+    .meme > img {
+        max-width: 350px;
+    }
+
+    .header > h1 {
+        font-size: 30px
+    }
+
+    .header > img {
+        width: 180px
+    }
+}
+
+@media only screen and (max-width: 350px){
+    .meme > img {
+        max-width: 300px;
+    }
+
+    .header > h1 {
+        font-size: 26px
+    }
+
+    .header > img {
+        width: 160px
+    }
+}
