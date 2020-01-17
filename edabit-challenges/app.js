@@ -105,10 +105,39 @@ const changeEnough = (change, amountDue) => {
 	let total = (change[0] * .25) + (change[1] * .1) + (change[2] * .05) + (change[3] * .01)
 	return (total >= amountDue)
 }
-console.log(changeEnough([2, 100, 0, 0], 14.11)) // -> false
-console.log(changeEnough([0, 0, 20, 5], 0.75)) // -> true
-console.log(changeEnough([30, 40, 20, 5], 12.55)) // -> true
-console.log(changeEnough([10, 0, 0, 50], 13.85)) // -> false
-console.log(changeEnough([1, 0, 5, 219], 19.99)) // -> false
-console.log(changeEnough([1, 0, 2555, 219], 127.75)) // -> true
-console.log(changeEnough([1, 335, 0, 219], 35.21)) // -> true
+// console.log(changeEnough([2, 100, 0, 0], 14.11)) // -> false
+// console.log(changeEnough([0, 0, 20, 5], 0.75)) // -> true
+// console.log(changeEnough([30, 40, 20, 5], 12.55)) // -> true
+// console.log(changeEnough([10, 0, 0, 50], 13.85)) // -> false
+// console.log(changeEnough([1, 0, 5, 219], 19.99)) // -> false
+// console.log(changeEnough([1, 0, 2555, 219], 127.75)) // -> true
+// console.log(changeEnough([1, 335, 0, 219], 35.21)) // -> true
+
+
+// 1/17/20
+// Create a function that takes a string as an argument. The string is a random name.
+// If the last character of the name is an "n", return true.
+// If the last character of the name is not an "n", return false.
+
+// function isLastCharacterN(word) {
+// 	for(let i = 0; i < word.length; i++){
+// 		if(word[word.length - 1] === "n"){
+// 			return true
+// 		} else
+// 			return false
+// 	}
+// }
+
+// more concice
+const isLastCharacterN = word => {
+	for(let i = 0; i < word.length; i++){
+		return word[word.length - 1] === "n"
+	}
+}
+console.log(isLastCharacterN("Aiden")) // -> true
+console.log(isLastCharacterN("Roxy")) // -> false
+console.log(isLastCharacterN("Bert")) // -> false
+console.log(isLastCharacterN("Dean")) // -> true
+console.log(isLastCharacterN("Ian")) // -> true
+console.log(isLastCharacterN("Brian")) // -> true
+console.log(isLastCharacterN("Daniel")) // -> false
