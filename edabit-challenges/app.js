@@ -134,10 +134,26 @@ const isLastCharacterN = word => {
 		return word[word.length - 1] === "n"
 	}
 }
-console.log(isLastCharacterN("Aiden")) // -> true
-console.log(isLastCharacterN("Roxy")) // -> false
-console.log(isLastCharacterN("Bert")) // -> false
-console.log(isLastCharacterN("Dean")) // -> true
-console.log(isLastCharacterN("Ian")) // -> true
-console.log(isLastCharacterN("Brian")) // -> true
-console.log(isLastCharacterN("Daniel")) // -> false
+// console.log(isLastCharacterN("Aiden")) // -> true
+// console.log(isLastCharacterN("Roxy")) // -> false
+// console.log(isLastCharacterN("Bert")) // -> false
+// console.log(isLastCharacterN("Dean")) // -> true
+// console.log(isLastCharacterN("Ian")) // -> true
+// console.log(isLastCharacterN("Brian")) // -> true
+// console.log(isLastCharacterN("Daniel")) // -> false
+
+
+// 1/18/20
+// CHALLENGE DIFFICULTY: HARD (it really isn't that hard...)
+// Create a function that takes an array of numbers and return "Boom!" if the number 7 appears in the array. Otherwise, return "there is no 7 in the array".
+
+const sevenBoom = arr => arr.toString().includes(7) ?
+	`Boom!`
+	:
+	`there is no 7 in the array`
+
+console.log(sevenBoom([2, 6, 7, 9, 3])) // -> "Boom!"
+console.log(sevenBoom([33, 68, 400, 5])) // -> "there is no 7 in the array"
+console.log(sevenBoom([86, 48, 100, 66])) // -> "there is no 7 in the array"
+console.log(sevenBoom([76, 55, 44, 32])) // -> "Boom!"
+console.log(sevenBoom([35, 4, 9, 37])) // -> "Boom!"
