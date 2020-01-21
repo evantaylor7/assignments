@@ -160,6 +160,7 @@ const sevenBoom = arr => arr.toString().includes(7) ?
 
 
 // 1/20/20
+// another HARD challenge
 // Create a function that determines whether a number is Oddish or Evenish. A number is Oddish if the sum of all of its digits is odd, and a number is Evenish if the sum of all of its digits is even. If a number is Oddish, return "Oddish". Otherwise, return "Evenish".
 
 function oddishOrEvenish(num) {
@@ -167,10 +168,19 @@ function oddishOrEvenish(num) {
 	return sumNum % 2 === 0 ? "Evenish" : "Oddish"
 }
 
-console.log(oddishOrEvenish(43)) // -> "Oddish"
-console.log(oddishOrEvenish(373)) // -> "Oddish"
-console.log(oddishOrEvenish(55551)) // -> "Oddish"
-console.log(oddishOrEvenish(694)) // -> "Oddish"
-console.log(oddishOrEvenish(4433)) // -> "Evenish"
-console.log(oddishOrEvenish(11)) // -> "Evenish"
-console.log(oddishOrEvenish(211112)) // -> "Evenish"
+// console.log(oddishOrEvenish(43)) // -> "Oddish"
+// console.log(oddishOrEvenish(373)) // -> "Oddish"
+// console.log(oddishOrEvenish(55551)) // -> "Oddish"
+// console.log(oddishOrEvenish(694)) // -> "Oddish"
+// console.log(oddishOrEvenish(4433)) // -> "Evenish"
+// console.log(oddishOrEvenish(11)) // -> "Evenish"
+// console.log(oddishOrEvenish(211112)) // -> "Evenish"
+
+
+// 1/21/20
+// MEDIUM challenge
+// Create a function that takes width and height and finds the perimeter of a rectangle.
+const findPerimeter = (height, width) => (height * 2) + (width * 2)
+console.log(findPerimeter(6, 7)) // -> 26
+console.log(findPerimeter(20, 10)) // -> 60
+console.log(findPerimeter(2, 9)) // -> 22
