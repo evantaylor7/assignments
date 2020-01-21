@@ -152,8 +152,25 @@ const sevenBoom = arr => arr.toString().includes(7) ?
 	:
 	`there is no 7 in the array`
 
-console.log(sevenBoom([2, 6, 7, 9, 3])) // -> "Boom!"
-console.log(sevenBoom([33, 68, 400, 5])) // -> "there is no 7 in the array"
-console.log(sevenBoom([86, 48, 100, 66])) // -> "there is no 7 in the array"
-console.log(sevenBoom([76, 55, 44, 32])) // -> "Boom!"
-console.log(sevenBoom([35, 4, 9, 37])) // -> "Boom!"
+// console.log(sevenBoom([2, 6, 7, 9, 3])) // -> "Boom!"
+// console.log(sevenBoom([33, 68, 400, 5])) // -> "there is no 7 in the array"
+// console.log(sevenBoom([86, 48, 100, 66])) // -> "there is no 7 in the array"
+// console.log(sevenBoom([76, 55, 44, 32])) // -> "Boom!"
+// console.log(sevenBoom([35, 4, 9, 37])) // -> "Boom!"
+
+
+// 1/20/20
+// Create a function that determines whether a number is Oddish or Evenish. A number is Oddish if the sum of all of its digits is odd, and a number is Evenish if the sum of all of its digits is even. If a number is Oddish, return "Oddish". Otherwise, return "Evenish".
+
+function oddishOrEvenish(num) {
+	let sumNum = num.toString().split('').map(Number).reduce((a, b) => a + b, 0)
+	return sumNum % 2 === 0 ? "Evenish" : "Oddish"
+}
+
+console.log(oddishOrEvenish(43)) // -> "Oddish"
+console.log(oddishOrEvenish(373)) // -> "Oddish"
+console.log(oddishOrEvenish(55551)) // -> "Oddish"
+console.log(oddishOrEvenish(694)) // -> "Oddish"
+console.log(oddishOrEvenish(4433)) // -> "Evenish"
+console.log(oddishOrEvenish(11)) // -> "Evenish"
+console.log(oddishOrEvenish(211112)) // -> "Evenish"
