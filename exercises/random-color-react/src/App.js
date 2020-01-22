@@ -43,7 +43,7 @@ class App extends React.Component {
         }
         return (
             <div>
-                <p style={{textAlign: "center"}}>CLICK ME</p>
+                <p style={{textAlign: "center"}} onClick={this.handleClick}>CLICK ME</p>
                 <div style={styles} onClick={this.handleClick}></div>
             </div>
         )
