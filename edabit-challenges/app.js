@@ -181,6 +181,43 @@ function oddishOrEvenish(num) {
 // MEDIUM challenge
 // Create a function that takes width and height and finds the perimeter of a rectangle.
 const findPerimeter = (height, width) => (height * 2) + (width * 2)
-console.log(findPerimeter(6, 7)) // -> 26
-console.log(findPerimeter(20, 10)) // -> 60
-console.log(findPerimeter(2, 9)) // -> 22
+// console.log(findPerimeter(6, 7)) // -> 26
+// console.log(findPerimeter(20, 10)) // -> 60
+// console.log(findPerimeter(2, 9)) // -> 22
+
+
+// 1/22/20
+// HARD challenge
+// Create a Book constructor that has two properties: 1. Title, 2. Author
+// and two methods:
+// 1. A method named getTitle that returns: "Title: " + the instance title.
+// 2. A method named getAuthor that returns: "Author: " + the instance author.
+// and instantiate this constructor by creating 3 new books:
+// 1. Pride and Prejudice - Jane Austen (PP)
+// 2. Hamlet - William Shakespeare (H)
+// 3. War and Peace - Leo Tolstoy (WP)
+// Name the new object instances PP, H, and WP, respectively.
+function Book(title, author) {
+	this.title = title
+	this.author = author
+	this.getTitle = () => `Title: ${this.title}`
+	this.getAuthor = () => `Author: ${this.author}`
+}
+const PP = new Book("Pride and Prejudice", "Jane Austen")
+const H = new Book("Hamlet", "William Shakespeare")
+const WP = new Book("War and Peace", "Leo Tolstoy")
+
+console.log(PP.title) // -> "Pride and Prejudice"
+console.log(PP.author) // -> "Jane Austen"
+console.log(PP.getTitle()) // -> 'Title: Pride and Prejudice'
+console.log(PP.getAuthor()) // -> 'Author: Jane Austen'
+
+console.log(H.title) // -> "Hamlet"
+console.log(H.author) // -> "William Shakespeare"
+console.log(H.getTitle()) // -> 'Title: Hamlet'
+console.log(H.getAuthor()) // -> 'Author: William Shakespeare'
+
+console.log(WP.title) // -> "War and Peace"
+console.log(WP.author) // -> "Leo Tolstoy"
+console.log(WP.getTitle()) // -> 'Title: War and Peace'
+console.log(WP.getAuthor()) // -> 'Author: Leo Tolstoy'
