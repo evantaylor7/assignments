@@ -78,7 +78,7 @@ class App extends React.Component {
             <div className="container">
                 {squares}
                 <div className="buttonContainer">
-        <button className="button button1" onClick={this.handleClick}>1</button>
+                    <button className="button button1" onClick={this.handleClick}>1</button>
                     <button className="button button2" onClick={this.handleClick2}>2</button>
                     <button className="button button3" onClick={this.handleClick3}>3</button>
                     <button className="button button4" onClick={this.handleClick4}>4</button>

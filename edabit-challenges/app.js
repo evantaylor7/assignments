@@ -207,17 +207,34 @@ const PP = new Book("Pride and Prejudice", "Jane Austen")
 const H = new Book("Hamlet", "William Shakespeare")
 const WP = new Book("War and Peace", "Leo Tolstoy")
 
-console.log(PP.title) // -> "Pride and Prejudice"
-console.log(PP.author) // -> "Jane Austen"
-console.log(PP.getTitle()) // -> 'Title: Pride and Prejudice'
-console.log(PP.getAuthor()) // -> 'Author: Jane Austen'
+// console.log(PP.title) // -> "Pride and Prejudice"
+// console.log(PP.author) // -> "Jane Austen"
+// console.log(PP.getTitle()) // -> 'Title: Pride and Prejudice'
+// console.log(PP.getAuthor()) // -> 'Author: Jane Austen'
 
-console.log(H.title) // -> "Hamlet"
-console.log(H.author) // -> "William Shakespeare"
-console.log(H.getTitle()) // -> 'Title: Hamlet'
-console.log(H.getAuthor()) // -> 'Author: William Shakespeare'
+// console.log(H.title) // -> "Hamlet"
+// console.log(H.author) // -> "William Shakespeare"
+// console.log(H.getTitle()) // -> 'Title: Hamlet'
+// console.log(H.getAuthor()) // -> 'Author: William Shakespeare'
 
-console.log(WP.title) // -> "War and Peace"
-console.log(WP.author) // -> "Leo Tolstoy"
-console.log(WP.getTitle()) // -> 'Title: War and Peace'
-console.log(WP.getAuthor()) // -> 'Author: Leo Tolstoy'
+// console.log(WP.title) // -> "War and Peace"
+// console.log(WP.author) // -> "Leo Tolstoy"
+// console.log(WP.getTitle()) // -> 'Title: War and Peace'
+// console.log(WP.getAuthor()) // -> 'Author: Leo Tolstoy'
+
+
+// 1/23/20
+// challenge rating: HARD
+// In the image below, squares are either empty or filled with a circle.
+// (Images show squares with grids of smaller squares, some with circles and some empty)
+// Create a function that takes a number step (which equals HALF the width of a square) and returns the amount of empty squares. The image shows the squares with step 1, 2 and 3. The return value is the number of cells not on a diagonal, which is 0 for the first square, 8 for the second, and 24 for the third.
+const emptySq = step => (step * 4) * (step - 1)
+console.log(emptySq(3)) // -> 24
+console.log(emptySq(1)) // -> 0
+console.log(emptySq(27)) // -> 2808
+console.log(emptySq(3)) // -> 24
+console.log(emptySq(0)) // -> 0, 'Even though the box is unexisting, the amount of empty squares is also 0.'
+console.log(emptySq(10)) // -> 360
+console.log(emptySq(19)) // -> 1368
+console.log(emptySq(60)) // -> 14160
+console.log(emptySq(7)) // -> 168
