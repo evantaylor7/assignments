@@ -229,12 +229,24 @@ const WP = new Book("War and Peace", "Leo Tolstoy")
 // (Images show squares with grids of smaller squares, some with circles and some empty)
 // Create a function that takes a number step (which equals HALF the width of a square) and returns the amount of empty squares. The image shows the squares with step 1, 2 and 3. The return value is the number of cells not on a diagonal, which is 0 for the first square, 8 for the second, and 24 for the third.
 const emptySq = step => (step * 4) * (step - 1)
-console.log(emptySq(3)) // -> 24
-console.log(emptySq(1)) // -> 0
-console.log(emptySq(27)) // -> 2808
-console.log(emptySq(3)) // -> 24
-console.log(emptySq(0)) // -> 0, 'Even though the box is unexisting, the amount of empty squares is also 0.'
-console.log(emptySq(10)) // -> 360
-console.log(emptySq(19)) // -> 1368
-console.log(emptySq(60)) // -> 14160
-console.log(emptySq(7)) // -> 168
+// console.log(emptySq(3)) // -> 24
+// console.log(emptySq(1)) // -> 0
+// console.log(emptySq(27)) // -> 2808
+// console.log(emptySq(3)) // -> 24
+// console.log(emptySq(0)) // -> 0, 'Even though the box is unexisting, the amount of empty squares is also 0.'
+// console.log(emptySq(10)) // -> 360
+// console.log(emptySq(19)) // -> 1368
+// console.log(emptySq(60)) // -> 14160
+// console.log(emptySq(7)) // -> 168
+
+
+// 1/25/20
+// challenge rating: HARD
+// Write a function that returns the least common multiple (LCM) of two integers.
+const lcm = (n1, n2) => n2 % n1 === 0 ? n2 : n2 * n1
+console.log(lcm(9, 18)) // -> 18
+console.log(lcm(8, 5)) // -> 40
+console.log(lcm(17, 11)) // -> 187
+console.log(lcm(17, 5)) // -> 85
+console.log(lcm(3, 12)) // -> 12
+console.log(lcm(9, 9)) // -> 9
