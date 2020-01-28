@@ -244,9 +244,18 @@ const emptySq = step => (step * 4) * (step - 1)
 // challenge rating: HARD
 // Write a function that returns the least common multiple (LCM) of two integers.
 const lcm = (n1, n2) => n2 % n1 === 0 ? n2 : n2 * n1
-console.log(lcm(9, 18)) // -> 18
-console.log(lcm(8, 5)) // -> 40
-console.log(lcm(17, 11)) // -> 187
-console.log(lcm(17, 5)) // -> 85
-console.log(lcm(3, 12)) // -> 12
-console.log(lcm(9, 9)) // -> 9
+// console.log(lcm(9, 18)) // -> 18
+// console.log(lcm(8, 5)) // -> 40
+// console.log(lcm(17, 11)) // -> 187
+// console.log(lcm(17, 5)) // -> 85
+// console.log(lcm(3, 12)) // -> 12
+// console.log(lcm(9, 9)) // -> 9
+
+
+// 1/28/20
+// Create a function that returns true when num1 is equal to num2.
+const isSameNum = (num1, num2) => num1 === num2
+console.log(isSameNum(4, 8)) // -> false
+console.log(isSameNum(2, 2)) // -> true
+console.log(isSameNum(0, 6)) // -> false
+console.log(isSameNum(2, "2")) // -> false
