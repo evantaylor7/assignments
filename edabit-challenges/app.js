@@ -255,7 +255,26 @@ const lcm = (n1, n2) => n2 % n1 === 0 ? n2 : n2 * n1
 // 1/28/20
 // Create a function that returns true when num1 is equal to num2.
 const isSameNum = (num1, num2) => num1 === num2
-console.log(isSameNum(4, 8)) // -> false
-console.log(isSameNum(2, 2)) // -> true
-console.log(isSameNum(0, 6)) // -> false
-console.log(isSameNum(2, "2")) // -> false
+// console.log(isSameNum(4, 8)) // -> false
+// console.log(isSameNum(2, 2)) // -> true
+// console.log(isSameNum(0, 6)) // -> false
+// console.log(isSameNum(2, "2")) // -> false
+
+
+// 1/30/20
+// Write a function that takes an integer and:
+// If the number is a multiple of 3, return "Hello".
+// If the number is a multiple of 5, return "World".
+// If the number is a multiple of both 3 and 5, return "Hello World".
+function helloWorld(num) {
+	if(num === 3){
+		return "Hello"
+	} else if(num === 5){
+		return "World"
+	} else {
+		return "Hello World"
+	}
+}
+console.log(helloWorld(3)) // -> "Hello"
+console.log(helloWorld(5)) // -> "World"
+console.log(helloWorld(15)) // -> "Hello World"
