@@ -1,18 +1,52 @@
-/* .headerBox {
-    background-color: black;
-    text-align: center
+* {
+    margin: 0
 }
 
-.header {
-    color: white
+body {
+    background-color: rgb(238, 238, 238)
 }
 
-.buttonBox {
-    text-align: center;
-} */
+.nav {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 20px
+}
 
+.navItem:hover {
+    color: cyan;
+    cursor: pointer;
+}
 
 .dark {
-    color: white;
+    color: rgb(207, 207, 207);
+    background-color: black;
+    text-align: center;
+}
+
+.main {
+    margin: 200px 0px
+}
+
+.button-light {
+    color: cyan;
     background-color: black
+}
+
+.button-dark, .button-light {
+    height: 30px;
+    width: 120px;
+}
+
+.buttonContainer {
+    background-color: rgb(238, 238, 238)
+}
+
+.light {
+    text-align: center;
+    background-color: white;
+}
+
+.footer {
+    margin-top: 200px;
 }

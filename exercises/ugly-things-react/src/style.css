@@ -1,0 +1,30 @@
+* {
+    margin: 0
+}
+
+body {
+    text-align: center;
+    background-color: rgb(228, 228, 228);
+}
+
+img {
+    max-width: 500px;
+    margin: 10px
+}
+
+input {
+    width: 250px;
+    margin: 10px;
+    height: 30px
+}
+
+form {
+    background-color: rgb(2, 167, 167);
+    padding: 20px
+}
+
+.uglyCard {
+    background-color: white;
+    width: 550px;
+    margin: 10px auto
+}
