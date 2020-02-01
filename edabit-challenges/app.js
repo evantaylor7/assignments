@@ -275,6 +275,18 @@ function helloWorld(num) {
 		return "Hello World"
 	}
 }
-console.log(helloWorld(3)) // -> "Hello"
-console.log(helloWorld(5)) // -> "World"
-console.log(helloWorld(15)) // -> "Hello World"
+// console.log(helloWorld(3)) // -> "Hello"
+// console.log(helloWorld(5)) // -> "World"
+// console.log(helloWorld(15)) // -> "Hello World"
+
+
+// 1/30/20
+// Given a fraction as a string, return whether or not it is greater than 1 when evaluated.
+const greaterThanOne = frac => eval(frac) > 1
+console.log(greaterThanOne("1/2")) // -> false 
+console.log(greaterThanOne("7/4")) // -> true
+console.log(greaterThanOne("10/10")) // -> false
+console.log(greaterThanOne("12/30")) // -> false
+console.log(greaterThanOne("28/3")) // -> true
+console.log(greaterThanOne("35/31")) // -> true
+console.log(greaterThanOne("11/27")) // -> false
