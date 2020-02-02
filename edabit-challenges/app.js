@@ -283,10 +283,24 @@ function helloWorld(num) {
 // 1/30/20
 // Given a fraction as a string, return whether or not it is greater than 1 when evaluated.
 const greaterThanOne = frac => eval(frac) > 1
-console.log(greaterThanOne("1/2")) // -> false 
-console.log(greaterThanOne("7/4")) // -> true
-console.log(greaterThanOne("10/10")) // -> false
-console.log(greaterThanOne("12/30")) // -> false
-console.log(greaterThanOne("28/3")) // -> true
-console.log(greaterThanOne("35/31")) // -> true
-console.log(greaterThanOne("11/27")) // -> false
+// console.log(greaterThanOne("1/2")) // -> false 
+// console.log(greaterThanOne("7/4")) // -> true
+// console.log(greaterThanOne("10/10")) // -> false
+// console.log(greaterThanOne("12/30")) // -> false
+// console.log(greaterThanOne("28/3")) // -> true
+// console.log(greaterThanOne("35/31")) // -> true
+// console.log(greaterThanOne("11/27")) // -> false
+
+
+// 2/1/20
+// Create a function that takes an array and returns the sum of all numbers in the array.
+function getSumOfItems(arr) {
+	let sum = 0
+	for(let i = 0; i < arr.length; i++){
+		sum += arr[i]
+	}
+	return sum
+}
+console.log(getSumOfItems([2, 7, 4])) // -> 13
+console.log(getSumOfItems([45, 3, 0])) // -> 48
+console.log(getSumOfItems([-2, 84, 23])) // -> 105
