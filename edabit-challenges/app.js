@@ -294,13 +294,18 @@ const greaterThanOne = frac => eval(frac) > 1
 
 // 2/1/20
 // Create a function that takes an array and returns the sum of all numbers in the array.
-function getSumOfItems(arr) {
-	let sum = 0
-	for(let i = 0; i < arr.length; i++){
-		sum += arr[i]
-	}
-	return sum
-}
+
+// function getSumOfItems(arr) {
+// 	let sum = 0
+// 	for(let i = 0; i < arr.length; i++){
+// 		sum += arr[i]
+// 	}
+// 	return sum
+// }
+
+// could have also been:
+const getSumOfItems = arr => arr.reduce((a, b) => a + b)
+
 console.log(getSumOfItems([2, 7, 4])) // -> 13
 console.log(getSumOfItems([45, 3, 0])) // -> 48
 console.log(getSumOfItems([-2, 84, 23])) // -> 105
