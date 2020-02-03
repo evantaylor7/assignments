@@ -11,7 +11,7 @@ function App(){
                 {(props) => (
                     <>
                         {props.savedCards.map(
-                            (uglyItem, i) => <List {...uglyItem} key={i}/>
+                            (uglyItem, i) => <List {...uglyItem} handleDelete={props.handleDelete} key={i}/>
                         )}
                     </>
                 )}

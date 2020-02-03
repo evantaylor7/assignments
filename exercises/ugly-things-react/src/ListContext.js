@@ -11,14 +11,25 @@ class ListContext extends React.Component {
     }
 
     handleClick = (e) => {
-        console.log("clicked!")
         e.preventDefault()
-        this.setState(({title, url, description, savedCards}) => ({savedCards: [...savedCards, {title, url, description}]}))
+        this.setState(({title, url, description, savedCards}) => ({savedCards: [...savedCards, {title, url, description, _id: Math.floor(Math.random() * 10000)}]}))
     }
 
     handleChange = (e) => {
         const {name, value} = e.target
         this.setState({[name]: value})
+    }
+
+    handleDelete = (id) => {
+        this.setState(prevState => ({
+            savedCards: prevState.savedCards.filter(uglyThing => {
+                return uglyThing._id !== id
+            }) 
+        }))
+    }
+
+    handleEdit = () => {
+
     }
 
     render(){
@@ -30,7 +41,9 @@ class ListContext extends React.Component {
                     description: this.state.description,
                     savedCards: this.state.savedCards,
                     handleClick: this.handleClick,
-                    handleChange: this.handleChange
+                    handleChange: this.handleChange,
+                    handleDelete: this.handleDelete,
+                    handleEdit: this.handleEdit
                 }}>
                 {this.props.children}
             </Provider>
