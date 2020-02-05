@@ -1,5 +1,5 @@
 import React from "react"
-import List from "./components/List"
+import UglyCard from "./components/UglyCard"
 import Submit from "./components/Submit"
 import {Consumer} from "./ListContext"
 
@@ -11,7 +11,7 @@ function App(){
                 {(props) => (
                     <>
                         {props.savedCards.map(
-                            (uglyItem, i) => <List {...uglyItem} handleDelete={props.handleDelete} key={i}/>
+                            (uglyItem, i) => <UglyCard {...uglyItem} {...props} key={i}/>
                         )}
                     </>
                 )}

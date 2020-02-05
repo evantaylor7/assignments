@@ -7,7 +7,8 @@ class ListContext extends React.Component {
         title: "",
         url: "",
         description: "",
-        savedCards: []
+        savedCards: [],
+        showEdit: false
     }
 
     handleClick = (e) => {
@@ -29,7 +30,9 @@ class ListContext extends React.Component {
     }
 
     handleEdit = () => {
-
+        this.setState(prevState => ({
+            showEdit: prevState.showEdit ? "false" : "true"
+        }))
     }
 
     render(){
@@ -43,7 +46,8 @@ class ListContext extends React.Component {
                     handleClick: this.handleClick,
                     handleChange: this.handleChange,
                     handleDelete: this.handleDelete,
-                    handleEdit: this.handleEdit
+                    handleEdit: this.handleEdit,
+                    showEdit: this.showEdit
                 }}>
                 {this.props.children}
             </Provider>
