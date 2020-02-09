@@ -324,7 +324,25 @@ const getSumOfItems = arr => arr.reduce((a, b) => a + b)
 // using reduce:
 const getBudgets = arr => arr.reduce((a, b) => a + b.budget, 0)
 
-console.log(getBudgets([{name: "John",  age: 21, budget: 23000}, {name: "Steve",  age: 32, budget: 40000}, {name: "Martin",  age: 16, budget: 2700}])) // -> 65700
-console.log(getBudgets([{name: "John",  age: 21, budget: 29000}, {name: "Steve",  age: 32, budget: 32000}, {name: "Martin",  age: 16, budget: 1600}])) // -> 62600
-console.log(getBudgets([{name: "John",  age: 21, budget: 19401}, {name: "Steve",  age: 32, budget: 12321}, {name: "Martin",  age: 16, budget: 1204}])) // -> 32926
-console.log(getBudgets([{name: "John",  age: 21, budget: 10234}, {name: "Steve",  age: 32, budget: 21754}, {name: "Martin",  age: 16, budget: 4935}])) // -> 36923
+// console.log(getBudgets([{name: "John",  age: 21, budget: 23000}, {name: "Steve",  age: 32, budget: 40000}, {name: "Martin",  age: 16, budget: 2700}])) // -> 65700
+// console.log(getBudgets([{name: "John",  age: 21, budget: 29000}, {name: "Steve",  age: 32, budget: 32000}, {name: "Martin",  age: 16, budget: 1600}])) // -> 62600
+// console.log(getBudgets([{name: "John",  age: 21, budget: 19401}, {name: "Steve",  age: 32, budget: 12321}, {name: "Martin",  age: 16, budget: 1204}])) // -> 32926
+// console.log(getBudgets([{name: "John",  age: 21, budget: 10234}, {name: "Steve",  age: 32, budget: 21754}, {name: "Martin",  age: 16, budget: 4935}])) // -> 36923
+
+
+// 2/9/20
+// Throughout the 12 days of Christmas, my true love gave me in total 364 items.
+// Create a function where given n days as an argument, return the total amount of items received throughout those days as an integer.
+
+const xmasItems = n => (n * (n + 1) * (n + 2)) / 6
+
+console.log(xmasItems(0)) // -> 0
+console.log(xmasItems(1)) // -> 1
+console.log(xmasItems(21)) // -> 1771
+console.log(xmasItems(12)) // -> 364
+console.log(xmasItems(54)) // -> 27720
+console.log(xmasItems(14)) // -> 560
+console.log(xmasItems(11)) // -> 286
+console.log(xmasItems(9)) // -> 165
+console.log(xmasItems(13)) // -> 455
+console.log(xmasItems(19)) // -> 1330
