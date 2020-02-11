@@ -1,3 +1,19 @@
 input {
     width: 300px
 }
+
+.nav {
+    background-color: whitesmoke;
+    display: grid;
+    grid-template-columns: 1fr 1fr 5fr 1fr;
+}
+
+.navElement, .navTitle {
+    font-size: 20pt;
+    text-decoration: none;
+    color: black
+}
+
+.navElement:hover {
+    color: darkcyan
+}
