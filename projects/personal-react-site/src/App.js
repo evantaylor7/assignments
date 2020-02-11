@@ -9,7 +9,7 @@
 //     }
 
 //     componentDidMount(){
-//         fetch("https://www.googleapis.com/books/v1/volumes?q=stephen+king&key=AIzaSyAMG9EJGwBv6vwz32jDYdS-oq-d2u-KeW0&maxResults=13&startIndex=220")
+//         fetch("https://www.googleapis.com/books/v1/volumes?q=stephen+king&key=&startIndex=220")
 //             .then(response => response.json())
 //             .then(data => {
 //                 console.log(data)
