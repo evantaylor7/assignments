@@ -2,18 +2,79 @@ input {
     width: 300px
 }
 
+Link {
+    color: blue;
+    background-color: blue;
+}
+
+/* nav bar */
 .nav {
     background-color: whitesmoke;
     display: grid;
-    grid-template-columns: 1fr 1fr 5fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 5fr 1fr;
+    text-align: center;
 }
 
-.navElement, .navTitle {
+.nav-title {
+    grid-column: 5 / -1
+}
+
+.nav-element {
     font-size: 20pt;
     text-decoration: none;
     color: black
 }
 
-.navElement:hover {
+.nav-element:hover {
     color: darkcyan
+}
+
+.nav-selected {
+    font-size: 20pt;
+    text-decoration: none;
+    color: darkcyan
+}
+
+/* title page */
+.title {
+    font-size: 80pt;
+    margin: 0 0 50px
+}
+
+.title-page {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.start-button{
+    margin: auto;
+    height: 40px;
+    width: 130px;
+    font-size: 18pt
+}
+
+/* footer */
+.footer {
+    background-color: whitesmoke;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1.5rem;
+    text-align: center;
+    padding-top: 15px;
+    /* margin-top: 80px */
+}
+
+.pageContainer {
+    position: relative;
+    min-height: 98vh;
+}
+
+.content {
+    padding-bottom: 2.5rem
+}
+
+.nav-element.home-link{
+
 }

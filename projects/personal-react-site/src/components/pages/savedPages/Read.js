@@ -2,7 +2,7 @@ import React from "react"
 
 function Read(){
     return(
-        <div>
+        <div className="content">
             Read Page
         </div>
     )

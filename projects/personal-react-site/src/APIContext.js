@@ -3,9 +3,9 @@ import axios from "axios"
 import dotENV from ".../../dotenv"
 dotENV.config()
 
-const {Provider, Consumer} = React.createContext()
+export const APIContext = React.createContext()
 
-function APIContextProvider(props){
+export default function APIContextProvider(props){
     const [bookData, setBookData] = useState([])
     const [search, setSearch] = useState("popular")
     const [page, setPage] = useState(0)
@@ -31,10 +31,8 @@ function APIContextProvider(props){
     }
 
     return(
-        <Provider value={{bookData, search, handleChange}}>
+        <APIContext.Provider value={{bookData, search, handleChange}}>
             {props.children}
-        </Provider>
+        </APIContext.Provider>
     )
 }
-
-export {Consumer as APIContextConsumer, APIContextProvider}

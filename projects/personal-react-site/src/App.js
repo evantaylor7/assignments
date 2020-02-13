@@ -10,7 +10,7 @@ import BookDetail from "./components/pages/BookDetail"
 
 function App(){
     return(
-        <div>
+        <div className="pageContainer">
             <Navbar />
             <Switch>
                 <Route exact path="/"><Home /></Route>

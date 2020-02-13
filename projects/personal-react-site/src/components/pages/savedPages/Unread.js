@@ -2,7 +2,7 @@ import React from "react"
 
 function Unread(){
     return(
-        <div>
+        <div className="content">
             Unread Page
         </div>
     )
