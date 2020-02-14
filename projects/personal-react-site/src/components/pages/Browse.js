@@ -3,20 +3,38 @@ import {Link} from "react-router-dom"
 import {APIContext} from "../../APIContext"
 
 function Browse(){
-    const {bookData, search, genre, sort, searchChange, genreChange, sortChange, page, lastPage, handlePageChange, handleRead, handleUnread} = useContext(APIContext)
+    const {bookData, 
+        search, 
+        genre, 
+        sort, 
+        searchChange, 
+        genreChange, 
+        sortChange, 
+        page, 
+        lastPage,
+        handlePageChange, 
+        handleRead, 
+        handleUnread} 
+        = useContext(APIContext)
     const book = bookData && bookData.map(item => {
         let authors = item.volumeInfo.authors && item.volumeInfo.authors.join(", ")
-
         return (
-            <div key={item.id}>
+            <div className="book-container" key={item.id}>
                 <Link to={`/${item.id}`}>
                     <h2>{item.volumeInfo.title}</h2>
                     <h3><i>{item.volumeInfo.subtitle}</i></h3>
-                    <img src={item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.thumbnail} alt="no image"/>
+                    <img 
+                        src={item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.thumbnail} 
+                        alt="no image"
+                    />
                 </Link>
-                <p>{item.volumeInfo.authors && `Author${item.volumeInfo.authors.length > 1 ? "s" : ""}: `}{authors}</p>
-                <button value={item.id} onClick={handleUnread}>Want to Read</button>
-                <button value={item.id} onClick={handleRead}>Read</button>
+                <p>
+                    {item.volumeInfo.authors && `Author${item.volumeInfo.authors.length > 1 ? "s" : ""}: `}
+                    {authors}
+                </p>
+
+                <button onClick={() => handleUnread(item)}>Want to Read</button>
+                <button onClick={() => handleRead(item)}>Read</button>
             </div>
         )
     })
@@ -26,7 +44,13 @@ function Browse(){
             <h1>BOOKMARK!!!</h1>
             <form>
                 <label>Search by title/author/keyword</label>
-                <input value={search} className="search-input" onChange={searchChange} placeholder="start typing to see results"/><br />
+                <input 
+                    value={search} 
+                    className="search-input" 
+                    onChange={searchChange} 
+                    placeholder="start typing to see results"
+                />
+                <br />
                 <label>Refine search by:</label><br/>
                 <label>Genre/Subject:</label>
                 <select onChange={genreChange} value={genre}>
@@ -53,7 +77,7 @@ function Browse(){
             <div className="page-change-container">
                 <button onClick={() => handlePageChange("first")} disabled={page === 0}>First</button>
                 <button onClick={() => handlePageChange("decrement")} disabled={page === 0}>Previous</button>
-                <button onClick={() => handlePageChange("increment")}>Next</button>
+                <button onClick={() => handlePageChange("increment")} disabled={page > (lastPage - 10)}>Next</button>
             </div>
         </div>
     )

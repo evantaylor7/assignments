@@ -5,10 +5,30 @@ import {withRouter} from 'react-router-dom'
 function Navbar(props){
     return(
         <div className="nav">
-            <Link className={props.location.pathname === "/" ? "nav-selected" : "nav-element"} to="/">Home</Link>
-            <Link className={props.location.pathname === "/browse" ? "nav-selected" : "nav-element"} to="/browse">Browse</Link>
-            <Link className={props.location.pathname === "/saved" ? "nav-selected" : "nav-element"} to="/saved">Saved</Link>
-            <Link className="nav-element nav-title" to="/">BookMark</Link>
+            <Link 
+                className={props.location.pathname === "/" ? "nav-selected" : "nav-element"} 
+                to="/"
+            >
+            Home
+            </Link>
+            <Link 
+                className={props.location.pathname === "/browse" ? "nav-selected" : "nav-element"} 
+                to="/browse"
+            >
+            Browse
+            </Link>
+            <Link 
+                className={props.location.pathname === "/saved/read" ? "nav-selected" : "nav-element"} 
+                to="/saved/read"
+            >
+            Saved
+            </Link>
+            <Link 
+                className="nav-element nav-title" 
+                to="/"
+            >
+            BookMark
+            </Link>
         </div>
     )
 }

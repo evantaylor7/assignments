@@ -73,6 +73,7 @@ Link {
 
 .content {
     padding-bottom: 2.5rem;
+    margin-bottom: 20px
 }
 
 /* browse  page */
@@ -80,6 +81,10 @@ Link {
     position: absolute;
     bottom: 40px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 5px
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 5px;
+}
+
+.book-container {
+    margin-bottom: 30px
 }
