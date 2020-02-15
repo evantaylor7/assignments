@@ -1,39 +1,43 @@
 import React, {useContext} from "react"
-import {useParams} from "react-router-dom"
+import {useParams, Link} from "react-router-dom"
 
 import {APIContext} from "../../APIContext"
 
 function BookDetail(){
     const {bookId} = useParams()
-    const {bookData} = useContext(APIContext)
+    const {bookData, handleUnread, handleRead} = useContext(APIContext)
     const thisBook = bookData.find(book => book.id === bookId) 
 
     let authors = thisBook.volumeInfo.authors && thisBook.volumeInfo.authors.join(", ")
     return(
-        <div className="content">
+        <div className="content book-detail">
             <a href="">{thisBook && thisBook.volumeInfo.categories}</a>
-            <h1>{thisBook.volumeInfo.title && thisBook.volumeInfo.title}</h1>
-            <h2><i>{thisBook.volumeInfo.subtitle && thisBook.volumeInfo.subtitle}</i></h2>
+            <h1 className="detail-title">{thisBook.volumeInfo.title && thisBook.volumeInfo.title}</h1>
+            <h2 className="detail-subtitle"><i>{thisBook.volumeInfo.subtitle && thisBook.volumeInfo.subtitle}</i></h2>
             <img 
+                className="detail-img"
                 src={thisBook.volumeInfo.imageLinks && thisBook.volumeInfo.imageLinks.thumbnail} 
                 alt="no image"
             />
-            <h3>
+            <h3 className="detail-author">
                 {thisBook.volumeInfo.authors && `Author${thisBook.volumeInfo.authors.length > 1 ? "s" : ""}: `}
                 {authors}
             </h3>
-            <p>
-                {`${thisBook.volumeInfo.publisher ? `Publisher: ${thisBook && thisBook.volumeInfo.publisher}` : ""}`}
-            </p>
-            <p>
+            <p className="detail-description">{thisBook && thisBook.volumeInfo.description}</p>
+            <p className="detail-details">
                 {
+                    `${thisBook.volumeInfo.publisher ? 
+                        `Publisher: ${thisBook && thisBook.volumeInfo.publisher}` : 
+                        ""}`
+                } | {
                     thisBook && thisBook.volumeInfo.publishedDate ? 
-                    `Date published: ${thisBook.volumeInfo.publishedDate}` : 
-                    ""
-                }
+                        `Date published: ${thisBook.volumeInfo.publishedDate}` : 
+                        ""
+                } | <b>{thisBook && thisBook.volumeInfo.pageCount} pages</b>
             </p>
-            <p>{thisBook && thisBook.volumeInfo.description}</p>
-            <p><b>{thisBook && thisBook.volumeInfo.pageCount} pages</b></p>
+            <Link className="detail-back-button" to="/browse"><button>Go Back to Browse</button></Link>
+            <button onClick={() => handleUnread(thisBook)}>Want to Read</button>
+            <button onClick={() => handleRead(thisBook)}>Read</button>
         </div>
     )
 }

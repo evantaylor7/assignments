@@ -16,6 +16,7 @@ function Browse(){
         handleRead, 
         handleUnread} 
         = useContext(APIContext)
+
     const book = bookData && bookData.map(item => {
         let authors = item.volumeInfo.authors && item.volumeInfo.authors.join(", ")
         return (
@@ -40,22 +41,21 @@ function Browse(){
     })
 
     return(
-        <div className="content">
-            <h1>BOOKMARK!!!</h1>
-            <form>
-                <label>Search by title/author/keyword</label>
+        <div className="content browse-page">
+            <form className="search-form">
+                <h3>Search by title/author/keyword:</h3>
                 <input 
                     value={search} 
                     className="search-input" 
                     onChange={searchChange} 
                     placeholder="start typing to see results"
                 />
-                <br />
-                <label>Refine search by:</label><br/>
-                <label>Genre/Subject:</label>
+                <br/><br/><hr/>
+                <h3>Refine search by:</h3>
+                <label>Genre: </label>
                 <select onChange={genreChange} value={genre}>
                     <option></option>
-                    <option value="subject:non-fiction">Non-Fiction</option>
+                    <option value="subject:nonfiction">Non-Fiction</option>
                     <option value="+subject:fiction">Fiction</option>
                     <option value="+subject:classics">Classics</option>
                     <option value="+subject:fantasy">Fantasy</option>
@@ -67,17 +67,38 @@ function Browse(){
                     <option value="+subject:poetry">Poetry</option>
                     <option value="+subject:self+help">Self-Help</option>
                 </select>
+                <br/><br/>
                 <label>Sort by: </label>
                 <select onChange={sortChange} value={sort}>
                     <option value="&orderBy=relevance">Relevance</option>
                     <option value="&orderBy=newest">Newest</option>
                 </select>
             </form>
-            {book}
+            <div className="book-page">
+                {book}
+            </div>
             <div className="page-change-container">
-                <button onClick={() => handlePageChange("first")} disabled={page === 0}>First</button>
-                <button onClick={() => handlePageChange("decrement")} disabled={page === 0}>Previous</button>
-                <button onClick={() => handlePageChange("increment")} disabled={page > (lastPage - 10)}>Next</button>
+                <button 
+                    className="page-button" 
+                    onClick={() => handlePageChange("first")} 
+                    disabled={page === 0}
+                >
+                    First
+                </button>
+                <button 
+                    className="page-button" 
+                    onClick={() => handlePageChange("decrement")} 
+                    disabled={page === 0}
+                >
+                    Previous
+                </button>
+                <button 
+                    className="page-button" 
+                    onClick={() => handlePageChange("increment")} 
+                    disabled={page > (lastPage - 10)}
+                >
+                    Next
+                </button>
             </div>
         </div>
     )

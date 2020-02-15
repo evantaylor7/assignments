@@ -14,10 +14,11 @@ export default function APIContextProvider(props){
     const [lastPage, setLastPage] = useState(0)
     const [read, setRead] = useState([])
     const [unread, setUnread] = useState([])
+    
     const apiKey = process.env.REACT_APP_API_KEY
 
     useEffect(() => {
-        axios.get(`https://www.googleapis.com/books/v1/volumes?q=${search}${genre}${sort}&key=${apiKey}&startIndex=${page}`)
+        axios.get(`https://www.googleapis.com/books/v1/volumes?q=${search}${genre}${sort}&key=${apiKey}&startIndex=${page}&maxResults=12`)
             .then(response => response.data)
             .then(data => {
                 console.log(data)
@@ -25,8 +26,6 @@ export default function APIContextProvider(props){
                 setLastPage(data.totalItems)
             })
     }, [search, genre, sort, page])
-
-    console.log(page)
 
     function searchChange(e){
         const value = e.target.value
