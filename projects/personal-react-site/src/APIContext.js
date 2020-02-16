@@ -46,9 +46,9 @@ export default function APIContextProvider(props){
         window.scrollTo(0, 0)
         setPage(prevPage => {
             if(e === "decrement"){
-                return prevPage - 10
+                return prevPage - 12
             } else if(e === "increment"){
-                return prevPage += 10
+                return prevPage += 12
             } else{
                 return 0
             }

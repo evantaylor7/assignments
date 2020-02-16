@@ -18,13 +18,13 @@ function Navbar(props){
             Browse
             </Link>
             <Link 
-                className={props.location.pathname === "/saved/read" ? "nav-selected" : "nav-element"} 
+                className={props.location.pathname === "/saved/read" || props.location.pathname === "/saved/unread" ? "nav-selected" : "nav-element"} 
                 to="/saved/read"
             >
             Saved
             </Link>
             <Link 
-                className="nav-element nav-title" 
+                className="nav-title" 
                 to="/"
             >
             BookMark

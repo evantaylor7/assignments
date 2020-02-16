@@ -29,10 +29,11 @@ function Read(){
     })
 
     return(
-        <div className="content">
+        <div className="content saved-page">
             <SavedPagesNav />
-            Read Page!!
-            {book}
+            <div className="book-page">
+                {book}
+            </div>
         </div>
     )
 }

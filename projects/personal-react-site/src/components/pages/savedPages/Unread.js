@@ -28,10 +28,11 @@ function Unread(){
     })
 
     return(
-        <div className="content">
+        <div className="content saved-page">
             <SavedPagesNav />
-            Unread Page
-            {book}
+            <div className="book-page">
+                {book}
+            </div>
         </div>
     )
 }

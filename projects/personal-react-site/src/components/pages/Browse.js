@@ -21,19 +21,20 @@ function Browse(){
         let authors = item.volumeInfo.authors && item.volumeInfo.authors.join(", ")
         return (
             <div className="book-container" key={item.id}>
-                <Link to={`/${item.id}`}>
-                    <h2>{item.volumeInfo.title}</h2>
-                    <h3><i>{item.volumeInfo.subtitle}</i></h3>
-                    <img 
-                        src={item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.thumbnail} 
-                        alt="no image"
-                    />
+                <Link className="book-link" to={`/${item.id}`}>
+                    <div className="book-title">
+                        <h2>{item.volumeInfo.title}</h2>
+                        <h3><i>{item.volumeInfo.subtitle}</i></h3>
+                        <img 
+                            src={item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.thumbnail} 
+                            alt="no image"
+                        />
+                    </div>
                 </Link>
                 <p>
                     {item.volumeInfo.authors && `Author${item.volumeInfo.authors.length > 1 ? "s" : ""}: `}
                     {authors}
                 </p>
-
                 <button onClick={() => handleUnread(item)}>Want to Read</button>
                 <button onClick={() => handleRead(item)}>Read</button>
             </div>
@@ -95,10 +96,11 @@ function Browse(){
                 <button 
                     className="page-button" 
                     onClick={() => handlePageChange("increment")} 
-                    disabled={page > (lastPage - 10)}
+                    disabled={page > (lastPage - 12)}
                 >
                     Next
                 </button>
+                <p>Page {(page / 12) + 1}</p>
             </div>
         </div>
     )

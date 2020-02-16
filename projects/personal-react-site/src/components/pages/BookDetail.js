@@ -36,8 +36,8 @@ function BookDetail(){
                 } | <b>{thisBook && thisBook.volumeInfo.pageCount} pages</b>
             </p>
             <Link className="detail-back-button" to="/browse"><button>Go Back to Browse</button></Link>
-            <button onClick={() => handleUnread(thisBook)}>Want to Read</button>
-            <button onClick={() => handleRead(thisBook)}>Read</button>
+            <button className="detail-read" onClick={() => handleUnread(thisBook)}>Want to Read</button>
+            <button className="detail-unread" onClick={() => handleRead(thisBook)}>Read</button>
         </div>
     )
 }

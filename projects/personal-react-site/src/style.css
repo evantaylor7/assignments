@@ -1,8 +1,3 @@
-Link {
-    color: blue;
-    background-color: blue;
-}
-
 /* nav bar */
 .nav {
     background-color: whitesmoke;
@@ -12,13 +7,17 @@ Link {
 }
 
 .nav-title {
-    grid-column: 5 / -1
+    grid-column: 5 / -1;
+    font-size: 20pt;
+    text-decoration: none;
+    color: black;
 }
 
 .nav-element {
     font-size: 20pt;
     text-decoration: none;
-    color: black
+    color: black;
+    transition: color .5s
 }
 
 .nav-element:hover {
@@ -113,6 +112,20 @@ Link {
     background-color: whitesmoke;
 }
 
+.book-link {
+    text-decoration: none;
+}
+
+.book-title {
+    color: black;
+    text-decoration: none;
+    transition: color .5s
+}
+
+.book-title:hover {
+    color: darkcyan
+}
+
 /* detail page */
 .book-detail {
     display: grid;
@@ -145,11 +158,56 @@ Link {
     margin: 25px
 }
 
-.detail-details {
+/* .detail-details {
     
-}
+} */
 
 .detail-back-button {
     grid-column: 2 / 3;
     margin: 50px
+}
+
+.detail-read {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    width: 100px;
+    margin: auto
+}
+
+.detail-unread {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    width: 100px;
+    margin: auto
+}
+
+/* saved pages */
+.saved-page {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    text-align: center;
+}
+
+.saved-nav {
+    background-color: whitesmoke;
+    grid-column: 1 / 2;
+    height: 70vh;
+    margin: 10px;
+    padding: 20px
+}
+
+.saved-link {
+    font-size: 18pt;
+    text-decoration: none;
+    color: black;
+}
+
+.saved-link:hover {
+    color: darkcyan
+}
+
+.saved-selected {
+    font-size: 18pt;
+    text-decoration: none;
+    color: darkcyan
 }
