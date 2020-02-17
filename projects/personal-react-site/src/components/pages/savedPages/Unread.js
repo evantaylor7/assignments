@@ -10,18 +10,21 @@ function Unread(){
         let authors = item.volumeInfo.authors && item.volumeInfo.authors.join(", ")
         return (
             <div className="book-container" key={item.id}>
-                <Link to={`/${item.id}`}>
-                    <h2>{item.volumeInfo.title}</h2>
-                    <h3><i>{item.volumeInfo.subtitle}</i></h3>
-                    <img 
-                        src={item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.thumbnail} 
-                        alt="no image"
-                    />
+                <Link className="book-link" to={`/${item.id}`}>
+                    <div className="book-title">
+                        <h2 className="title-elements">{item.volumeInfo.title}</h2>
+                        <h3 className="title-elements"><i>{item.volumeInfo.subtitle}</i></h3>
+                        <img 
+                            className="title-elements" 
+                            src={item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.thumbnail} 
+                            alt="no image"
+                        />
+                    </div>
                 </Link>
                 <p>
                     {item.volumeInfo.authors && `Author${item.volumeInfo.authors.length > 1 ? "s" : ""}: `}
                     {authors}
-                </p>
+                </p><br/>
                 <button onClick={() => handleDeleteUnread(item)}>Remove</button>
             </div>
         )

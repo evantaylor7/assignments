@@ -11,7 +11,7 @@ import BookDetail from "./components/pages/BookDetail"
 
 function App(){
     return(
-        <div className="pageContainer">
+        <div className="page-container">
             <Navbar />
             <Switch>
                 <Route exact path="/" component={Home}/>

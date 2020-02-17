@@ -23,9 +23,10 @@ function Browse(){
             <div className="book-container" key={item.id}>
                 <Link className="book-link" to={`/${item.id}`}>
                     <div className="book-title">
-                        <h2>{item.volumeInfo.title}</h2>
-                        <h3><i>{item.volumeInfo.subtitle}</i></h3>
+                        <h2 className="title-elements">{item.volumeInfo.title}</h2>
+                        <h3 className="title-elements"><i>{item.volumeInfo.subtitle}</i></h3>
                         <img 
+                            className="title-elements"
                             src={item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.thumbnail} 
                             alt="no image"
                         />
@@ -34,27 +35,28 @@ function Browse(){
                 <p>
                     {item.volumeInfo.authors && `Author${item.volumeInfo.authors.length > 1 ? "s" : ""}: `}
                     {authors}
-                </p>
-                <button onClick={() => handleUnread(item)}>Want to Read</button>
-                <button onClick={() => handleRead(item)}>Read</button>
+                </p><br/>
+                <button className="detail-unread" onClick={() => handleUnread(item)}>Want to Read</button>
+                <button className="detail-read" onClick={() => handleRead(item)}>Read</button>
             </div>
         )
     })
 
     return(
         <div className="content browse-page">
-            <form className="search-form">
-                <h3>Search by title/author/keyword:</h3>
+            <form className="search-form" onSubmit={e => e.preventDefault()}>
+                <h3 className="search-by">Search by title/author/keyword:</h3>
                 <input 
                     value={search} 
                     className="search-input" 
                     onChange={searchChange} 
                     placeholder="start typing to see results"
                 />
-                <br/><br/><hr/>
+                <br/><br/><hr/><br/>
                 <h3>Refine search by:</h3>
+                <br/>
                 <label>Genre: </label>
-                <select onChange={genreChange} value={genre}>
+                <select className="genre-input" onChange={genreChange} value={genre}>
                     <option></option>
                     <option value="subject:nonfiction">Non-Fiction</option>
                     <option value="+subject:fiction">Fiction</option>
@@ -70,7 +72,7 @@ function Browse(){
                 </select>
                 <br/><br/>
                 <label>Sort by: </label>
-                <select onChange={sortChange} value={sort}>
+                <select className="order-input" onChange={sortChange} value={sort}>
                     <option value="&orderBy=relevance">Relevance</option>
                     <option value="&orderBy=newest">Newest</option>
                 </select>
@@ -100,7 +102,7 @@ function Browse(){
                 >
                     Next
                 </button>
-                <p>Page {(page / 12) + 1}</p>
+                <p>{search === "" ? "" : `Page ${(page / 12) + 1}`}</p>
             </div>
         </div>
     )
