@@ -1,10 +1,18 @@
 * {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+button, select, input {
+    background-color: rgb(221, 221, 221)
+}
+
+button {
+    border-radius: 3px;
 }
 
 /* nav bar */
-.nav {
+.light-nav {
     background-color: rgb(230, 230, 230);
     display: grid;
     position: fixed;
@@ -19,14 +27,14 @@
     grid-column: 5 / -1;
     font-size: 20pt;
     text-decoration: none;
-    color: black;
+    color: rgb(70, 70, 70);
     margin-right: 10px
 }
 
 .nav-element {
     font-size: 20pt;
     text-decoration: none;
-    color: black;
+    color: rgb(70, 70, 70);
     transition: color .5s
 }
 
@@ -41,15 +49,17 @@
 }
 
 /* footer */
-.footer {
+.light-footer {
     background-color: whitesmoke;
+    color: rgb(51, 51, 51);
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 1.5rem;
     text-align: center;
     padding-top: 12px;
-    margin-bottom: -20px
+    padding-bottom: 10px;
+    margin-bottom: -26px;
 }
 
 .page-container {
@@ -63,6 +73,23 @@
     padding-top: 50px
 }
 
+.footer-text {
+    margin-left: 10px
+}
+
+.theme-button {
+    height: 30px;
+    font-size: 15pt;
+    color: darkcyan;
+    background-color: rgb(41, 41, 41);
+    position: inline;
+    float: right;
+    margin-right: 10px;
+    margin-top: -24px;
+    align-self: center;
+    border-radius: 5px
+}
+
 /* home page */
 .title {
     font-size: 80pt;
@@ -73,6 +100,7 @@
     text-align: center;
     display: flex;
     flex-direction: column;
+    color: rgb(70, 70, 70);
 }
 
 .start-button{
@@ -91,15 +119,18 @@
     display: grid;
     grid-template-columns: 1fr 5fr;
     text-align: center;
-    padding-top: 40px
+    padding-top: 40px;
+    margin: auto
+    /* align-items: center; */
 }
 
 .search-form {
     background-color: rgb(230, 230, 230);
+    color: rgb(70, 70, 70);
     grid-column: 1 / 2;
     height: 70vh;
     margin: 10px;
-    padding: 20px
+    padding: 20px;
 }
 
 .search-input {
@@ -114,24 +145,25 @@
 .page-change-container {
     grid-column: 2 / -1;
     bottom: 40px;
+    color: rgb(70, 70, 70);
 }
 
 .page-button {
     margin: 5px
 }
 
-
 .book-page {
     margin: 10px;
     grid-column: 2 / -1;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 350px);
     grid-gap: 10px
 }
 
 .book-container {
     padding: 10px;
     background-color: whitesmoke;
+    color: rgb(70, 70, 70);
 }
 
 .book-link {
@@ -139,7 +171,7 @@
 }
 
 .book-title {
-    color: black;
+    color: rgb(70, 70, 70);
     text-decoration: none;
     transition: color .5s
 }
@@ -156,6 +188,7 @@
 .book-detail {
     display: grid;
     grid-template-columns: 1fr 2fr;
+    color: rgb(70, 70, 70);
 }
 
 .detail-left {
@@ -188,6 +221,7 @@
 
 .saved-nav {
     background-color: rgb(230, 230, 230);
+    color: rgb(70, 70, 70);
     grid-column: 1 / 2;
     height: 70vh;
     width: 200px;
@@ -198,7 +232,7 @@
 .saved-link {
     font-size: 18pt;
     text-decoration: none;
-    color: black;
+    color: rgb(70, 70, 70);
     transition: color .5s
 }
 
@@ -212,15 +246,98 @@
     color: darkcyan
 }
 
-@media only screen and (max-width: 1100px){
+/* themes */
+.dark {
+    background-color: rgb(41, 41, 41);
+    color: rgb(212, 212, 212)
+}
+
+.dark-footer {
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1.5rem;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 10px;
+    margin-bottom: -26px;
+}
+
+.dark-nav {
+    background-color: black;
+    display: grid;
+    position: fixed;
+    grid-template-columns: 1fr 1fr 1fr 5fr 1fr;
+    text-align: center;
+    height: 40px;
+    width: 100%;
+    align-items: center;
+}
+
+.dark-element {
+    background-color: black
+}
+
+.dark-book-container {
+    background-color: rgb(70, 70, 70);
+    color: rgb(199, 199, 199)
+}
+
+.dark-book-title {
+    color: rgb(199, 199, 199)
+}
+
+.dark-search-form {
+    background-color: black;
+    color: rgb(199, 199, 199)
+}
+
+.dark-saved-link {
+    color:  rgb(199, 199, 199)
+}
+
+.dark-theme-button {
+    background-color: rgb(199, 199, 199)
+}
+
+.dark-book-detail {
+    color: rgb(199, 199, 199);
+}
+
+@media only screen and (max-width: 1780px){
     .book-page {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 400px);
     }
 }
 
-@media only screen and (max-width: 900px){
-    .nav {
-        grid-template-columns: 1fr 1fr 1fr 3fr 1fr;
+@media only screen and (max-width: 1570px){
+    .book-page {
+        grid-template-columns: repeat(3, 350px);
+    }
+}
+
+@media only screen and (max-width: 1422px){
+    .book-page {
+        grid-template-columns: repeat(2, 450px);
+    }
+}
+
+@media only screen and (max-width: 1262px){
+    .book-page {
+        grid-template-columns: repeat(2, 400px);
+    }
+}
+
+@media only screen and (max-width: 1162px){
+    .book-page {
+        grid-template-columns: repeat(2, 350px);
+    }
+}
+
+@media only screen and (max-width: 1062px){
+    .light-nav, .dark-nav {
+        grid-template-columns: 1fr 1fr 1fr 2fr 1fr;
     }
 
     .book-page {
@@ -233,22 +350,17 @@
 }
 
 @media only screen and (max-width: 700px){
-    .nav {
+    .light-nav, .dark-nav {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
 
     .detail-right {
         width: 400px
     }
-}
-
-@media only screen and (max-width: 600px){
-    .detail-right {
-        width: 300px
-    }
 
     .browse-page {
         display: inline-block;
+        margin: 10px 100px;
     }
 
     .search-form {
@@ -263,15 +375,49 @@
         height: 120px;
         width: 88vw;
     }
+
+    .footer-text {
+        float: left
+    }
+
+    .theme-button, .dark-theme-button {
+        margin-top: -5px
+    }
 }
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 600px){
     .nav-title, .nav-element, .nav-selected {
         font-size: 18pt
     }
 
     .title {
         font-size: 62pt;
+    }
+
+    .browse-page {
+        margin: 0
+    }
+    
+    .detail-right {
+        width: 300px
+    }
+
+    .footer-text {
+        font-size: 11pt
+    }
+
+    .theme-button, .dark-theme-button {
+        font-size: 12pt
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .nav-title, .nav-element, .nav-selected {
+        font-size: 16pt
+    }
+
+    .title {
+        font-size: 50pt;
     }
     
     .book-detail {
@@ -292,29 +438,49 @@
         width: 85vw;
     }
 
-    .footer {
-        font-size: 14px
+    .footer-text {
+        font-size: 10pt
+    }
+
+    .theme-button, .dark-theme-button {
+        font-size: 11pt
+    }
+}
+
+@media only screen and (max-width: 460px){
+    .light-footer, .dark-footer {
+        display: block;
+        padding-bottom: 40px;
+    }
+    
+    .footer-text {
+        margin: 10px;
     }
 }
 
 @media only screen and (max-width: 400px){
-    .nav-title, .nav-element, .nav-selected {
-        font-size: 15pt
-    }
-
-    .nav-title {
-        grid-column: 4 / -1
+    .light-nav, .dark-nav {
+        grid-template-columns: repeat(4, 1fr);
     }
 
     .title {
-        font-size: 50pt;
+        font-size: 42pt;
+    }
+
+    .nav-title{
+        grid-column: 4 / -1;
+        text-decoration: underline;
+    }
+
+    .nav-title, .nav-element, .nav-selected {
+        font-size: 14pt
     }
 
     .saved-nav {
         width: 80vw;
     }
 
-    .footer {
-        font-size: 12px
+    .footer-text {
+        font-size: 11px
     }
 }

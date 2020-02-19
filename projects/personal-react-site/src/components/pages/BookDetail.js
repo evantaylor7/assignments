@@ -5,13 +5,11 @@ import {APIContext} from "../../APIContext"
 
 function BookDetail(){
     const {bookId} = useParams()
-    const {bookData, handleUnread, handleRead} = useContext(APIContext)
+    const {bookData, handleUnread, handleRead, theme} = useContext(APIContext)
     const thisBook = bookData.find(book => book.id === bookId) 
-
     let authors = thisBook.volumeInfo.authors && thisBook.volumeInfo.authors.join(", ")
     return(
-        <div className="content book-detail">
-            {/* <a href="">{thisBook && thisBook.volumeInfo.categories}</a> */}
+        <div className={`content book-detail`}>
             <div className="detail-left">
                 <img 
                     className="detail-img"
@@ -23,7 +21,7 @@ function BookDetail(){
                     <button className="detail-read" onClick={() => handleRead(thisBook)}>Read</button>
                 </div>
             </div>
-            <div className="detail-right">
+            <div className={`detail-right ${theme}-book-detail`}>
                 <h1 className="detail-element">{thisBook.volumeInfo.title && thisBook.volumeInfo.title}</h1>
                 <h2 className="detail-element"><i>{thisBook.volumeInfo.subtitle && thisBook.volumeInfo.subtitle}</i></h2>
                 <h3 className="detail-element">

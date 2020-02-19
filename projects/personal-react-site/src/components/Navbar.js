@@ -1,30 +1,32 @@
-import React from "react"
+import React, {useContext} from "react"
 import {Link} from "react-router-dom"
 import {withRouter} from 'react-router-dom'
+import {APIContext} from "../APIContext"
 
 function Navbar(props){
+    const {theme} = useContext(APIContext)
     return(
-        <div className="nav">
+        <div className={`${theme}-nav`}>
             <Link 
-                className={props.location.pathname === "/" ? "nav-selected" : "nav-element"} 
+                className={props.location.pathname === "/" ? "nav-selected" : `${theme} ${theme}-element nav-element`} 
                 to="/"
             >
             Home
             </Link>
             <Link 
-                className={props.location.pathname === "/browse" ? "nav-selected" : "nav-element"} 
+                className={props.location.pathname === "/browse" ? "nav-selected" : `${theme} ${theme}-element nav-element`} 
                 to="/browse"
             >
             Browse
             </Link>
             <Link 
-                className={props.location.pathname === "/saved/read" || props.location.pathname === "/saved/unread" ? "nav-selected" : "nav-element"} 
+                className={props.location.pathname === "/saved/read" || props.location.pathname === "/saved/unread" ? "nav-selected" : `${theme} ${theme}-element nav-element`} 
                 to="/saved/read"
             >
             Saved
             </Link>
             <Link 
-                className="nav-title" 
+                className={`${theme} ${theme}-element nav-title` }
                 to="/"
             >
             BookMark

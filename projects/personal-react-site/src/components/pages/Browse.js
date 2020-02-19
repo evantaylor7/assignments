@@ -14,15 +14,16 @@ function Browse(){
         lastPage,
         handlePageChange, 
         handleRead, 
-        handleUnread} 
+        handleUnread,
+        theme} 
         = useContext(APIContext)
 
     const book = bookData && bookData.map(item => {
         let authors = item.volumeInfo.authors && item.volumeInfo.authors.join(", ")
         return (
-            <div className="book-container" key={item.id}>
+            <div className={`${theme}-book-container book-container`} key={item.id}>
                 <Link className="book-link" to={`/${item.id}`}>
-                    <div className="book-title">
+                    <div className={`${theme}-book-title book-title`}>
                         <h2 className="title-elements">{item.volumeInfo.title}</h2>
                         <h3 className="title-elements"><i>{item.volumeInfo.subtitle}</i></h3>
                         <img 
@@ -44,7 +45,7 @@ function Browse(){
 
     return(
         <div className="content browse-page">
-            <form className="search-form" onSubmit={e => e.preventDefault()}>
+            <form className={`${theme}-search-form search-form`} onSubmit={e => e.preventDefault()}>
                 <h3 className="search-by">Search by title/author/keyword:</h3>
                 <input 
                     value={search} 

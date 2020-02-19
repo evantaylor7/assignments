@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useContext} from "react"
 import {Switch, Route} from "react-router-dom"
 
 import Browse from "./components/pages/Browse"
@@ -8,10 +8,12 @@ import Unread from './components/pages/savedPages/Unread'
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 import BookDetail from "./components/pages/BookDetail"
+import {APIContext} from "./APIContext"
 
 function App(){
+    const {theme} = useContext(APIContext)
     return(
-        <div className="page-container">
+        <div className={`${theme} page-container`}>
             <Navbar />
             <Switch>
                 <Route exact path="/" component={Home}/>

@@ -5,13 +5,13 @@ import {Link} from "react-router-dom"
 import {APIContext} from "../../../APIContext"
 
 function Unread(){
-    const {unread, handleDeleteUnread} = useContext(APIContext)
+    const {unread, handleDeleteUnread, theme} = useContext(APIContext)
     const book = unread && unread.map(item => {
         let authors = item.volumeInfo.authors && item.volumeInfo.authors.join(", ")
         return (
-            <div className="book-container" key={item.id}>
+            <div className={`${theme}-book-container book-container`} key={item.id}>
                 <Link className="book-link" to={`/${item.id}`}>
-                    <div className="book-title">
+                    <div className={`${theme}-book-title book-title`}>
                         <h2 className="title-elements">{item.volumeInfo.title}</h2>
                         <h3 className="title-elements"><i>{item.volumeInfo.subtitle}</i></h3>
                         <img 

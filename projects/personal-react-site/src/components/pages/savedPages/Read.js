@@ -6,13 +6,13 @@ import {APIContext} from "../../../APIContext"
 
 
 function Read(){
-    const {read, handleDeleteRead} = useContext(APIContext)
+    const {read, handleDeleteRead, theme} = useContext(APIContext)
     const book = read && read.map(item => {
         let authors = item.volumeInfo.authors && item.volumeInfo.authors.join(", ")
         return (
-            <div className="book-container" key={item.id}>
+            <div className={`${theme}-book-container book-container`} key={item.id}>
                 <Link className="book-link" to={`/${item.id}`}>
-                    <div className="book-title">
+                    <div className={`${theme}-book-title book-title`}>
                         <h2 className="title-elements">{item.volumeInfo.title}</h2>
                         <h3 className="title-elements"><i>{item.volumeInfo.subtitle}</i></h3>
                         <img 
