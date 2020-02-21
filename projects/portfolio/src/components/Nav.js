@@ -35,7 +35,7 @@ function Nav(){
                     iconSize='5'
                     size='69px'
                     backgroundColor={linkedHover ? 'rgb(224, 224, 224)' : '#3D9970'}
-                    iconColor='rgb(70, 70, 70)'
+                    iconColor='rgb(15, 45, 53)'
                 />
             </div>
             <a 
@@ -59,7 +59,7 @@ function Nav(){
                     iconSize='5'
                     size='69px'
                     backgroundColor={mailHover ? 'rgb(224, 224, 224)' : '#3D9970'}
-                    iconColor='rgb(70, 70, 70)'
+                    iconColor='rgb(15, 45, 53)'
                     
                 />
             </div>
