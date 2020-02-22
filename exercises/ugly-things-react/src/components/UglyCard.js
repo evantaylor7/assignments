@@ -9,8 +9,9 @@ function UglyCard(props){
             <img src={`${url}`}/>
             <p>{description}</p>
             <br/>
-            <button onClick={() => handleEdit()}>Edit</button>
-            <form style={showEdit ? {display: "none"} : {display: "block"}}>
+            <button onClick={handleEdit}>Edit</button>
+            <form style={{display: showEdit ? 'block' : 'none'}} >
+            {/* style={showEdit ? {display: "none"} : {display: "block"}} */}
                 <label>Title:</label>
                 <input /><br />
                 <label>Image URL:</label>

@@ -39,10 +39,11 @@ class ListContext extends React.Component {
         return(
             <Provider 
                 value={{
-                    title: this.state.title, 
-                    url: this.state.url, 
-                    description: this.state.description,
-                    savedCards: this.state.savedCards,
+                    ...this.state,
+                    // title: this.state.title, 
+                    // url: this.state.url, 
+                    // description: this.state.description,
+                    // savedCards: this.state.savedCards,
                     handleClick: this.handleClick,
                     handleChange: this.handleChange,
                     handleDelete: this.handleDelete,
