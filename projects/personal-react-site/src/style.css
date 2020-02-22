@@ -120,8 +120,7 @@ button {
     grid-template-columns: 1fr 5fr;
     text-align: center;
     padding-top: 40px;
-    margin: auto
-    /* align-items: center; */
+    margin: auto;
 }
 
 .search-form {

@@ -15,6 +15,19 @@ export default function APIContextProvider(props){
     const [read, setRead] = useState([])
     const [unread, setUnread] = useState([])
     const [theme, setTheme] = useState("light")
+    // const [inputs, setInputs] = useState({
+    //     search: '',
+    //     genre: '',
+    //     sort: '',
+    //     theme: ''
+    // })
+
+    // setInputs(prev => {
+    //     return {
+    //         ...prev,
+    //         genre: 'new category'
+    //     }
+    // })
         
     const apiKey = process.env.REACT_APP_API_KEY
 
@@ -58,7 +71,7 @@ export default function APIContextProvider(props){
     function handleRead(item){
         const thisBook = read.find(book => book.id === item.id) 
         if(thisBook){
-            alert("Alread saved in 'read'!")
+            alert("Already saved in 'read'!")
         } else {
             alert("Book saved in 'read'!")
             setRead([...read, item])
@@ -68,7 +81,7 @@ export default function APIContextProvider(props){
     function handleUnread(item){
         const thisBook = unread.find(book => book.id === item.id) 
         if(thisBook){
-            alert("Alread saved in 'want to read'!")
+            alert("Already saved in 'want to read'!")
         } else {
             alert("Book saved in 'want to read'!")
             setUnread([...unread, item])
