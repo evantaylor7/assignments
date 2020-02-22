@@ -1,6 +1,7 @@
 import React from "react"
 
-function Home(){
+function Home(props){
+    console.log(props)
     return(
         <div>
             <h1>Plumbers R Us</h1>

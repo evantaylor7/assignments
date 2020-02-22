@@ -7,12 +7,14 @@ import FAQ from "./components/pages/FAQ"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 
-function App(){
+function App(props){
     return(
         <div>
             <Navbar />
             <Switch>
-                <Route exact path="/"><Home/></Route>
+                {/* if not passing props do it this way */}
+                <Route exact path="/" component={Home} />
+                {/* If passing props, do it this way */}
                 <Route path="/about"><About/></Route>
                 <Route path="/faq"><FAQ/></Route>
             </Switch>
