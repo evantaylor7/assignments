@@ -336,13 +336,21 @@ const getBudgets = arr => arr.reduce((a, b) => a + b.budget, 0)
 
 const xmasItems = n => (n * (n + 1) * (n + 2)) / 6
 
-console.log(xmasItems(0)) // -> 0
-console.log(xmasItems(1)) // -> 1
-console.log(xmasItems(21)) // -> 1771
-console.log(xmasItems(12)) // -> 364
-console.log(xmasItems(54)) // -> 27720
-console.log(xmasItems(14)) // -> 560
-console.log(xmasItems(11)) // -> 286
-console.log(xmasItems(9)) // -> 165
-console.log(xmasItems(13)) // -> 455
-console.log(xmasItems(19)) // -> 1330
+// console.log(xmasItems(0)) // -> 0
+// console.log(xmasItems(1)) // -> 1
+// console.log(xmasItems(21)) // -> 1771
+// console.log(xmasItems(12)) // -> 364
+// console.log(xmasItems(54)) // -> 27720
+// console.log(xmasItems(14)) // -> 560
+// console.log(xmasItems(11)) // -> 286
+// console.log(xmasItems(9)) // -> 165
+// console.log(xmasItems(13)) // -> 455
+// console.log(xmasItems(19)) // -> 1330
+
+// 2/22/20
+// Write a function that takes an integer i and returns an integer with the integer backwards followed by the original integer.
+function reverseAndNot(i){
+	return Number(i.toString().split('').reverse().join('') + i)
+}
+console.log(reverseAndNot(123)) // -> 321123
+console.log(reverseAndNot(123456789)) // -> 987654321123456789
