@@ -18,10 +18,13 @@ function Page3(){
     return(
         <div className="page3" id="page3">
             <h1>Resume</h1>
-            {/* <Document file={resume} onLoadSuccess={onDocumentLoadSuccess}>
-                <Page pageNumber={1}/>
-            </Document> */}
+            {/* <Document file={{data: "./resume.pdf"}} */}
+            {/* // onLoadSuccess={onDocumentLoadSuccess} */}
+            {/* > */}
+                {/* <Page pageNumber={1}/> */}
+            {/* </Document> */}
             {/* This is page 3 */}
+            <img src={resume} style={{width: "400px"}}/>
             <br/>
             <h1>Projects</h1>
             <h2>BookMark</h2>
