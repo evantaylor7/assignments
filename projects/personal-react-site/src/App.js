@@ -20,7 +20,7 @@ function App(){
                 <Route path="/browse" component={Browse}/>
                 <Route path="/saved/read" component={Read}/>
                 <Route path="/saved/unread" component={Unread}/>
-                <Route path="/:bookId" component={BookDetail} />
+                <Route path="/book/:bookId" component={BookDetail} />
             </Switch>
             <Footer />
         </div>

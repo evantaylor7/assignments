@@ -22,7 +22,7 @@ function Browse(){
         let authors = item.volumeInfo.authors && item.volumeInfo.authors.join(", ")
         return (
             <div className={`${theme}-book-container book-container`} key={item.id}>
-                <Link className="book-link" to={`/${item.id}`}>
+                <Link className="book-link" to={`/book/${item.id}`}>
                     <div className={`${theme}-book-title book-title`}>
                         <h2 className="title-elements">{item.volumeInfo.title}</h2>
                         <h3 className="title-elements"><i>{item.volumeInfo.subtitle}</i></h3>

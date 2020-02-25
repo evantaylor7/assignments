@@ -163,6 +163,7 @@ button {
     padding: 10px;
     background-color: whitesmoke;
     color: rgb(70, 70, 70);
+    /* max-height: 400px */
 }
 
 .book-link {

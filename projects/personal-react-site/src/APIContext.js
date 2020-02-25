@@ -7,7 +7,7 @@ export const APIContext = React.createContext()
 
 export default function APIContextProvider(props){
     const [bookData, setBookData] = useState([])
-    const [search, setSearch] = useState("")
+    const [search, setSearch] = useState(localStorage.getItem("search") || "")
     const [genre, setGenre] = useState("")
     const [sort, setSort] = useState("")
     const [page, setPage] = useState(0)
@@ -28,7 +28,6 @@ export default function APIContextProvider(props){
     //         genre: 'new category'
     //     }
     // })
-        
     const apiKey = process.env.REACT_APP_API_KEY
 
     useEffect(() => {
@@ -39,9 +38,16 @@ export default function APIContextProvider(props){
                 setLastPage(data.totalItems)
             })
     }, [search, genre, sort, page, apiKey])
+    
+    // useEffect(() => {
+    //     return () => {
+    //       setSearch("")
+    //     };
+    //   }, [search])
 
     function searchChange(e){
         const value = e.target.value
+        localStorage.setItem("search", value)
         setSearch(value)
     }
 
