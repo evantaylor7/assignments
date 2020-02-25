@@ -52,7 +52,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 24px
+    padding-top: 34px
 }
 
 .github-icon {
@@ -107,14 +107,14 @@ body {
 .page2 {
     background-color: rgb(20, 20, 20);
     height: 100vh;
-    min-height: 850px;
+    min-height: 880px;
     position: relative;
     /* ^ this was what made the arrow stick to the bottom of page 2 */
 }
 
 .p2-title {
     font-size: 45pt;
-    margin-top: 20px;
+    margin-top: 28px;
     color: #3D9970
     /* color: whitesmoke */
 }
@@ -192,7 +192,7 @@ body {
 .projects {
     color: #3D9970;
     font-size: 45pt;
-    padding: 26px
+    padding-top: 34px
 }
 
 .bookmark {
@@ -297,7 +297,11 @@ body {
     }
 
     .bm-screenshot {
-        margin: 10px 0
+        margin: 22px 0
+    }
+
+    .resume {
+        font-size: 33pt;
     }
 }
 
@@ -309,5 +313,9 @@ body {
 
     .nav-link {
         padding: 10px
+    }
+
+    .resume {
+        font-size: 24pt;
     }
 }
