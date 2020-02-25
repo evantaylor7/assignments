@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import DevIcon from 'devicon-react-svg'
 import {SocialMediaIconsReact} from 'social-media-icons-react'
 import {Link} from 'react-scroll'
-// import Nav from "./Nav"
 
 function Page1(){
     const [linkedHover, setLinkedHover] = useState(false)
@@ -26,7 +25,6 @@ function Page1(){
 
     return(
         <div className="page1">
-            {/* <Nav/> */}
             <div className='contact-icons'>
                 <div 
                     className='linkedin-icon'

@@ -29,23 +29,10 @@ body {
     list-style: none;
 }
 
-.navbar-nav > .active > a {
-    color: aqua;
-    background-color: chartreuse;    
-}
-
-.nav-item > a:hover {
-    color: aqua;
-}
-
 .nav-link {
     color: whitesmoke;
     text-decoration: none;
     transition: color .4s
-}
-
-.nav-link > .active > Link{
-    color: red
 }
 
 .nav-link:hover {
@@ -145,7 +132,6 @@ body {
 
 .skills {
     padding-top: 8px;
-    /* margin-left: 45%; */
     margin: auto;
     width: 180px
 }
@@ -196,7 +182,7 @@ body {
 
 /* page 3 */
 .page3 {
-    height: 100vh;
+    height: 100%;
     text-align: center;
     background-color: rgb(15, 45, 53);
     /* color: rgb(224, 224, 224) */
@@ -291,6 +277,15 @@ body {
 }
 
 @media only screen and (max-width: 745px){
+    .navbar {
+        display: inline;
+        text-align: right;
+    }
+
+    .nav-link {
+        padding: 20px
+    }
+    
     .title {
         font-size: 40pt;
         padding: 20px 40px
@@ -303,5 +298,16 @@ body {
 
     .bm-screenshot {
         margin: 10px 0
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .title {
+        font-size: 30pt;
+        padding: 0 30px
+    }
+
+    .nav-link {
+        padding: 10px
     }
 }
