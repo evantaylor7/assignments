@@ -8,3 +8,16 @@ const stringToObject = str => {
     const letters = str.split('')
 
 }
+
+// 2/25/20
+// given an array of strings and a string, count how many instances of that string are in the array
+// countStrings(["cat", "cow", "cat"], "cat") => 2
+
+// function countStrings(array, string){
+//     return array.filter(word => word === string).length
+// }
+
+const countStrings = (array, string) => array.filter(word => word === string).length
+
+console.log(countStrings(["cat", "cow", "cat"], "cat")) // -> 2
+console.log(countStrings(["no", "yes", "yes", "yes", "no"], "yes")) // -> 3
