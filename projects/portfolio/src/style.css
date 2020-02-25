@@ -7,7 +7,50 @@
 }
 
 body {
-    background-color: rgb(128, 76, 42)
+    /* background-color: rgb(128, 76, 42) */
+    background-color: #3D9970
+}
+
+/* nav */
+.navbar-container {
+    position: fixed;
+    background-color: rgb(15, 45, 53);
+    width: 100%;
+    z-index: 5;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    width: 500px;
+    padding: 10px;
+    right: 0;
+    float: right;
+    list-style: none;
+}
+
+.navbar-nav > .active > a {
+    color: aqua;
+    background-color: chartreuse;    
+}
+
+.nav-item > a:hover {
+    color: aqua;
+}
+
+.nav-link {
+    color: whitesmoke;
+    text-decoration: none;
+    transition: color .4s
+}
+
+.nav-link > .active > Link{
+    color: red
+}
+
+.nav-link:hover {
+    cursor: pointer;
+    color: #7FDBFF
 }
 
 /* page 1 */
@@ -18,10 +61,11 @@ body {
     position: relative
 }
 
-.nav {
+.contact-icons {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 24px
 }
 
 .github-icon {
@@ -30,14 +74,13 @@ body {
 }
 
 .github-icon:hover {
-    width: 100px;
     fill: rgb(224, 224, 224);
 }
 
 .title {
-    font-size: 80pt;
-    padding: 50px;
-    text-align: center;
+    font-size: 70pt;
+    padding: 10px 50px;
+    text-align: left;
     /* color: rgb(224, 224, 224); */
     color: rgb(91, 155, 152);
     transition: color 1s
@@ -77,13 +120,14 @@ body {
 .page2 {
     background-color: rgb(20, 20, 20);
     height: 100vh;
-    min-height: 820px;
+    min-height: 850px;
     position: relative;
     /* ^ this was what made the arrow stick to the bottom of page 2 */
 }
 
 .p2-title {
     font-size: 45pt;
+    margin-top: 20px;
     color: #3D9970
     /* color: whitesmoke */
 }
@@ -101,7 +145,8 @@ body {
 
 .skills {
     padding-top: 8px;
-    margin-left: 45%;
+    /* margin-left: 45%; */
+    margin: auto;
     width: 180px
 }
 
@@ -153,27 +198,110 @@ body {
 .page3 {
     height: 100vh;
     text-align: center;
-    color: rgb(224, 224, 224)
-    
+    background-color: rgb(15, 45, 53);
+    /* color: rgb(224, 224, 224) */
+    color: rgb(91, 155, 152)
+}
+
+.projects {
+    color: #3D9970;
+    font-size: 45pt;
+    padding: 26px
+}
+
+.bookmark {
+    text-align: right;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 30px 50px
+}
+
+.bm-title {
+    font-size: 30px
 }
 
 .bm-description {
-    width: 600px;
-    margin: auto;
-    margin-top: 10px
+    margin-top: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    font-size: 13pt
 }
 
 .bm-screenshot {
-    width: 800px;
-    margin: 20px
+    width: 100%;
+    margin: 0 20px;
 }
 
 .bm-link {
+    font-size: 20px;
     text-decoration: none;
-    color: rgb(224, 224, 224);
-    transition: color .4s
+    /* color: rgb(224, 224, 224); */
+    /* color: rgb(91, 155, 152); */
+    color: #3D9970;
+    transition: color .4s;
 }
 
 .bm-link:hover {
     color: #7FDBFF
+}
+
+.mini-github-icon {
+    width: 40px;
+    margin-bottom: -10px;
+    fill: #3D9970;
+}
+
+.mini-github-icon:hover {
+    fill: #7FDBFF
+}
+
+.resume-container {
+    padding: 20px;
+    transition: background-color 2s
+}
+
+.resume-container:hover {
+    background-color: rgb(189, 225, 235);
+    /* background-color: rgb(32, 73, 85); */
+}
+
+.resume {
+    /* color: rgb(224, 224, 224); */
+    color: rgb(91, 155, 152);
+    text-decoration: none;
+    font-size: 50pt;
+    transition: color .4s;
+}
+
+.resume:hover {
+    /* color: #7FDBFF */
+    color: rgb(20, 20, 20)
+}
+
+@media only screen and (max-width: 1230px){
+    .title {
+        font-size: 60pt;
+    }
+}
+
+@media only screen and (max-width: 1070px){
+    .title {
+        font-size: 50pt;
+    }
+}
+
+@media only screen and (max-width: 745px){
+    .title {
+        font-size: 40pt;
+        padding: 20px 40px
+    }
+
+    .bookmark {
+        display: block;
+        text-align: center
+    }
+
+    .bm-screenshot {
+        margin: 10px 0
+    }
 }

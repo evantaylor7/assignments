@@ -4,7 +4,7 @@ import {Link} from 'react-scroll'
 
 function Page2(){
     return(
-        <div className="page2" id="page2">
+        <div className="page2">
             <div className="skills">
                 <h1 className="p2-title">Skills:</h1>
                 <div className="skill">
