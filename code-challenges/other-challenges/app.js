@@ -30,10 +30,9 @@ const countStrings = (array, string) => array.filter(word => word === string).le
 
 function findMissing(arr){
     const sortedArr = arr.sort((a, b) => a - b)
-    let missingNum
     for(let i = 0; i < sortedArr.length; i++){
         if((sortedArr[i + 1] - sortedArr[i]) > 1){
-            missingNum = sortedArr[i] + 1
+            return sortedArr[i] + 1
         }
     }
     return missingNum
