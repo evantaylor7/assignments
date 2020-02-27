@@ -2,10 +2,11 @@ const express = require('express')
 const price = express.Router()
 const data = require('../database')
 
+// this allows a search for a min and max price
 price.get("/price", (req, res) => {
-    const price = req.query.price
-    console.log(req)
-    const filteredPrices = price.filter(price => price === data.price)
+    const minPrice = Number(req.query.min)
+    const maxPrice = Number(req.query.max)
+    const filteredPrices = data.filter(item => minPrice <= item.price && maxPrice >= item.price)
     res.send(filteredPrices)
 })
 

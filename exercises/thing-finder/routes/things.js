@@ -6,7 +6,6 @@ const data = require('../database')
 things.get("/", (req, res) => {
     // instead of another things.get you could also use:
     // if(req.query)
-    console.log(data)
     res.send(data)
 })
 
