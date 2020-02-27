@@ -1,22 +1,53 @@
 # Intro to to REST API architecture:
 
+    # REST - Representational State Transfer
 
-# REST - Representational State Transfer
+    # Resource - Single item (object) in a database
+        /user
+    # Collection - A collection of similar items in a database
+        /users
+    # Base (root) URL - http:#amazon.com/
 
-# Resource - Single item (object) in a database
-    /user
-# Collection - A collection of similar items in a database
-    /users
-# Base (root) URL - http:#amazon.com/
+    # API Endpoint - http:#amazon.com/movies
 
-# API Endpoint - http:#amazon.com/movies
+    # Parameters - /movies/:movieId
 
-# Parameters - /movies/:movieId
+    # Query (query string) - /movies?genre=action&year=1999
 
-# Query (query string) - /movies?genre=action&year=1999
+    # Client - Frontend (website or application that they are interacting with)
 
-# Client - Frontend (website or application that they are interacting with)
+    # Server - Intermediary (receives request from client and performs action)
 
-# Server - Intermediary (receives request from client and performs action)
+    # Request Method - CRUD - GET POST PUT DELETE
 
-# Request Method - CRUD - GET POST PUT DELETE
+    # Middleware - a function that fires on the inbetween
+
+    # Request body (req.body)
+
+    # UUID - creates unique IDs
+        - npmm install uuid (not global)
+
+#######################################################
+
+# Express Router - Enables us to modularize our routes in express
+
+# Modular file organization
+
+#######################################################
+
+# URL Parameters
+
+    # Parts of a URL
+        * Base - http://amazon.com
+        * Endpoint - http://amazon.com/images
+        * Parameter - http://amazon.com/images/234987348sfv
+        * Query
+
+# Parameters (req.params) - GET one
+
+# URL Queries
+
+    # Query String - (typically to filter results)
+        * begins with the "?".
+        * Built of key=value pairs.
+        * Multiple queries separated by the "&".

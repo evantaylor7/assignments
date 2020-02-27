@@ -1,29 +1,41 @@
 // first express server
 const express = require("express")
 const app = express()
+// const uuid = require("uuid/v4")
+
+// Middleware (for every request) - a function that fires on the inbetween
+app.use(express.json()) // Looks for a request body, and turns it into 'req.body'
+// first argument is endpoint; optional --> app.use("/", express.json())
 
 // fake data:
-const users = [
-    {name: "joe", age: 20},
-    {name: "moe", age: 24},
-    {name: "bob", age: 10},
-    {name: "larry", age: 22},
-    {name: "mike", age: 21}
-]
+// const users = [
+//     {name: "joe", age: 20, _id: uuid()},
+//     {name: "moe", age: 24, _id: uuid()},
+//     {name: "bob", age: 10, _id: uuid()},
+//     {name: "larry", age: 22, _id: uuid()},
+//     {name: "mike", age: 21, _id: uuid()}
+// ]
+
+// Routes //
+app.use("/movies", require("./routes/movieRouter.js"))
+app.use("/users", require("./routes/userRouter"))
 
 // Two arguments:
     // 1. Endpoint (mount path)
     // 2. Callback function
-app.get("/users", (req, res) => {
-    res.send(users)
-})
+// app.get("/users", (req, res) => {
+//     res.send(users)
+// })
 // app.put()
 // app.post()
 // app.delete()
 
-app.post("/users", (req, res) => {
-    
-})
+// app.post("/users", (req, res) => {
+//     const newUser = req.body
+//     newUser._id = uuid()
+//     users.push(newUser)
+//     res.send(`Successfully added ${newUser.name} to the database`)
+// })
 
 
 // listen needs 2 arguments
