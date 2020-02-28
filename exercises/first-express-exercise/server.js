@@ -20,6 +20,22 @@ app.use(express.json()) // Looks for a request body, and turns it into 'req.body
 app.use("/movies", require("./routes/movieRouter.js"))
 app.use("/users", require("./routes/userRouter"))
 
+// Middleware
+app.use("/items", (req, res, next) => {
+    console.log("THE ITEMS MIDDLEWARE WAS EXECTUED")
+    next()
+})
+
+app.use("/items", (req, res, next) => {
+    req.body = { name: "Rick" }
+    next()
+})
+
+app.get("/items", (req, res, next) => {
+    console.log("GET REQUEST RECEIVED")
+    res.send(req.body)
+})
+
 // Two arguments:
     // 1. Endpoint (mount path)
     // 2. Callback function

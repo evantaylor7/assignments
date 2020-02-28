@@ -6,9 +6,9 @@
         /user
     # Collection - A collection of similar items in a database
         /users
-    # Base (root) URL - http:#amazon.com/
+    # Base (root) URL - http://amazon.com/
 
-    # API Endpoint - http:#amazon.com/movies
+    # API Endpoint - http://amazon.com/movies
 
     # Parameters - /movies/:movieId
 
@@ -51,3 +51,15 @@
         * begins with the "?".
         * Built of key=value pairs.
         * Multiple queries separated by the "&".
+
+#######################################################
+
+# Middleware
+
+    # What is it?
+        * app.use()
+            1. (optional) - Mount Path (endpoint)
+            2. Callback function - receives the request, response objects, also the "next" function
+
+    # The "next" function
+        * Moves on to the next middleware in line on our server
