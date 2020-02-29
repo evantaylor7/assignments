@@ -63,3 +63,22 @@
 
     # The "next" function
         * Moves on to the next middleware in line on our server
+
+# Console Errors in Express
+
+    # Use a logger
+        * npm install morgan (doesn't install globally)
+
+# Connecting the Front-end to the Back-end
+
+    # Folder Structure
+        * create client folder with react app in it
+
+    # Proxy
+        * create in /src/package.json in react app : 
+            },
+                "proxy": "http://localhost:9000"
+            }
+
+    # Run 2 servers simultaneously
+        * open new bash window in terminal

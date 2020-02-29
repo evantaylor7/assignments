@@ -1,13 +1,13 @@
 const express = require("express")
 const userRouter = express.Router()
-const uuid = require("uuid/v4")
+const {v4} = require("uuid")
 
 const users = [
-    {name: "joe", age: 20, _id: uuid()},
-    {name: "moe", age: 24, _id: uuid()},
-    {name: "bob", age: 10, _id: uuid()},
-    {name: "larry", age: 22, _id: uuid()},
-    {name: "mike", age: 21, _id: uuid()}
+    {name: "joe", age: 20, _id: v4()},
+    {name: "moe", age: 24, _id: v4()},
+    {name: "bob", age: 10, _id: v4()},
+    {name: "larry", age: 22, _id: v4()},
+    {name: "mike", age: 21, _id: v4()}
 ]
 
 // Get All
@@ -25,7 +25,7 @@ userRouter.get("/userId", (req, res) => {
 // Post One
 userRouter.post("/", (req, res) => {
     const newUser = req.body
-    newUser._id = uuid()
+    newUser._id = v4()
     users.push(newUser)
     res.send(`Successfully added ${newUser.name} to the database`)
 })

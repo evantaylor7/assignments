@@ -1,11 +1,14 @@
 // first express server
 const express = require("express")
 const app = express()
-// const uuid = require("uuid/v4")
+const morgan = require('morgan')
 
 // Middleware (for every request) - a function that fires on the inbetween
 app.use(express.json()) // Looks for a request body, and turns it into 'req.body'
 // first argument is endpoint; optional --> app.use("/", express.json())
+
+// morgan:
+app.use(morgan("dev")) // logs requests to the console
 
 // fake data:
 // const users = [

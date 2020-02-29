@@ -1,13 +1,13 @@
 const express = require("express")
 const movieRouter = express.Router()
-const uuid = require("uuid/v4")
+const {v4} = require("uuid")
 
 const movies = [
-    {title: "movie1", genre: "action", _id: uuid()},
-    {title: "movie2", genre: "romance", _id: uuid()},
-    {title: "movie3", genre: "fantasy", _id: uuid()},
-    {title: "movie4", genre: "sci-fi", _id: uuid()},
-    {title: "movie5", genre: "documentary", _id: uuid()},
+    {title: "movie1", genre: "action", _id: v4()},
+    {title: "movie2", genre: "romance", _id: v4()},
+    {title: "movie3", genre: "fantasy", _id: v4()},
+    {title: "movie4", genre: "sci-fi", _id: v4()},
+    {title: "movie5", genre: "documentary", _id: v4()},
 ]
 
 // Get All
@@ -32,9 +32,9 @@ movieRouter.get("/search/genre", (req, res) => {
 // Post One
 movieRouter.post("/", (req, res) => {
     const newMovie = req.body
-    newMovie._id = uuid()
+    newMovie._id = v4()
     movies.push(newMovie)
-    res.send(`Successfully added ${newMovie.title} to the database!`)
+    res.send(newMovie)
 })
 
 // Delete One
@@ -59,7 +59,7 @@ movieRouter.put("/:movieId", (req, res) => {
 //     })
 //     .post((req, res) => {
 //         const newMovie = req.body
-//         newMovie._id = uuid()
+//         newMovie._id = v4()
 //         movies.push(newMovie)
 //         res.send(`Successfully added ${newMovie.title} to the database!`)
 //     })
