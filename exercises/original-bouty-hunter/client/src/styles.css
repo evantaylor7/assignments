@@ -5,17 +5,19 @@
 
 .bounty-container {
     text-align: center;
+    
 }
 
 .bounty {
     background-color: lightsteelblue;
-    width: auto
+    width: auto;
+    margin: 10px;
 }
 
 .input-form {
     display: flex;
     width: 700px;
     margin: auto;
-    flex-direction: row;
     justify-content: space-evenly;
+    align-items: center;
 }

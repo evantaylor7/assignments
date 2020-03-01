@@ -1,9 +1,24 @@
 import React, {useState} from "react"
 
 function AddBounty(props){
-    const initInputs = {firstName: "", lastName: "", living: "", bountyAmount: "", type: ""}
+    const {
+        submit,
+        firstName,
+        lastName,
+        living,
+        bountyAmount,
+        type,
+        btnText,
+        style
+    } = props
+    const initInputs = {
+        firstName: firstName || "",
+        lastName: lastName || "",
+        living: living || "",
+        bountyAmount: bountyAmount || "",
+        type: type || ""
+    }
     const [inputs, setInputs] = useState(initInputs)
-    const {postBounty} = props
 
     function handleChange(e){
         const {name, value} = e.target
@@ -12,11 +27,16 @@ function AddBounty(props){
 
     function handleSubmit(e){
         e.preventDefault()
-        postBounty(inputs)
+        submit(inputs, props._id)
+        setInputs(initInputs)
     }
 
     return(
-        <form onSubmit={handleSubmit} className="input-form">
+        <form 
+            onSubmit={handleSubmit} 
+            className="input-form"
+            style={style}
+        >
             <input 
                 name="firstName" 
                 value={inputs.firstName} 
@@ -52,7 +72,7 @@ function AddBounty(props){
                 onChange={handleChange} 
                 type="text" 
             />
-            <button>Add Bounty</button>
+            <button>{btnText}</button>
         </form>
     )
 }
