@@ -352,5 +352,32 @@ const xmasItems = n => (n * (n + 1) * (n + 2)) / 6
 function reverseAndNot(i){
 	return Number(i.toString().split('').reverse().join('') + i)
 }
-console.log(reverseAndNot(123)) // -> 321123
-console.log(reverseAndNot(123456789)) // -> 987654321123456789
+// console.log(reverseAndNot(123)) // -> 321123
+// console.log(reverseAndNot(123456789)) // -> 987654321123456789
+
+
+// 2/29/20
+// Challenge: MEDIUM
+// Create a regular expression to match all red flag and blue flag in a string. You must use | in your expression. Flags can come in any order.
+
+const REGEXP = /blue flag|red flag/g
+
+const str1 = "red flag blue flag"
+const str2 = "yellow flag red flag blue flag green flag"
+const str3 = "pink flag red flag black flag blue flag green flag red flag"
+const str4 = "blue flag red flag red flag blue flag green flag red flag"
+
+const validate = (REGEXP) => {
+	if(!/\|/.test(String(REGEXP))) return () => "invalid" 
+	return function testReg(str) {
+		//console.log(str.match(REGEXP))
+		return str.match(REGEXP)
+	}
+}
+
+const testExp = validate(REGEXP)
+
+console.log(testExp(str1)) // -> ["red flag", "blue flag"]
+console.log(testExp(str2)) // -> ["red flag", "blue flag"]
+console.log(testExp(str3)) // -> ["red flag", "blue flag", "red flag"]
+console.log(testExp(str4)) // -> ["blue flag", "red flag", "red flag", "blue flag", "red flag"]
