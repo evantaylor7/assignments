@@ -82,3 +82,13 @@
 
     # Run 2 servers simultaneously
         * open new bash window in terminal
+
+# Status Codes
+
+    # 200 - Successful Request
+    # 201 - Successful Insert / Sucessful update
+    # 401 - Unauthorized
+    # 404 - Not found
+    # 500 - Server Error
+
+    # https://http.cat

@@ -56,6 +56,11 @@ app.get("/items", (req, res, next) => {
 //     res.send(`Successfully added ${newUser.name} to the database`)
 // })
 
+// error handling
+app.use((err, req, res, next) => {
+    console.log(err)
+    return res.send({errMsg: err.message})
+})
 
 // listen needs 2 arguments
     // 1: PORT
