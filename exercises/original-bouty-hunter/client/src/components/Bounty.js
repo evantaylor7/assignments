@@ -16,7 +16,7 @@ function Bounty(props){
                     <h3>Alive: {living ? "Yes" : "No"}</h3>
                     <p>Bounty: ${bountyAmount}</p>
                     <button onClick={() => deleteBounty(_id)}>X</button>
-                    <button onClick={() => setEditToggle(!editToggle)}>Edit Bounty</button>
+                    <button onClick={() => setEditToggle(prevToggle => !prevToggle)}>Edit Bounty</button>
                 </>
             :
                 <>
@@ -30,9 +30,10 @@ function Bounty(props){
                         deleteBounty={deleteBounty}
                         submit={editBounty}
                         _id={_id}
+                        toggle={setEditToggle}
                         style={{flexDirection: "column", width: "100px"}}
                     />
-                    <button onClick={() => setEditToggle(!editToggle)}>Cancel</button>
+                    <button onClick={() => setEditToggle(prevToggle => !prevToggle)}>Cancel</button>
                 </>
             }
         </div>

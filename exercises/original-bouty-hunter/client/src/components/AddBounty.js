@@ -5,16 +5,17 @@ function AddBounty(props){
         submit,
         firstName,
         lastName,
-        living,
         bountyAmount,
         type,
+        living,
         btnText,
-        style
+        style,
+        toggle
     } = props
     const initInputs = {
         firstName: firstName || "",
         lastName: lastName || "",
-        living: living || "",
+        living: living || true,
         bountyAmount: bountyAmount || "",
         type: type || ""
     }
@@ -29,6 +30,7 @@ function AddBounty(props){
         e.preventDefault()
         submit(inputs, props._id)
         setInputs(initInputs)
+        props._id && toggle()
     }
 
     return(
@@ -51,7 +53,7 @@ function AddBounty(props){
                 onChange={handleChange} 
                 type="text" 
             />
-            <select name="living" onChange={handleChange}>
+            <select name="living" onChange={handleChange} value={living}>
                 <option>Living status:</option>
                 <option value={true}>Alive</option>
                 <option value={false}>Dead</option>

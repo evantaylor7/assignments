@@ -12,8 +12,8 @@ function App(){
             .catch(err => console.log(err))
     }
 
-    function postBounty(newMovie){
-        axios.post("/bounties", newMovie)
+    function postBounty(newBounty){
+        axios.post("/bounties", newBounty)
             .then(res => {
                 setBounties(prevBounties => [...prevBounties, res.data.newBounty])
             })
@@ -29,8 +29,10 @@ function App(){
     }
 
     function editBounty(inputs, _id){
+        console.log(1111, inputs)
         axios.put(`/bounties/${_id}`, inputs)
             .then(res => {
+                console.log(res.data)
                 setBounties(prevBounties => prevBounties.map(bounty => bounty._id !== _id ? bounty : res.data))
             })
             .catch(err => console.log(err))
