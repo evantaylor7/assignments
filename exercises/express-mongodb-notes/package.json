@@ -1,5 +1,5 @@
 {
-  "name": "original-bouty-hunter",
+  "name": "first-xprs-exercise",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.9.3",
+    "mongoose": "^5.9.2",
     "morgan": "^1.9.1",
     "uuid": "^7.0.1"
   }

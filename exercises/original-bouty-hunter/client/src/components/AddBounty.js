@@ -5,6 +5,7 @@ function AddBounty(props){
         submit,
         firstName,
         lastName,
+        imgURL,
         bountyAmount,
         type,
         living,
@@ -15,6 +16,7 @@ function AddBounty(props){
     const initInputs = {
         firstName: firstName || "",
         lastName: lastName || "",
+        imgURL: imgURL || "",
         living: living || true,
         bountyAmount: bountyAmount || "",
         type: type || ""
@@ -52,6 +54,13 @@ function AddBounty(props){
                 placeholder="Last Name" 
                 onChange={handleChange} 
                 type="text" 
+            />
+            <input 
+                name="imgURL" 
+                value={inputs.imgURL} 
+                placeholder="Image URL" 
+                onChange={handleChange} 
+                type="text"
             />
             <select name="living" onChange={handleChange} value={living}>
                 <option>Living status:</option>

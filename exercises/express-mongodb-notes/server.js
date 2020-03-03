@@ -2,6 +2,7 @@
 const express = require("express")
 const app = express()
 const morgan = require('morgan')
+const mongoose = require('mongoose')
 
 // Middleware (for every request) - a function that fires on the inbetween
 app.use(express.json()) // Looks for a request body, and turns it into 'req.body'
@@ -18,6 +19,17 @@ app.use(morgan("dev")) // logs requests to the console
 //     {name: "larry", age: 22, _id: uuid()},
 //     {name: "mike", age: 21, _id: uuid()}
 // ]
+
+// Connect to DB
+mongoose.connect('mongodb://localhost:27017/moviesdb',
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+        useFindAndModify: false
+    },
+    () => console.log("Connected to the DB")
+)
 
 // Routes //
 app.use("/movies", require("./routes/movieRouter.js"))

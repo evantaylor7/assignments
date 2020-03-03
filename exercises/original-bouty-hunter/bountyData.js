@@ -8,3 +8,5 @@ const bounties = [
 ]
 
 module.exports = bounties
+
+// ^ NOT USED AFTER IMPLEMENTING MONGOOSE

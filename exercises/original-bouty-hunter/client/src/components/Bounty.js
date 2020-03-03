@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import AddBounty from "./AddBounty"
 
 function Bounty(props){
-    const {firstName, lastName, bountyAmount, type, deleteBounty, editBounty, _id} = props
+    const {firstName, lastName, imgURL, bountyAmount, type, deleteBounty, editBounty, _id} = props
     const living = JSON.parse(props.living)
 
     const [editToggle, setEditToggle] = useState(false)
@@ -12,6 +12,7 @@ function Bounty(props){
             { !editToggle ?
                 <>
                     <h1>{firstName} {lastName}</h1>
+                    <img src={imgURL} style={{width: "200px"}} />
                     <h2>{type}</h2>
                     <h3>Alive: {living ? "Yes" : "No"}</h3>
                     <p>Bounty: ${bountyAmount}</p>
@@ -24,6 +25,7 @@ function Bounty(props){
                         btnText="Save Edits"
                         firstName={firstName}
                         lastName={lastName}
+                        imgURL={imgURL}
                         living={living}
                         bountyAmount={bountyAmount}
                         type={type}
