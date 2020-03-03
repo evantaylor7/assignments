@@ -11,27 +11,27 @@ class ListContext extends React.Component {
         showEdit: false
     }
 
-    handleClick = (e) => {
-        e.preventDefault()
-        this.setState(({title, url, description, savedCards}) => ({savedCards: [...savedCards, {title, url, description, _id: Math.floor(Math.random() * 10000)}]}))
-    }
-
     handleChange = (e) => {
         const {name, value} = e.target
         this.setState({[name]: value})
     }
 
-    handleDelete = (id) => {
+    handleSubmit = (e) => {
+        e.preventDefault()
+        this.setState(({title, url, description, savedCards}) => ({savedCards: [...savedCards, {title, url, description, _id: Math.floor(Math.random() * 10000)}]}))
+    }
+
+    handleDelete = (_id) => {
         this.setState(prevState => ({
             savedCards: prevState.savedCards.filter(uglyThing => {
-                return uglyThing._id !== id
+                return uglyThing._id !== _id
             }) 
         }))
     }
 
-    handleEdit = () => {
+    editToggle = () => {
         this.setState(prevState => ({
-            showEdit: prevState.showEdit ? "false" : "true"
+            showEdit: prevState.showEdit ? false : true
         }))
     }
 
@@ -40,15 +40,16 @@ class ListContext extends React.Component {
             <Provider 
                 value={{
                     ...this.state,
+                    // what I had previously:
                     // title: this.state.title, 
                     // url: this.state.url, 
                     // description: this.state.description,
                     // savedCards: this.state.savedCards,
-                    handleClick: this.handleClick,
+                    handleSubmit: this.handleSubmit,
                     handleChange: this.handleChange,
                     handleDelete: this.handleDelete,
-                    handleEdit: this.handleEdit,
-                    showEdit: this.showEdit
+                    editToggle: this.editToggle,
+                    // showEdit: this.showEdit
                 }}>
                 {this.props.children}
             </Provider>

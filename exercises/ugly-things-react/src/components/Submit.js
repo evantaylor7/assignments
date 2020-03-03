@@ -4,8 +4,8 @@ import {Consumer} from "../ListContext"
 function Submit(){
     return(
         <Consumer>
-            {({title, url, description, handleClick, handleChange}) => (
-                <form onSubmit={handleClick}>
+            {({title, url, description, handleSubmit, handleChange}) => (
+                <form onSubmit={handleSubmit}>
                     <h1>Ugly Things</h1>
                     <br/>
                     <h3><i>post your ugly things here</i></h3>
