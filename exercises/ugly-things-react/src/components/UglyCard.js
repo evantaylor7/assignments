@@ -4,9 +4,10 @@ class UglyCard extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            updatedTitle: "",
-            updatedUrl: "",
-            updatedDescription: ""
+            title: props.title,
+            url: props.url,
+            description: props.description,
+            showEdit: false
         }
     }
 
@@ -15,39 +16,48 @@ class UglyCard extends React.Component{
         this.setState({[name]: value})
     }
 
+    editToggle = () => {
+        this.setState(prevState => ({
+            showEdit: prevState.showEdit ? false : true
+        }))
+    }
+
     render(){
-        const {title, url, description, showEdit, handleSubmit, handleDelete, editToggle, _id} = this.super.props
-        // console.log(props)
+        const {title, url, description, showEdit, handleDelete, handleEdit, _id} = this.props
         return(
             <div className="uglyCard">
                 <h1>{title}</h1>
                 <img src={`${url}`}/>
                 <p>{description}</p>
                 <br/>
-                <button onClick={() => editToggle(_id)}>{showEdit ? "Close" : "Edit"}</button>
-                <form style={{display: showEdit ? 'block' : 'none'}} onSubmit={handleSubmit}>
+                <button onClick={() => this.editToggle(_id)}>{showEdit ? "Close" : "Edit"}</button>
+                <form style={{display: this.state.showEdit ? 'block' : 'none'}} onSubmit={(e) => {
+                    handleEdit(e, _id, this.state)
+                    this.editToggle()
+                }}
+                >
                 {/* what I had previously: */}
                 {/* style={showEdit ? {display: "none"} : {display: "block"}} */}
                     <label>Title:</label>
                     <input 
-                        value={this.state.updatedTitle}
-                        name="Title"
+                        value={this.state.title}
+                        name="title"
                         type="text"
                         onChange={this.handleUpdates}
                     />
                     <br />
                     <label>Image URL:</label>
                     <input 
-                        value={this.state.updatedUrl}
-                        name="Image URL"
+                        value={this.state.url}
+                        name="url"
                         type="text"
                         onChange={this.handleUpdates}
                     />
                     <br />
                     <label>Description:</label>
                     <input 
-                        value={this.state.updatedDescription}
-                        name="Description"
+                        value={this.state.description}
+                        name="description"
                         type="text"
                         onChange={this.handleUpdates}
                     />

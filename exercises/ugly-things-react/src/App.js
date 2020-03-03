@@ -11,7 +11,7 @@ function App(){
                 {(props) => (
                     <>
                         {props.savedCards.map(
-                            (uglyItem, i) => <UglyCard {...uglyItem} {...props} key={i}/>
+                            (uglyItem, i) => <UglyCard {...uglyItem} handleSubmit={props.handleSubmit} handleChange={props.handleChange} handleDelete={props.handleDelete} handleEdit={props.handleEdit} key={i}/>
                         )}
                     </>
                 )}

@@ -8,7 +8,6 @@ class ListContext extends React.Component {
         url: "",
         description: "",
         savedCards: [],
-        showEdit: false
     }
 
     handleChange = (e) => {
@@ -29,9 +28,10 @@ class ListContext extends React.Component {
         }))
     }
 
-    editToggle = () => {
+    handleEdit = (e, _id, updatedItem) => {
+        e.preventDefault()
         this.setState(prevState => ({
-            showEdit: prevState.showEdit ? false : true
+            savedCards: prevState.savedCards.map(item => item._id === _id ? updatedItem : item)
         }))
     }
 
@@ -48,7 +48,8 @@ class ListContext extends React.Component {
                     handleSubmit: this.handleSubmit,
                     handleChange: this.handleChange,
                     handleDelete: this.handleDelete,
-                    editToggle: this.editToggle,
+                    // editToggle: this.editToggle,
+                    handleEdit: this.handleEdit
                     // showEdit: this.showEdit
                 }}>
                 {this.props.children}
