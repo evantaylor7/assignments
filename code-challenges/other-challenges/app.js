@@ -38,5 +38,39 @@ function findMissing(arr){
     return missingNum
 }
 
- console.log(findMissing([3, 5, 4, 8, 1, 2, 7])) // 6
- console.log(findMissing([10, 14, 12, 11, 16, 18, 17, 13])) // 15
+//  console.log(findMissing([3, 5, 4, 8, 1, 2, 7])) // 6
+//  console.log(findMissing([10, 14, 12, 11, 16, 18, 17, 13])) // 15
+
+
+// 3/4/20
+// Write a function that returns a 10 X 10 multiplication table (2D array).
+
+function multTable(){
+    let table = []
+    for(let j = 1; j < 11; j++){
+        let row = []
+        for(let i = 1; i < 11; i++){
+            row.push(i * j)
+        }
+        table.push(row)
+    }
+    return table
+}
+console.log(multTable())
+
+// Allow for the function to take a parameter n and return a table with n * n cells.
+function multTableN(n){
+    let table = []
+    for(let j = 1; j <= n; j++){
+        let row = []
+        for(let i = 1; i <= n; i++){
+            row.push(i * j)
+        }
+        table.push(row)
+    }
+    return table
+}
+console.log('2:', multTableN(2))
+console.log('3:', multTableN(3))
+console.log('6:', multTableN(6))
+console.log('7:', multTableN(7))
