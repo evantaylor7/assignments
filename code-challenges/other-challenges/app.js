@@ -56,7 +56,7 @@ function multTable(){
     }
     return table
 }
-console.log(multTable())
+// console.log(multTable())
 
 // Allow for the function to take a parameter n and return a table with n * n cells.
 function multTableN(n){
@@ -70,7 +70,30 @@ function multTableN(n){
     }
     return table
 }
-console.log('2:', multTableN(2))
-console.log('3:', multTableN(3))
-console.log('6:', multTableN(6))
-console.log('7:', multTableN(7))
+// console.log('2:', multTableN(2))
+// console.log('3:', multTableN(3))
+// console.log('6:', multTableN(6))
+// console.log('7:', multTableN(7))
+
+
+// 3/5/20
+// Write a program that returns an array of every word that appears more than once in the phrase:
+// "Banh mi pull skateboard ipsum lorem, kombucha scenester banjo. Franzen mlkshk consequat, PBR&B lever lever listicle irony pop-up sriracha on the saliva. Shabby on chic eu iceland far next level far lever pull drinking the right vinegar fanny pack pull minim right chicharrones migas."
+
+function repeatWords(str){
+    const splitStr = str.split(' ')
+    const duplicatedWords = []
+    for(let i = 0; i < splitStr.length; i++){
+        let thisWord = splitStr[i]
+        for(let j = 0; j < splitStr.length; j++){
+            if(splitStr[j] === thisWord){
+                duplicatedWords.push(splitStr[j])
+            }
+        }
+    }
+    return duplicatedWords
+}
+
+const str = "Banh mi pull skateboard ipsum lorem, kombucha scenester banjo. Franzen mlkshk consequat, PBR&B lever lever listicle irony pop-up sriracha on the saliva. Shabby on chic eu iceland far next level far lever pull drinking the right vinegar fanny pack pull minim right chicharrones migas."
+console.log(repeatWords(str))
+// ^ haven't figured it out yet
