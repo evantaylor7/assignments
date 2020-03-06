@@ -377,7 +377,25 @@ const validate = (REGEXP) => {
 
 const testExp = validate(REGEXP)
 
-console.log(testExp(str1)) // -> ["red flag", "blue flag"]
-console.log(testExp(str2)) // -> ["red flag", "blue flag"]
-console.log(testExp(str3)) // -> ["red flag", "blue flag", "red flag"]
-console.log(testExp(str4)) // -> ["blue flag", "red flag", "red flag", "blue flag", "red flag"]
+// console.log(testExp(str1)) // -> ["red flag", "blue flag"]
+// console.log(testExp(str2)) // -> ["red flag", "blue flag"]
+// console.log(testExp(str3)) // -> ["red flag", "blue flag", "red flag"]
+// console.log(testExp(str4)) // -> ["blue flag", "red flag", "red flag", "blue flag", "red flag"]
+
+
+// 3/6/20
+// Create a regexp to find ellipsis: 3 (or more?) dots in a row:
+
+const REGEXP2 = /\.{3,}/g
+
+const str = "Hello!... Wait. How goes?..... GoodBye!.."
+
+const validate2 = (REGEXP2) => {
+	 if(!/\{.*\}/.test(String(REGEXP2))) return () => "invalid" 
+	 return function testReg(str) {
+		return str.match(REGEXP2);
+	 }
+}
+const testExp2 = validate2(REGEXP2)
+
+console.log(testExp2(str)) // -> ["...", "....."]
