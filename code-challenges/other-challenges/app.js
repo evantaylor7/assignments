@@ -116,7 +116,7 @@ function letterCounter(string){
     return obj
 }
 
-console.log(marqueeLetters("FISH FAN FAVORITE", "CRAZY RICH ASIANS")) //=> {
+// console.log(marqueeLetters("FISH FAN FAVORITE", "CRAZY RICH ASIANS")) //=> {
 //   A: 1,
 //   C: 2,
 //   R: 1,
@@ -124,3 +124,20 @@ console.log(marqueeLetters("FISH FAN FAVORITE", "CRAZY RICH ASIANS")) //=> {
 //   Y: 1,
 //   Z: 1
 // }
+
+
+// 3/10/20
+// Write a function that takes a string, and returns a string with just the vowels.
+
+function vowelsOnly(str){
+    const vowels = []
+    const strArr = str.split('')
+    for(let i = 0; i < strArr.length; i++){
+        if(strArr[i] === "a" || strArr[i] === "e" || strArr[i] === "i" || strArr[i] === "o" || strArr[i] === "u"){
+            vowels.push(strArr[i])
+        }
+    }
+    return vowels
+}
+
+console.log(vowelsOnly("hello world")) //=> "eoo"
