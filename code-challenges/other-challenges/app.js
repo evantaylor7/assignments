@@ -74,3 +74,53 @@ function multTableN(n){
 // console.log('3:', multTableN(3))
 // console.log('6:', multTableN(6))
 // console.log('7:', multTableN(7))
+
+
+// 3/9/20
+// write a function that takes two words. The first is what's up on the marquee and needs to be taken down, the second is what needs to be put up.
+// The output is how many of which letter you would still need.
+
+function marqueeLetters(toTakeDown, toPutUp){ 
+    const toTakeDownObj = letterCounter(toTakeDown)
+    const toPutUpObj = letterCounter(toPutUp)
+
+    const finalObj = {}
+
+    for(let i = 0; i < toPutUp.length; i++){
+        if(toPutUp[i] === " "){
+            continue
+        }
+        let howManyToTakeDown;
+        if(toTakeDownObj[toPutUp[i]] === undefined){
+            howManyToTakeDown = 0
+        } else {
+            howManyToTakeDown = toTakeDownObj[toPutUp[i]]
+        }
+        const total = toPutUpObj[toPutUp[i]] - howManyToTakeDown
+        if(total > 0){
+            finalObj[toPutUp[i]] = total
+        }
+    }
+    return finalObj
+}
+
+function letterCounter(string){
+    obj = {}
+    for(let i = 0; i < string.length; i++){
+        if(obj[string[i]]){
+            obj[string[i]] += 1
+        } else {
+            obj[string[i]] = 1
+        }
+    }
+    return obj
+}
+
+console.log(marqueeLetters("FISH FAN FAVORITE", "CRAZY RICH ASIANS")) //=> {
+//   A: 1,
+//   C: 2,
+//   R: 1,
+//   S: 1,
+//   Y: 1,
+//   Z: 1
+// }
