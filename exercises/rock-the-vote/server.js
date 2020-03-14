@@ -9,7 +9,7 @@ app.use(express.json())
 app.use(morgan('dev'))
 
 mongoose.connect(
-    'mongodb://localhost:27017/user-authentication',
+    'mongodb://localhost:27017/rock-the-vote',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
@@ -19,9 +19,10 @@ mongoose.connect(
     () => console.log('Connected to the DB')
 )
 
-app.use('/auth', require('./routes/authRouter'))
+app.use('/auth', require('./routes/authRouter.js'))
 app.use('/api', expressJwt({secret: process.env.SECRET}))
-app.use('./api/issues', require('./routes/issueRouter'))
+app.use('/api/issues', require('./routes/issueRouter.js'))
+app.use('/api/comments', require('./routes/commentRouter.js'))
 
 app.use((err, req, res, next) => {
     console.log(err)
