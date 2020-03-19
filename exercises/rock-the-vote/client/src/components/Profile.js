@@ -10,6 +10,8 @@ function Profile(){
         issues
     } = useContext(UserContext)
 
+    console.log(issues)
+
     return(
         <div>
             <h2>Welcome @{username}</h2>

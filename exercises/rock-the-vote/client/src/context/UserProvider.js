@@ -84,7 +84,9 @@ export default function UserProvider(props){
     }
     
     function getAllIssues(){
-
+        axios.get('/api/issues')
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
     }
 
     return(
