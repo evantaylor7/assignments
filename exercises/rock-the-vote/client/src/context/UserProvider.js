@@ -15,10 +15,12 @@ export default function UserProvider(props){
     const initState = {
         user: JSON.parse(localStorage.getItem('user')) || {},
         token: localStorage.getItem('token') || '',
-        issues: []
+        issues: [],
+        comments: []
     }
 
     const [userState, setUserState] = useState(initState)
+    console.log(userState)
 
     function signup(credentials){
         axios.post('/auth/signup', credentials)
@@ -42,6 +44,7 @@ export default function UserProvider(props){
                 localStorage.setItem('token', token)
                 localStorage.setItem('user', JSON.stringify(user))
                 getUserIssues()
+                // getComments()
                 setUserState(prevUserState => ({
                     ...prevUserState,
                     user,
@@ -57,7 +60,8 @@ export default function UserProvider(props){
         setUserState({
             user: {},
             token: '',
-            issues: []
+            issues: [],
+            comments: []
         })
     }
 
@@ -89,6 +93,31 @@ export default function UserProvider(props){
             .catch(err => console.log(err))
     }
 
+    function upvoteIssue(issueId){
+        userAxios.put(`/api/issues/upvote/${issueId}`)
+            .then(res => {
+                console.log(res)
+                getUserIssues()
+            })
+            .catch(err => console.log(err))
+    }
+
+    function downvoteIssue(issueId){
+        userAxios.put(`/api/issues/downvote/${issueId}`)
+            .then(res => {
+                console.log(res)
+                getUserIssues()
+            })
+            .catch(err => console.log(err))
+    }
+
+    // function getComments(){
+    //     const issueId = userState.issues._id
+    //     userAxios.get(`/api/comments/${issueId}`)
+    //         .then(res => console.log(res))
+    //         .catche(err => console.log(err))
+    // }
+
     return(
         <div>
             <UserContext.Provider
@@ -99,7 +128,9 @@ export default function UserProvider(props){
                     logout,
                     addIssue,
                     getUserIssues,
-                    getAllIssues
+                    getAllIssues,
+                    upvoteIssue,
+                    downvoteIssue
                 }}
             >
                 {props.children}
