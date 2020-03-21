@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect} from 'react'
 import IssueList from './IssueList.js'
 import {UserContext} from '../context/UserProvider.js' 
 
@@ -9,7 +9,7 @@ function Public(){
         getAllIssues
     } = useContext(UserContext)
 
-    getAllIssues()
+    useEffect(() => getAllIssues(), [])
 
     return(
         <div>

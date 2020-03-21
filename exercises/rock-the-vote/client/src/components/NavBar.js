@@ -2,12 +2,12 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 function NavBar(props){
-    const {logout, getUserIssues, getAllIssues} = props
+    const {logout} = props
 
     return(
         <div>
-            <Link to='/posts' onClick={getAllIssues}>Posts</Link>
-            <Link to='/profile' onClick={getUserIssues}>Profile</Link>
+            <Link to='/posts'>Posts</Link>
+            <Link to='/profile'>Profile</Link>
             <button onClick={logout}>Logout</button>
         </div>
     )

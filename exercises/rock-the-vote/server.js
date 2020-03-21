@@ -20,8 +20,9 @@ mongoose.connect(
 )
 
 app.use('/auth', require('./routes/authRouter.js'))
+app.use('/issues', require('./routes/issueRouter.js'))
 app.use('/api', expressJwt({secret: process.env.SECRET}))
-app.use('/api/issues', require('./routes/issueRouter.js'))
+app.use('/api/issues', require('./routes/userIssueRouter.js'))
 app.use('/api/comments', require('./routes/commentRouter.js'))
 
 app.use((err, req, res, next) => {

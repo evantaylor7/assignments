@@ -6,8 +6,8 @@ const initInputs = {
 }
 
 function IssueForm(props){
-    const [inputs, setInputs] = useState(initInputs)
     const {addIssue} = props
+    const [inputs, setInputs] = useState(initInputs)
 
     function handleChange(e){
         const {name, value} = e.target

@@ -1,9 +1,10 @@
 import React, {useContext} from 'react'
 import {UserContext} from '../context/UserProvider'
+import CommentForm from './CommentForm.js'
 
 function Issue(props){
     const {title, description, votes, _id} = props
-    const {upvoteIssue, downvoteIssue} = useContext(UserContext)
+    const {upvoteIssue, downvoteIssue, addComment} = useContext(UserContext)
 
     return(
         <div>
@@ -12,6 +13,7 @@ function Issue(props){
             <button onClick={() => upvoteIssue(_id)}>Upvote</button>
             <button onClick={() => downvoteIssue(_id)}>Downvote</button>
             <span>Votes: {votes}</span>
+            <CommentForm _id={_id} addComment={addComment}/>
         </div>
     )
 }

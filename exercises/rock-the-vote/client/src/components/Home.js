@@ -2,16 +2,16 @@ import React, {useState, useContext} from 'react'
 import AuthForm from './AuthForm.js'
 import {UserContext} from '../context/UserProvider.js'
 
-
 function Home(){
     const initInputs = {username: '', password: ''}
     const [inputs, setInputs] = useState(initInputs)
     const [toggleAuth, setToggleAuth] = useState(true)
 
-    const {signup, login} = useContext(UserContext)
+    const {signup, login, errMsg, resetAuthError} = useContext(UserContext)
 
     function toggle(){
         setToggleAuth(prevToggleAuth => !prevToggleAuth)
+        resetAuthError()
     }
 
     function handleChange(e){
@@ -43,6 +43,7 @@ function Home(){
                         inputs={inputs}
                         handleChange={handleChange}
                         handleSubmit={handleSignup}
+                        errMsg={errMsg}
                     /> 
                     <button onClick={toggle}>Already a member?</button>
                 </>
@@ -53,6 +54,7 @@ function Home(){
                         inputs={inputs}
                         handleChange={handleChange}
                         handleSubmit={handleLogin}
+                        errMsg={errMsg}
                     />
                     <button onClick={toggle}>Not a member?</button>
                 </>
