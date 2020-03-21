@@ -6,12 +6,13 @@ import {UserContext} from '../context/UserProvider'
 function Profile(){
     const{
         user: {username},
-        addIssue,
         issues,
+        addIssue,
         getUserIssues
     } = useContext(UserContext)
 
     useEffect(() => getUserIssues(), [])
+    // this is creating an infinite loop
 
     return(
         <div>

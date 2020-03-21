@@ -43,7 +43,6 @@ export default function UserProvider(props){
                 const {user, token} = res.data
                 localStorage.setItem('token', token)
                 localStorage.setItem('user', JSON.stringify(user))
-                getUserIssues()
                 setUserState(prevUserState => ({
                     ...prevUserState,
                     user,
@@ -132,8 +131,19 @@ export default function UserProvider(props){
             .catch(err => console.log(err))
     }
 
+    function getComments(_id){
+        userAxios.get(`/api/comments/${_id}`)
+            .then(res => {
+                setUserState(prevUserState => ({
+                    ...prevUserState,
+                    comments: res.data
+                }))
+            })
+            .catch(err => console.log(err))
+    }
+
     function addComment(comment, issueId){
-        userAxios.post(`/api/comments${issueId}`, comment)
+        userAxios.post(`/api/comments/post/${issueId}`, comment)
             .then(res => console.log(res))
             .catch(err => console.log(err))
     }
@@ -159,6 +169,7 @@ export default function UserProvider(props){
                     upvoteIssue,
                     downvoteIssue,
                     resetAuthError,
+                    getComments,
                     addComment
                 }}
             >
