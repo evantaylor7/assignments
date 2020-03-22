@@ -148,13 +148,6 @@ export default function UserProvider(props){
             .catch(err => console.log(err))
     }
 
-    // function getComments(){
-    //     const issueId = userState.issues._id
-    //     userAxios.get(`/api/comments/${issueId}`)
-    //         .then(res => console.log(res))
-    //         .catche(err => console.log(err))
-    // }
-
     return(
         <div>
             <UserContext.Provider

@@ -12,6 +12,11 @@ function Issue(props){
         setToggle(prevToggle => !prevToggle)
     }
 
+    function handleClick(){
+        getComments()
+        toggleComments()
+    }
+
     return(
         <div>
             <h2>{title}</h2>
@@ -20,16 +25,10 @@ function Issue(props){
             <button onClick={() => downvoteIssue(_id)}>Downvote</button>
             <span>Votes: {votes}</span>
             <CommentForm _id={_id} addComment={addComment}/>
-            <button 
-                onClick={
-                    toggleComments(),
-                    getComments(_id)
-                }
-            >
+            <button onClick={() => handleClick()}>
                 {toggle ? 'Hide Comments' : 'Show Comments'}
             </button>
             {toggle && 
-                // (getComments(_id)),
                 <CommentList comments={comments}/>
             }
         </div>
