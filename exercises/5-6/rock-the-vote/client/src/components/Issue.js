@@ -5,7 +5,7 @@ import CommentList from './CommentList.js'
 
 function Issue(props){
     const {title, description, votes, _id} = props
-    const {upvoteIssue, downvoteIssue, addComment, getComments, comments} = useContext(UserContext)
+    const {upvoteIssue, downvoteIssue, addComment, getComments, comments, sortList} = useContext(UserContext)
     const [toggle, setToggle] = useState(false)
 
     function toggleComments(){
@@ -13,7 +13,7 @@ function Issue(props){
     }
 
     function handleClick(){
-        getComments()
+        getComments(_id)
         toggleComments()
     }
 
@@ -21,8 +21,18 @@ function Issue(props){
         <div>
             <h2>{title}</h2>
             <p>{description}</p>
-            <button onClick={() => upvoteIssue(_id)}>Upvote</button>
-            <button onClick={() => downvoteIssue(_id)}>Downvote</button>
+            <button onClick={() => 
+                upvoteIssue(_id),
+                sortList()}
+            >
+                Upvote
+            </button>
+            <button onClick={() => 
+                downvoteIssue(_id),
+                sortList()}
+            >
+                Downvote
+            </button>
             <span>Votes: {votes}</span>
             <CommentForm _id={_id} addComment={addComment}/>
             <button onClick={() => handleClick()}>
