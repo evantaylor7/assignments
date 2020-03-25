@@ -5,7 +5,7 @@ import CommentList from './CommentList.js'
 
 function Issue(props){
     const {title, description, votes, _id} = props
-    const {upvoteIssue, downvoteIssue, addComment, getComments, comments, sortList} = useContext(UserContext)
+    const {user, issue, upvoteIssue, downvoteIssue, addComment, getComments, deleteIssue, comments, sortList} = useContext(UserContext)
     const [toggle, setToggle] = useState(false)
 
     function toggleComments(){
@@ -20,17 +20,21 @@ function Issue(props){
     return(
         <div>
             <h2>{title}</h2>
+            {/* { */}
+                {/* issue.user === user._id && */}
+                <button onClick={deleteIssue(_id)}>Delete Issue</button>
+            {/* // } */}
             <p>{description}</p>
             <button onClick={() => 
-                upvoteIssue(_id),
-                sortList()}
-            >
+                upvoteIssue(_id)
+                // sortList()
+            }>
                 Upvote
             </button>
             <button onClick={() => 
-                downvoteIssue(_id),
-                sortList()}
-            >
+                downvoteIssue(_id)
+                // sortList()
+            }>
                 Downvote
             </button>
             <span>Votes: {votes}</span>

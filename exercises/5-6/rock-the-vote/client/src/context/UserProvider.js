@@ -21,19 +21,11 @@ export default function UserProvider(props){
     }
     
     const [userState, setUserState] = useState(initState)
-    console.log(userState.issues)
+    console.log(userState.user._id)
 
     // useEffect(() => sortList(), [])
 
-    function sortList(){
-        setUserState(prevUserState => {
-            return(
-                {...prevUserState,
-                issues: prevUserState.issues.sort((a, b) => a.votes < b.votes)}
-            )
-        })
-    }
-
+    // USERS:
     function signup(credentials){
         axios.post('/auth/signup', credentials)
             .then(res => {
@@ -74,6 +66,16 @@ export default function UserProvider(props){
             comments: []
         })
     }
+
+    // ISSUES:
+    // function sortList(){
+    //     setUserState(prevUserState => {
+    //         return(
+    //             {...prevUserState,
+    //             issues: prevUserState.issues.sort((a, b) => a.votes < b.votes)}
+    //         )
+    //     })
+    // }
 
     function handleAuthError(errMsg){
         setUserState(prevUserState => ({
@@ -142,7 +144,6 @@ export default function UserProvider(props){
             setUserState(prevUserState => {
                 return(
                     {...prevUserState,
-
                     issues: prevUserState.issues.map(issue => (
                         issue._id === issueId ? res.data : issue))}
                 )
@@ -151,12 +152,19 @@ export default function UserProvider(props){
             .catch(err => console.log(err))
     }
 
+    function deleteIssue(issueId){
+        userAxios.delete(`/api/issues/${issueId}`)
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+    }
+
+    // COMMENTS:
     function getComments(_id){
         userAxios.get(`/api/comments/${_id}`)
             .then(res => {
                 setUserState(prevUserState => ({
                     ...prevUserState,
-                    comments: res.data
+                    comments: [...prevUserState.comments, res.data]
                 }))
             })
             .catch(err => console.log(err))
@@ -181,15 +189,15 @@ export default function UserProvider(props){
                     getAllIssues,
                     upvoteIssue,
                     downvoteIssue,
+                    deleteIssue,
                     resetAuthError,
                     getComments,
-                    addComment,
-                    sortList
+                    addComment
+                    // sortList
                 }}
             >
                 {props.children}
             </UserContext.Provider>
-            
         </div>
     )
 }
