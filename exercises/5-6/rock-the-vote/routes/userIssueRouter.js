@@ -13,6 +13,9 @@ userIssueRouter.get('/user', (req, res, next) => {
     })
 })
 
+// get one issue
+// userIssueRouter.get(`/`)
+
 // post new issue
 userIssueRouter.post('/post', (req, res, next) => {
     req.body.user = req.user._id
@@ -28,6 +31,7 @@ userIssueRouter.post('/post', (req, res, next) => {
 
 // delete an issue
 userIssueRouter.delete('/:issueId', (req, res, next) => {
+    console.log(req.params.issueId)
     Issue.findOneAndDelete(
         {_id: req.params.issueId, user: req.user._id},
         (err, deletedIssue) => {

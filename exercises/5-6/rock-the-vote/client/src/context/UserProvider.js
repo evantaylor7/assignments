@@ -110,8 +110,12 @@ export default function UserProvider(props){
                     issues: res.data
                 }))
             })
-            .catch(err => console.log(err.respsonse.data.errMsg))
+            .catch(err => console.log(err.response.data.errMsg))
     }
+
+    // function issueDetail(){
+    //     userAxios.get(`/issues/detail/:id`)
+    // }
     
     function getAllIssues(){
         axios.get('/issues')
@@ -127,13 +131,11 @@ export default function UserProvider(props){
     function upvoteIssue(issueId){
         userAxios.put(`/api/issues/upvote/${issueId}`)
             .then(res => {
-                setUserState(prevUserState => {
-                    return(
-                        {...prevUserState,
+                setUserState(prevUserState => ({
+                        ...prevUserState,
                         issues: prevUserState.issues.map(issue => (
-                            issue._id === issueId ? res.data : issue))}
-                    )
-                })
+                            issue._id === issueId ? res.data : issue))
+                }))
             })
             .catch(err => console.log(err))
     }
@@ -164,7 +166,7 @@ export default function UserProvider(props){
             .then(res => {
                 setUserState(prevUserState => ({
                     ...prevUserState,
-                    comments: [...prevUserState.comments, res.data]
+                    comments: [...prevUserState.comments, ...res.data]
                 }))
             })
             .catch(err => console.log(err))

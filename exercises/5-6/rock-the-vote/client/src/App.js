@@ -4,6 +4,7 @@ import Home from './components/Home.js'
 import NavBar from './components/NavBar.js'
 import Profile from './components/Profile.js'
 import Public from './components/Public.js'
+import IssueDetail from './components/IssueDetail.js'
 import ProtectedRoute from './components/ProtectedRoute.js'
 import {UserContext} from './context/UserProvider.js'
 
@@ -27,6 +28,12 @@ function App(){
                 <ProtectedRoute 
                     path='/profile' 
                     component={Profile}
+                    redirectTo='/'
+                    token={token}
+                />
+                <ProtectedRoute 
+                    path='/issues/detail/:id' 
+                    component={IssueDetail}
                     redirectTo='/'
                     token={token}
                 />
