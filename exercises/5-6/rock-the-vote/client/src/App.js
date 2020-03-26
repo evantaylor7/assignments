@@ -32,7 +32,7 @@ function App(){
                     token={token}
                 />
                 <ProtectedRoute 
-                    path='/issues/detail/:id' 
+                    path='/issues/detail/:issueId' 
                     component={IssueDetail}
                     redirectTo='/'
                     token={token}

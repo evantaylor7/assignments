@@ -16,12 +16,12 @@ export default function UserProvider(props){
         user: JSON.parse(localStorage.getItem('user')) || {},
         token: localStorage.getItem('token') || '',
         issues: [],
+        issueDetail: {},
         comments: [],
         errMsg: ''
     }
     
     const [userState, setUserState] = useState(initState)
-    console.log(userState.user._id)
 
     // useEffect(() => sortList(), [])
 
@@ -113,9 +113,16 @@ export default function UserProvider(props){
             .catch(err => console.log(err.response.data.errMsg))
     }
 
-    // function issueDetail(){
-    //     userAxios.get(`/issues/detail/:id`)
-    // }
+    function getOneIssue(issueId){
+        userAxios.get(`/api/issues/${issueId}`)
+            .then(res => {
+                setUserState(prevUserState => ({
+                    ...prevUserState,
+                    issueDetail: res.data
+                }))
+            })
+            .catch(err => console.log(err))
+    }
     
     function getAllIssues(){
         axios.get('/issues')
@@ -142,16 +149,14 @@ export default function UserProvider(props){
 
     function downvoteIssue(issueId){
         userAxios.put(`/api/issues/downvote/${issueId}`)
-        .then(res => {
-            setUserState(prevUserState => {
-                return(
-                    {...prevUserState,
+            .then(res => {
+                setUserState(prevUserState => ({
+                    ...prevUserState,
                     issues: prevUserState.issues.map(issue => (
-                        issue._id === issueId ? res.data : issue))}
-                )
+                        issue._id === issueId ? res.data : issue))
+                    }))
             })
-        })
-            .catch(err => console.log(err))
+                .catch(err => console.log(err))
     }
 
     function deleteIssue(issueId){
@@ -166,13 +171,13 @@ export default function UserProvider(props){
             .then(res => {
                 setUserState(prevUserState => ({
                     ...prevUserState,
-                    comments: [...prevUserState.comments, ...res.data]
+                    comments: [...res.data.reverse()]
                 }))
             })
             .catch(err => console.log(err))
     }
 
-    function addComment(comment, issueId){
+    function addComment(issueId, comment){
         userAxios.post(`/api/comments/post/${issueId}`, comment)
             .then(res => console.log(res))
             .catch(err => console.log(err))
@@ -188,6 +193,7 @@ export default function UserProvider(props){
                     logout,
                     addIssue,
                     getUserIssues,
+                    getOneIssue,
                     getAllIssues,
                     upvoteIssue,
                     downvoteIssue,

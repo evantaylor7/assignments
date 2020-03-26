@@ -10,13 +10,13 @@ function CommentForm(props){
 
     function handleSubmit(e){
         e.preventDefault()
-        addComment(comment, _id)
+        addComment(_id, comment)
         setComment('')
     }
 
     return(
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={() => handleSubmit()}>
                 <input onChange={handleChange} type='text' value={comment}/>
                 <button>Comment</button>
             </form>

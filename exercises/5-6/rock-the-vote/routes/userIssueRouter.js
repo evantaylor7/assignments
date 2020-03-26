@@ -14,7 +14,17 @@ userIssueRouter.get('/user', (req, res, next) => {
 })
 
 // get one issue
-// userIssueRouter.get(`/`)
+userIssueRouter.get('/:issueId', (req, res, next) => {
+    Issue.findOne(
+        {_id: req.params.issueId}, 
+        (err, post) => {
+        if(err){
+            res.status(500)
+            return next(err)
+        }
+        return res.status(200).send(post)
+    })
+})
 
 // post new issue
 userIssueRouter.post('/post', (req, res, next) => {
