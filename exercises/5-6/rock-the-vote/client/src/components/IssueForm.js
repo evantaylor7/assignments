@@ -1,12 +1,11 @@
 import React, {useState} from 'react'
 
-const initInputs = {
-    title: '',
-    description: ''
-}
-
 function IssueForm(props){
-    const {addIssue} = props
+    const {addOrEdit, buttonText, title, description, issueId, onClick} = props
+    const initInputs = {
+        title: title || '',
+        description: description || ''
+    }
     const [inputs, setInputs] = useState(initInputs)
 
     function handleChange(e){
@@ -19,11 +18,11 @@ function IssueForm(props){
 
     function handleSubmit(e){
         e.preventDefault()
-        addIssue(inputs)
+        addOrEdit(issueId, inputs)
         setInputs(initInputs)
     }
 
-    const {title, description} = inputs
+    const {title: titleInput, description: descriptionInput} = inputs
 
     return(
         <div>
@@ -32,17 +31,17 @@ function IssueForm(props){
                     type='text' 
                     placeholder='Title' 
                     name='title' 
-                    value={title} 
+                    value={titleInput} 
                     onChange={handleChange} 
                 />
                 <input 
                     type='text' 
                     placeholder='Description' 
                     name='description' 
-                    value={description} 
+                    value={descriptionInput} 
                     onChange={handleChange} 
                 />
-                <button>Post Issue</button>
+                <button onClick={onClick}>{buttonText}</button>
             </form>
         </div>
     )

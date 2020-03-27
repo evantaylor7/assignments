@@ -67,16 +67,6 @@ export default function UserProvider(props){
         })
     }
 
-    // ISSUES:
-    // function sortList(){
-    //     setUserState(prevUserState => {
-    //         return(
-    //             {...prevUserState,
-    //             issues: prevUserState.issues.sort((a, b) => a.votes < b.votes)}
-    //         )
-    //     })
-    // }
-
     function handleAuthError(errMsg){
         setUserState(prevUserState => ({
             ...prevUserState,
@@ -91,7 +81,17 @@ export default function UserProvider(props){
         }))
     }
 
-    function addIssue(newIssue){
+    // ISSUES:
+    // function sortList(){
+    //     setUserState(prevUserState => {
+    //         return(
+    //             {...prevUserState,
+    //             issues: prevUserState.issues.sort((a, b) => a.votes < b.votes)}
+    //         )
+    //     })
+    // }
+
+    function addIssue(id, newIssue){
         userAxios.post('/api/issues/post', newIssue)
             .then(res => {
                 setUserState(prevUserState => ({
@@ -135,6 +135,20 @@ export default function UserProvider(props){
             .catch(err => console.log(err))
     }
 
+    function editIssue(issueId, updatedIssue){
+        console.log(updatedIssue)
+        userAxios.put(`/api/issues/${issueId}`, updatedIssue)
+            .then(res => {
+                setUserState(prevUserState => ({
+                    ...prevUserState,
+                    issues: prevUserState.issues.map(issue => (
+                        issue._id === issueId ? res.data : issue
+                    ))
+                }))
+            })
+            .catch(err => console.log(err))
+    }
+
     function upvoteIssue(issueId){
         userAxios.put(`/api/issues/upvote/${issueId}`)
             .then(res => {
@@ -161,7 +175,12 @@ export default function UserProvider(props){
 
     function deleteIssue(issueId){
         userAxios.delete(`/api/issues/${issueId}`)
-            .then(res => console.log(res))
+            .then(res => {
+                setUserState(prevUserState => ({
+                    ...prevUserState,
+                    issues: prevUserState.issues.filter(issue => issue._id !== issueId)
+                }))
+            })
             .catch(err => console.log(err))
     }
 
@@ -194,6 +213,7 @@ export default function UserProvider(props){
                     addIssue,
                     getUserIssues,
                     getOneIssue,
+                    editIssue,
                     getAllIssues,
                     upvoteIssue,
                     downvoteIssue,

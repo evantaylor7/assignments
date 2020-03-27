@@ -1,6 +1,6 @@
 import React, {useContext, useEffect} from 'react'
 import PostForm from './IssueForm.js'
-import PostList from './IssueList.js'
+import IssueList from './IssueList.js'
 import {UserContext} from '../context/UserProvider'
 
 function Profile(){
@@ -12,15 +12,17 @@ function Profile(){
     } = useContext(UserContext)
 
     useEffect(() => getUserIssues(), [])
-    // this is creating an infinite loop
+    // this (was) creating an infinite loop
 
     return(
         <div>
             <h2>Welcome @{username}</h2>
             <h3>Post an issue:</h3>
-            <PostForm addIssue={addIssue}/>
+            <PostForm addOrEdit={addIssue} buttonText='Post Issue'/>
             <h3>Your issues:</h3>
-            <PostList issues={issues}/>
+            <IssueList 
+                issues={issues}
+            />
         </div>
     )
 }

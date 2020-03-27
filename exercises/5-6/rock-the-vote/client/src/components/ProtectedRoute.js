@@ -3,9 +3,12 @@ import {Route, Redirect} from 'react-router-dom'
 
 function ProtectedRoute(props){
     const {path, redirectTo, component: C, token, ...rest} = props
-    return token ? 
+
+    return (
+        token ? 
         <Route path={path} render={() => <C {...rest}/>}/> :
         <Redirect to={redirectTo}/>
+    )
 }
 
 export default ProtectedRoute
