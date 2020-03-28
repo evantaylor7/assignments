@@ -3,12 +3,13 @@ import Comment from './Comment.js'
 import {UserContext} from '../context/UserProvider.js'
 
 function CommentList(props){
-    // const {_id} = props
-    const {getComments, comments} = useContext(UserContext)
+    const {issueId} = props
+    const {getComments, comments, user: {username}} = useContext(UserContext)
     // useEffect(() => getComments(_id))
+    
     return(
         <div>
-            {comments.map(comment => <Comment {...comment} key={comment._id}/>)}
+            {comments.map(comment => <Comment {...comment} user={username} issueId={issueId}/>)}
         </div>
     )
 }

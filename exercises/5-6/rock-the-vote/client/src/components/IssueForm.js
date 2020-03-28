@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 function IssueForm(props){
-    const {addOrEdit, buttonText, title, description, issueId, onClick} = props
+    const {addOrEdit, buttonText, title, description, issueId} = props
     const initInputs = {
         title: title || '',
         description: description || ''
@@ -41,7 +41,7 @@ function IssueForm(props){
                     value={descriptionInput} 
                     onChange={handleChange} 
                 />
-                <button onClick={onClick}>{buttonText}</button>
+                <button>{buttonText}</button>
             </form>
         </div>
     )

@@ -136,7 +136,6 @@ export default function UserProvider(props){
     }
 
     function editIssue(issueId, updatedIssue){
-        console.log(updatedIssue)
         userAxios.put(`/api/issues/${issueId}`, updatedIssue)
             .then(res => {
                 setUserState(prevUserState => ({
@@ -195,10 +194,16 @@ export default function UserProvider(props){
             })
             .catch(err => console.log(err))
     }
-
+    
+    // console.log(userState.comments)
     function addComment(issueId, comment){
         userAxios.post(`/api/comments/post/${issueId}`, comment)
-            .then(res => console.log(res))
+            .then(res => {
+                setUserState(prevUserState => ({
+                    ...prevUserState,
+                    comments: [...prevUserState.comments, res.data]
+                }))
+            })
             .catch(err => console.log(err))
     }
 

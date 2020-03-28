@@ -1,5 +1,5 @@
 import React, {useContext, useEffect} from 'react'
-import PostForm from './IssueForm.js'
+import IssueForm from './IssueForm.js'
 import IssueList from './IssueList.js'
 import {UserContext} from '../context/UserProvider'
 
@@ -18,11 +18,9 @@ function Profile(){
         <div>
             <h2>Welcome @{username}</h2>
             <h3>Post an issue:</h3>
-            <PostForm addOrEdit={addIssue} buttonText='Post Issue'/>
+            <IssueForm addOrEdit={addIssue} buttonText='Post Issue'/>
             <h3>Your issues:</h3>
-            <IssueList 
-                issues={issues}
-            />
+            <IssueList issues={issues}/>
         </div>
     )
 }
