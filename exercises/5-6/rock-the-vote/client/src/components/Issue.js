@@ -3,12 +3,15 @@ import {Link} from 'react-router-dom'
 import {UserContext} from '../context/UserProvider'
 
 function Issue(props){
-    const {title, description, votes, _id} = props
-    const {user, issues, upvoteIssue, downvoteIssue, sortList} = useContext(UserContext)
+    const {title, description, votes, user, _id} = props
+    const {upvoteIssue, downvoteIssue, sortList} = useContext(UserContext)
 
     return(
         <div>
             <Link to={`/issues/detail/${_id}`}><h2>{title}</h2></Link>
+            {user && 
+                <h3>Posted by: @{user}</h3>
+            }
             <p>{description}</p>
             <button onClick={() => 
                 upvoteIssue(_id)

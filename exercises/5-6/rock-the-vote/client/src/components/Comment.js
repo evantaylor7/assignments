@@ -1,10 +1,10 @@
 import React from 'react'
 
 function Comment(props){
-    const {comment, user, key} = props
-    console.log(user)
+    const {comment, user} = props
+
     return(
-        <div _id={key}>
+        <div key={comment._id}>
             <h3>@{user}</h3>
             <p>{comment}</p>
         </div>
