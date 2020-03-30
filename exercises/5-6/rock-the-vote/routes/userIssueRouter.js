@@ -71,38 +71,54 @@ userIssueRouter.put('/:issueId', (req, res, next) => {
 
 // upvote issue
 userIssueRouter.put('/upvote/:issueId', (req, res, next) => {
-    Issue.findOneAndUpdate(
-        {_id: req.params.issueId},
-        {$inc: {
-            votes: 1}
-        },
-        {new: true},
-        (err, updatedIssue) => {
-            if(err){
-                res.status(500)
-                return next(err)
-            }
-            return res.status(201).send(updatedIssue)
+    Issue.findOne({_id: req.params.issueId}, (err, issue) => {
+        if(issue.usersWhoHaveVoted.includes(req.user._id)){
+            res.status(403)
+            return next(Error('You can only vote once'))
+        }else{
+            Issue.findOneAndUpdate(
+                {_id: req.params.issueId},
+                {
+                    $inc: {votes: 1},
+                    $push: {usersWhoHaveVoted: req.user._id}
+                },
+                {new: true},
+                (err, updatedIssue) => {
+                    if(err){
+                        res.status(500)
+                        return next(err)
+                    }
+                    return res.status(201).send(updatedIssue)
+                }
+            )
         }
-    )
+    })
 })
 
 // downvote issue
 userIssueRouter.put('/downvote/:issueId', (req, res, next) => {
-    Issue.findOneAndUpdate(
-        {_id: req.params.issueId},
-        {$inc: {
-            votes: -1}
-        },
-        {new: true},
-        (err, updatedIssue) => {
-            if(err){
-                res.status(500)
-                return next(err)
-            }
-            return res.status(201).send(updatedIssue)
+    Issue.findOne({_id: req.params.issueId}, (err, issue) => {
+        if(issue.usersWhoHaveVoted.includes(req.user._id)){
+            res.status(403)
+            return next(Error('You can only vote once'))
+        }else{
+            Issue.findOneAndUpdate(
+                {_id: req.params.issueId},
+                {
+                    $inc: {votes: -1},
+                    $push: {usersWhoHaveVoted: req.user._id}
+                },
+                {new: true},
+                (err, updatedIssue) => {
+                    if(err){
+                        res.status(500)
+                        return next(err)
+                    }
+                    return res.status(200).send(updatedIssue)
+                }
+            )
         }
-    )
+    })
 })
 
 module.exports = userIssueRouter

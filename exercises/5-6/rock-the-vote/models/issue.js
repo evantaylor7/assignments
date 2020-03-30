@@ -19,10 +19,6 @@ const issueSchema = new Schema({
         type: Number,
         default: 0
     },
-    comments: {
-        type: [Object],
-        default: []
-    },
     usersWhoHaveVoted: {
         type: [Schema.Types.ObjectId],
         ref: 'User',

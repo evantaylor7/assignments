@@ -12,7 +12,6 @@ function Profile(){
     } = useContext(UserContext)
 
     useEffect(() => getUserIssues(), [])
-    // this (was) creating an infinite loop
 
     return(
         <div>

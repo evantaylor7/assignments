@@ -1,44 +1,25 @@
 import React, {useState} from 'react'
 
 function CommentForm(props){
-    const {addComment, issueId, user} = props
-
-    // const initComment = {
-    //     text: '',
-    //     user: ''
-    // }
-
-    // const [comment, setComment] = useState(initComment)
-
-    // function handleChange(e){
-    //     const {value} = e.target
-    //     setComment(prevComment => ({
-    //         ...prevComment,
-    //         text: value,
-    //         user: user
-    //     }))
-    // }
+    const {addComment, issueId} = props
 
     const [comment, setComment] = useState('')
 
     function handleChange(e){
         const {value} = e.target
-        setComment(prevComment => ({
-            ...prevComment,
-            comment: value
-        }))
+        setComment(value)
     }
 
     function handleSubmit(e){
         e.preventDefault()
         addComment(issueId, comment)
-        // setComment(initComment)
+        setComment('')
     }
 
     return(
         <div>
             <form onSubmit={handleSubmit}>
-                <input onChange={handleChange} type='text' value={comment.text}/>
+                <input onChange={handleChange} type='text' value={comment}/>
                 <button>Comment</button>
             </form>
         </div>
