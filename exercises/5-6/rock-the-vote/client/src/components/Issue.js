@@ -1,17 +1,15 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext} from 'react'
 import {Link} from 'react-router-dom'
 import {UserContext} from '../context/UserProvider'
 
 function Issue(props){
-    const {title, description, votes, user, _id, voteErr} = props
-    const {upvoteIssue, downvoteIssue, sortList} = useContext(UserContext)
+    const {title, description, votes, postedBy, voteErr, _id} = props
+    const {upvoteIssue, downvoteIssue} = useContext(UserContext)
 
     return(
         <div>
             <Link to={`/issues/detail/${_id}`}><h2>{title}</h2></Link>
-            {user && 
-                <h3>Posted by: @{user}</h3>
-            }
+            <h3>Posted by: @{postedBy}</h3>
             <p>{description}</p>
             <button onClick={() => upvoteIssue(_id)}>Upvote</button>
             <button onClick={() => downvoteIssue(_id)}>Downvote</button>

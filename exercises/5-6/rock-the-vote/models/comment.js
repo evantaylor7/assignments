@@ -15,6 +15,11 @@ const commentSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true
+    },
+    postedBy: {
+        type: Schema.Types.String,
+        ref: 'User',
+        required: true
     }
 })
 

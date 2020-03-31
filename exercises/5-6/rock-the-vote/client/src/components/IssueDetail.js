@@ -8,10 +8,15 @@ import CommentList from './CommentList.js'
 function IssueDetail(){
     const {issueId} = useParams()
     const {
-        user: {
-            username
-        },
+        user: {username},
         issueDetail,
+        issueDetail: {
+            title,
+            description,
+            votes,
+            postedBy,
+            _id
+        },
         getOneIssue,
         editIssue,
         deleteIssue, 
@@ -19,8 +24,7 @@ function IssueDetail(){
         getComments,
         issues
     } = useContext(UserContext)
-    const {title, description, votes, _id} = issueDetail
-
+    
     useEffect(() => {
         getComments(issueId)
         getOneIssue(issueId)}, [issues])
@@ -35,33 +39,42 @@ function IssueDetail(){
     }
 
     const [toggle, setToggle] = useState(false)
-
+    // issueDetail && () => const {title, description, votes, _id} = issueDetail
+    
     return(
-        <div>
-            <br/>
-            <button onClick={handleToggle}>{toggle ? 'Cancel' : 'Edit Issue'}</button>
-            <button onClick={() => deleteIssue(issueId)}>Delete Issue</button>
-            {toggle ?
-                <>
-                    <IssueForm 
-                        addOrEdit={submitEdits}
-                        buttonText='Save'
-                        title={title}
-                        description={description}
-                        issueId={issueId}
-                        onClick={handleToggle}
-                    />
-                </>
-                :
-                <>
-                    <h2>{title}</h2>
-                    <p>{description}</p>
-                    <span>Votes: {votes}</span>
-                    <CommentForm addComment={addComment} issueId={issueId} user={username}/>
-                    <CommentList issueId={issueId}/>
-                </>
+        <>
+            {title &&
+                <div key={_id}>
+                    <br/>
+                    <button onClick={handleToggle}>{toggle ? 'Cancel' : 'Edit Issue'}</button>
+                    {username === postedBy &&
+                    <>
+                        <button onClick={() => deleteIssue(issueId)}>Delete Issue</button>
+                    </>}
+                    {toggle ?
+                        <>
+                            <IssueForm 
+                                addOrEdit={submitEdits}
+                                buttonText='Save'
+                                title={title}
+                                description={description}
+                                issueId={issueId}
+                                onClick={handleToggle}
+                            />
+                        </>
+                        :
+                        <>
+                            <h2>{title}</h2>
+                            <h3>Posted by: @{postedBy}</h3>
+                            <p>{description}</p>
+                            <span>Votes: {votes}</span>
+                            <CommentForm addComment={addComment} issueId={issueId}/>
+                            <CommentList/>
+                        </>
+                    }
+                </div>
             }
-        </div>
+        </>
     )
 }
 

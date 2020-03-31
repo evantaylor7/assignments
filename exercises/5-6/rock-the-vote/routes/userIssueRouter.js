@@ -28,7 +28,9 @@ userIssueRouter.get('/:issueId', (req, res, next) => {
 
 // post new issue
 userIssueRouter.post('/post', (req, res, next) => {
+    console.log(req)
     req.body.user = req.user._id
+    req.body.postedBy = req.user.username
     const newIssue = new Issue(req.body)
     newIssue.save((err, issue) => {
         if(err){

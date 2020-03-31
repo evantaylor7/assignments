@@ -4,7 +4,6 @@ import {UserContext} from '../context/UserProvider.js'
 
 function Public(){
     const{
-        user: {username},
         issues,
         getAllIssues
     } = useContext(UserContext)
@@ -14,7 +13,7 @@ function Public(){
     return(
         <div>
             <h1>All of our issues</h1>
-            <IssueList issues={issues} user={username}/>
+            <IssueList issues={issues}/>
         </div>
     )
 }

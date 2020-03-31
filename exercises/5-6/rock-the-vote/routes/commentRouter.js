@@ -5,7 +5,7 @@ const Comment = require('../models/comment.js')
 // get all comments by post
 commentRouter.get('/:issueId', (req, res, next) => {
     req.body.post = req.params.issueId
-    Comment.find({post: req.body.post, user: req.user._id}, (err, posts) => {
+    Comment.find({post: req.body.post}, (err, posts) => {
         if(err){
             res.status(500)
             return next(err)
@@ -18,6 +18,7 @@ commentRouter.get('/:issueId', (req, res, next) => {
 commentRouter.post('/post/:issueId', (req, res, next) => {
     req.body.post = req.params.issueId
     req.body.user = req.user._id
+    req.body.postedBy = req.user.username
     const newComment = new Comment(req.body)
     newComment.save((err, newComment) => {
         if(err){

@@ -7,6 +7,11 @@ const issueSchema = new Schema({
         ref: 'User',
         required: true
     },
+    postedBy: {
+        type: Schema.Types.String,
+        ref: 'User',
+        required: true
+    },
     title: {
         type: String,
         required: true,
