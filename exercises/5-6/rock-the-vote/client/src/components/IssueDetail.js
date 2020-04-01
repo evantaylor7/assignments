@@ -43,7 +43,7 @@ function IssueDetail(){
     
     return(
         <>
-            {title &&
+            {issueDetail.title &&
                 <div key={_id}>
                     <br/>
                     <button onClick={handleToggle}>{toggle ? 'Cancel' : 'Edit Issue'}</button>
@@ -68,7 +68,11 @@ function IssueDetail(){
                             <h3>Posted by: @{postedBy}</h3>
                             <p>{description}</p>
                             <span>Votes: {votes}</span>
-                            <CommentForm addComment={addComment} issueId={issueId}/>
+                            <CommentForm 
+                                addOrEditComment={addComment} 
+                                issueOrCommentId={issueId} 
+                                commentBtnText='Comment'
+                            />
                             <CommentList/>
                         </>
                     }

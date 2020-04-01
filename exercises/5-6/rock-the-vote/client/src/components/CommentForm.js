@@ -1,26 +1,26 @@
 import React, {useState} from 'react'
 
 function CommentForm(props){
-    const {addComment, issueId} = props
-
-    const [comment, setComment] = useState('')
+    const {addOrEditComment, issueOrCommentId, commentBtnText, toggle, prevComment} = props
+    const [comment, setComment] = useState({comment: prevComment || ''})
 
     function handleChange(e){
         const {value} = e.target
-        setComment(value)
+        setComment({comment: value})
     }
 
     function handleSubmit(e){
         e.preventDefault()
-        addComment(issueId, comment)
+        addOrEditComment(issueOrCommentId, comment)
         setComment('')
+        toggle && toggle()
     }
 
     return(
         <div>
             <form onSubmit={handleSubmit}>
-                <input onChange={handleChange} type='text' value={comment}/>
-                <button>Comment</button>
+                <input onChange={handleChange} type='text' value={comment.comment}/>
+                <button>{commentBtnText}</button>
             </form>
         </div>
     )

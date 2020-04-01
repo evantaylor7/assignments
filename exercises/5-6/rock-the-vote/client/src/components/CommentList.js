@@ -3,15 +3,18 @@ import Comment from './Comment.js'
 import {UserContext} from '../context/UserProvider.js'
 
 function CommentList(){
-    const {comments} = useContext(UserContext)
+    const {comments, deleteComment, user: {username}, editComment} = useContext(UserContext)
 
     return(
         <div>
             {comments.map(comment => 
                 <Comment 
                     {...comment} 
+                    key={comment._id}
                     commentId={comment._id}
-                    user={comment.postedBy}
+                    deleteComment={deleteComment}
+                    user={username}
+                    editComment={editComment}
                 />
             )}
         </div>

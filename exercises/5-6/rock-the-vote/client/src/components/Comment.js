@@ -1,12 +1,38 @@
-import React from 'react'
+import React, {useState} from 'react'
+import CommentForm from './CommentForm.js'
 
 function Comment(props){
-    const {comment, commentId, user} = props
+    const {comment, commentId, postedBy, deleteComment, user, editComment} = props
+    const [toggle, setToggle] = useState(false)
+
+    function toggleEditComment(){
+        setToggle(prevToggle => !prevToggle)
+    }
 
     return(
-        <div key={commentId}>
-            <h3>@{user}</h3>
-            <p>{comment}</p>
+        <div>
+            <h3>@{postedBy}</h3>
+            {toggle ? 
+                <>
+                    <CommentForm 
+                        addOrEditComment={editComment} 
+                        commentBtnText='Save' 
+                        issueOrCommentId={commentId}
+                        toggle={toggleEditComment}
+                        prevComment={comment}
+                    />
+                </>
+                :
+                <>
+                    <p>{comment}</p>
+                </>
+            }
+            {user === postedBy &&
+                <>
+                    <button onClick={() => deleteComment(commentId)}>X</button>
+                    <button onClick={() => toggleEditComment()}>{toggle ? 'Cancel' : 'Edit'}</button>
+                </>
+            }
         </div>
     )
 }

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import {useHistory} from 'react-router-dom'
 
 export const UserContext = React.createContext()
 
@@ -16,7 +17,13 @@ export default function UserProvider(props){
         user: JSON.parse(localStorage.getItem('user')) || {},
         token: localStorage.getItem('token') || '',
         issues: [],
-        issueDetail: {},
+        issueDetail: {
+            title: '',
+            description: '',
+            votes: 0,
+            postedBy: '',
+            _id: ''
+        },
         comments: [],
         errMsg: '',
         voteErr: {
@@ -25,6 +32,8 @@ export default function UserProvider(props){
         }
     }
     const [userState, setUserState] = useState(initState)
+
+    const {goBack} = useHistory()
 
     useEffect(() => {
         sortListByVotes()
@@ -69,7 +78,14 @@ export default function UserProvider(props){
             user: {},
             token: '',
             issues: [],
-            comments: []
+            comments: [],
+            issueDetail: {
+                title: '',
+                description: '',
+                votes: 0,
+                postedBy: '',
+                _id: ''
+            },
         })
     }
 
@@ -139,6 +155,7 @@ export default function UserProvider(props){
                     ...prevUserState,
                     issues: prevUserState.issues.filter(issue => issue._id !== issueId)
                 }))
+                goBack()
             })
             .catch(err => console.log(err))
     }
@@ -221,11 +238,34 @@ export default function UserProvider(props){
     }
     
     function addComment(issueId, comment){
-        userAxios.post(`/api/comments/post/${issueId}`, {comment})
+        userAxios.post(`/api/comments/post/${issueId}`, comment)
             .then(res => {
                 setUserState(prevUserState => ({
                     ...prevUserState,
                     comments: [res.data, ...prevUserState.comments]
+                }))
+            })
+            .catch(err => console.log(err))
+    }
+
+    function deleteComment(commentId){
+        userAxios.delete(`/api/comments/${commentId}`)
+            .then(res => {
+                setUserState(prevUserState => ({
+                    ...prevUserState,
+                    comments: prevUserState.comments.filter(comment => comment._id !== commentId)
+                }))
+            })
+            .catch(err => console.log(err))
+    }
+
+    function editComment(commentId, updatedComment){
+        userAxios.put(`/api/comments/${commentId}`, updatedComment)
+            .then(res => {
+                setUserState(prevUserState => ({
+                    ...prevUserState,
+                    comments: prevUserState.comments.map(comment => (
+                        comment._id === commentId ? res.data : comment))
                 }))
             })
             .catch(err => console.log(err))
@@ -249,7 +289,9 @@ export default function UserProvider(props){
                     downvoteIssue,
                     deleteIssue,
                     getComments,
-                    addComment
+                    addComment,
+                    deleteComment,
+                    editComment
                 }}
             >
                 {props.children}
