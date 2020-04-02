@@ -16,8 +16,7 @@ function Issue(props){
             <span>Votes: {votes}</span>
             <Link to={`/issues/detail/${_id}`}>Comments</Link>
             {voteErr.issueId === _id && 
-                <p style={{color: 'red'}}>{voteErr.msg}</p>
-            }
+                <p style={{color: 'red'}}>{voteErr.msg}</p>}
         </div>
     )
 }

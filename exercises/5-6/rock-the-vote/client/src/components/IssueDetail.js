@@ -39,7 +39,6 @@ function IssueDetail(){
     }
 
     const [toggle, setToggle] = useState(false)
-    // issueDetail && () => const {title, description, votes, _id} = issueDetail
     
     return(
         <>

@@ -9,11 +9,11 @@ import ProtectedRoute from './components/ProtectedRoute.js'
 import {UserContext} from './context/UserProvider.js'
 
 function App(){
-    const {token, logout, getUserIssues} = useContext(UserContext)
+    const {token, logout} = useContext(UserContext)
 
     return(
         <div>
-            {token && <NavBar logout={logout} getUserIssues={getUserIssues}/>}
+            {token && <NavBar logout={logout}/>}
             <Switch>
                 <Route 
                     exact path='/' 
