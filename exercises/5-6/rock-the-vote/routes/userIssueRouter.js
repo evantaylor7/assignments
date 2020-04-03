@@ -28,7 +28,6 @@ userIssueRouter.get('/:issueId', (req, res, next) => {
 
 // post new issue
 userIssueRouter.post('/post', (req, res, next) => {
-    console.log(req)
     req.body.user = req.user._id
     req.body.postedBy = req.user.username
     const newIssue = new Issue(req.body)
@@ -43,7 +42,6 @@ userIssueRouter.post('/post', (req, res, next) => {
 
 // delete an issue
 userIssueRouter.delete('/:issueId', (req, res, next) => {
-    console.log(req.params.issueId)
     Issue.findOneAndDelete(
         {_id: req.params.issueId, user: req.user._id},
         (err, deletedIssue) => {
