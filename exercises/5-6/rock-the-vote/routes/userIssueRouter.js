@@ -4,12 +4,12 @@ const Issue = require('../models/issue.js')
 
 // get issues by user
 userIssueRouter.get('/user', (req, res, next) => {
-    Issue.find({user: req.user._id}, (err, posts) => {
+    Issue.find({user: req.user._id}, (err, issues) => {
         if(err){
             res.status(500)
             return next(err)
         }
-        return res.status(200).send(posts)
+        return res.status(200).send(issues)
     })
 })
 
@@ -17,12 +17,12 @@ userIssueRouter.get('/user', (req, res, next) => {
 userIssueRouter.get('/:issueId', (req, res, next) => {
     Issue.findOne(
         {_id: req.params.issueId}, 
-        (err, post) => {
+        (err, issue) => {
         if(err){
             res.status(500)
             return next(err)
         }
-        return res.status(200).send(post)
+        return res.status(200).send(issue)
     })
 })
 

@@ -45,9 +45,9 @@ function IssueDetail(){
             {issueDetail.title &&
                 <div key={_id}>
                     <br/>
-                    <button onClick={handleToggle}>{toggle ? 'Cancel' : 'Edit Issue'}</button>
                     {username === postedBy &&
                     <>
+                        <button onClick={handleToggle}>{toggle ? 'Cancel' : 'Edit Issue'}</button>
                         <button onClick={() => deleteIssue(issueId)}>Delete Issue</button>
                     </>}
                     {toggle ?

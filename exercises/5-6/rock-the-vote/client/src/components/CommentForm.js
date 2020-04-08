@@ -12,7 +12,7 @@ function CommentForm(props){
     function handleSubmit(e){
         e.preventDefault()
         addOrEditComment(issueOrCommentId, comment)
-        setComment('')
+        setComment({comment: ''})
         toggle && toggle()
     }
 
