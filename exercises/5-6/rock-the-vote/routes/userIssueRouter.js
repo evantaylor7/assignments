@@ -18,10 +18,10 @@ userIssueRouter.get('/:issueId', (req, res, next) => {
     Issue.findOne(
         {_id: req.params.issueId}, 
         (err, issue) => {
-        if(err){
-            res.status(500)
-            return next(err)
-        }
+            if(err){
+                res.status(500)
+                return next(err)
+            }
         return res.status(200).send(issue)
     })
 })
@@ -45,10 +45,10 @@ userIssueRouter.delete('/:issueId', (req, res, next) => {
     Issue.findOneAndDelete(
         {_id: req.params.issueId, user: req.user._id},
         (err, deletedIssue) => {
-        if(err){
-            res.status(500)
-            return next(err)
-        }
+            if(err){
+                res.status(500)
+                return next(err)
+            }
         return res.status(200).send(`Your issue \"${deletedIssue.title}\" was successfully deleted.`)
     })
 })
