@@ -34,10 +34,10 @@ commentRouter.delete('/:commentId', (req, res, next) => {
     Comment.findOneAndDelete(
         {_id: req.params.commentId, user: req.user._id},
         (err, comment) => {
-        if(err){
-            res.status(500)
-            return next(err)
-        }
+            if(err){
+                res.status(500)
+                return next(err)
+            }
         return res.status(200).send(`Your comment was successfully deleted.`)
     })
 })
