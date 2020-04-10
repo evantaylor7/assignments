@@ -226,8 +226,8 @@ export default function UserProvider(props){
     }
 
     // COMMENTS:
-    function getComments(_id){
-        userAxios.get(`/api/comments/${_id}`)
+    function getComments(issueId){
+        userAxios.get(`/api/comments/${issueId}`)
             .then(res => {
                 setUserState(prevUserState => ({
                     ...prevUserState,
