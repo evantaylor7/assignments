@@ -4,6 +4,7 @@ import {APIContext} from "../../APIContext"
 
 function Home(){
     const {theme} = useContext(APIContext)
+    
     return(
         <div className={`${theme} content title-page`}>
             <h1><i>welcome to</i></h1><br/>

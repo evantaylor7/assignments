@@ -12,6 +12,7 @@ import {APIContext} from "./APIContext"
 
 function App(){
     const {theme} = useContext(APIContext)
+    
     return(
         <div className={`${theme} page-container`}>
             <Navbar />

@@ -20,6 +20,7 @@ function Browse(){
 
     const book = bookData && bookData.map(item => {
         let authors = item.volumeInfo.authors && item.volumeInfo.authors.join(", ")
+
         return (
             <div className={`${theme}-book-container book-container`} key={item.id}>
                 <Link className="book-link" to={`/book/${item.id}`}>
@@ -43,7 +44,7 @@ function Browse(){
         )
     })
 
-    return(
+    return (
         <div className="content browse-page">
             <form className={`${theme}-search-form search-form`} onSubmit={e => e.preventDefault()}>
                 <h3 className="search-by">Search by title/author/keyword:</h3>

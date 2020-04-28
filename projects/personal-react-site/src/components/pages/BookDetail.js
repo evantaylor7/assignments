@@ -8,6 +8,7 @@ function BookDetail(){
     const {bookData, handleUnread, handleRead, theme} = useContext(APIContext)
     const thisBook = bookData.find(book => book.id === bookId) 
     let authors = thisBook && thisBook.volumeInfo.authors && thisBook.volumeInfo.authors.join(", ")
+    
     return(
         <div className={`content book-detail`}>
             {thisBook && 

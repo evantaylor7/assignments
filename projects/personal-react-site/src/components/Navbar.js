@@ -5,6 +5,7 @@ import {APIContext} from "../APIContext"
 
 function Navbar(props){
     const {theme} = useContext(APIContext)
+    
     return(
         <div className={`${theme}-nav`}>
             <Link 
@@ -23,7 +24,7 @@ function Navbar(props){
                 className={props.location.pathname === "/saved/read" || props.location.pathname === "/saved/unread" ? "nav-selected" : `${theme} ${theme}-element nav-element`} 
                 to="/saved/read"
             >
-            Saved
+            My Books
             </Link>
             <Link 
                 className={`${theme} ${theme}-element nav-title` }
