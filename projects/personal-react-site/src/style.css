@@ -85,6 +85,7 @@ button {
 
 .theme-button {
     height: 30px;
+    width: 140px;
     font-size: 15pt;
     color: darkcyan;
     background-color: rgb(41, 41, 41);
@@ -111,7 +112,7 @@ button {
 .start-button {
     margin: auto;
     height: 40px;
-    width: 130px;
+    width: 150px;
     font-size: 18pt;
     margin-top: 35px;
     color: darkcyan;
@@ -360,12 +361,14 @@ button {
 
 @media only screen and (max-width: 700px){
     .light-nav, .dark-nav {
-        grid-template-columns: repeat(4, 1fr);
+        display: flex;
+        justify-content: space-between;
+        padding-left: 4px
     }
 
     .nav-title {
         grid-column: 4 / -1;
-        margin-right: 0
+        margin-right: 8px
     }
 
     .detail-right {
@@ -418,6 +421,7 @@ button {
 
     .theme-button, .dark-theme-button {
         margin-top: -5px;
+        margin-left: -10px;
         grid-column: 2 / -1;
     }
 }
@@ -456,7 +460,8 @@ button {
     }
 
     .theme-button, .dark-theme-button {
-        font-size: 12pt
+        font-size: 12pt;
+        width: 120px
     }
 }
 
@@ -496,7 +501,9 @@ button {
     }
 
     .theme-button, .dark-theme-button {
-        font-size: 11pt
+        font-size: 11pt;
+        width: 110px;
+        margin-left: -2px
     }
 }
 
@@ -507,16 +514,11 @@ button {
 }
 
 @media only screen and (max-width: 400px){
-    .light-nav, .dark-nav {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
     .title {
         font-size: 42pt;
     }
 
     .nav-title {
-        grid-column: 4 / -1;
         text-decoration: underline;
     }
 
