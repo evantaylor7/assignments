@@ -5,13 +5,24 @@ import {APIContext} from "../../../APIContext"
 
 function SavedPagesNav(props){
     const {theme} = useContext(APIContext)
+    const {location: {pathname}} = props
 
     return(
         <div className={`${theme}-search-form saved-nav`}>
             <h2>Collections:</h2><br/>
-            <Link className={props.location.pathname === "/saved/unread" ? "saved-selected" : `${theme}-saved-link saved-link`} to="/saved/unread">Want to Read</Link>
+            <Link 
+                className={pathname === "/saved/unread" ? "saved-selected" : `${theme}-saved-link saved-link`} 
+                to="/saved/unread"
+            >
+                Want to Read
+            </Link>
             <br/><br/>
-            <Link className={props.location.pathname === "/saved/read" ? "saved-selected" : `${theme}-saved-link saved-link`} to="/saved/read">Read</Link>
+            <Link 
+                className={pathname === "/saved/read" ? "saved-selected" : `${theme}-saved-link saved-link`} 
+                to="/saved/read"
+            >
+                Read
+            </Link>
         </div>
     )
 }

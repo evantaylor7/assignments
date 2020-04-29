@@ -16,7 +16,7 @@ button {
     background-color: rgb(230, 230, 230);
     display: grid;
     position: fixed;
-    grid-template-columns: 1fr 1fr 1fr 5fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 4fr 1fr;
     text-align: center;
     height: 40px;
     width: 100%;
@@ -80,8 +80,7 @@ button {
 
 .signature {
     color: rgb(139, 139, 139);
-    font-size: 8pt;
-    /* padding-bottom: 10px */
+    font-size: 8pt
 }
 
 .theme-button {
@@ -109,7 +108,7 @@ button {
     color: rgb(70, 70, 70);
 }
 
-.start-button{
+.start-button {
     margin: auto;
     height: 40px;
     width: 130px;
@@ -169,7 +168,6 @@ button {
     padding: 10px;
     background-color: whitesmoke;
     color: rgb(70, 70, 70);
-    /* max-height: 400px */
 }
 
 .book-link {
@@ -182,12 +180,17 @@ button {
     transition: color .5s
 }
 
-.title-elements {
-    margin: 5px
-}
-
 .book-title:hover {
     color: darkcyan
+}
+
+.title-elements {
+    margin: 5px  
+}
+
+.book-titles {
+    max-height: 110px;
+    overflow: scroll;
 }
 
 /* detail page */
@@ -274,7 +277,7 @@ button {
     background-color: black;
     display: grid;
     position: fixed;
-    grid-template-columns: 1fr 1fr 1fr 5fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 4fr 1fr;
     text-align: center;
     height: 40px;
     width: 100%;
@@ -343,7 +346,7 @@ button {
 
 @media only screen and (max-width: 1062px){
     .light-nav, .dark-nav {
-        grid-template-columns: 1fr 1fr 1fr 2fr 1fr;
+        grid-template-columns: repeat(5, 1fr);
     }
 
     .book-page {
@@ -357,7 +360,12 @@ button {
 
 @media only screen and (max-width: 700px){
     .light-nav, .dark-nav {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .nav-title {
+        grid-column: 4 / -1;
+        margin-right: 0
     }
 
     .detail-right {
@@ -366,11 +374,19 @@ button {
 
     .browse-page {
         display: inline-block;
-        margin: 10px 100px;
+        width: 100%;
+        padding-bottom: 100px
     }
 
     .search-form {
         height: 200px;
+    }
+
+    .page-change-container {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        margin-left: -84px
     }
 
     .saved-page {
@@ -382,12 +398,27 @@ button {
         width: 88vw;
     }
 
+    .light-footer, .dark-footer {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: auto 140px;
+    }
+
     .footer-text {
-        float: left
+        float: left;
+        grid-column: 1 / 2;
+        margin: 0
+    }
+
+    .signature {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        margin-top: -8px
     }
 
     .theme-button, .dark-theme-button {
-        margin-top: -5px
+        margin-top: -5px;
+        grid-column: 2 / -1;
     }
 }
 
@@ -403,13 +434,25 @@ button {
     .browse-page {
         margin: 0
     }
+
+    .search-form {
+        margin: auto
+    }
     
     .detail-right {
         width: 300px
     }
 
+    .light-footer, .dark-footer {
+        grid-template-columns: auto 120px;
+    }
+
     .footer-text {
-        font-size: 11pt
+        font-size: 10pt
+    }
+
+    .signature {
+        font-size: 7pt
     }
 
     .theme-button, .dark-theme-button {
@@ -444,8 +487,12 @@ button {
         width: 85vw;
     }
 
+    .light-footer, .dark-footer {
+        grid-template-columns: auto 110px;
+    }
+
     .footer-text {
-        font-size: 10pt
+        font-size: 9pt
     }
 
     .theme-button, .dark-theme-button {
@@ -454,13 +501,8 @@ button {
 }
 
 @media only screen and (max-width: 460px){
-    .light-footer, .dark-footer {
-        display: block;
-        padding-bottom: 40px;
-    }
-    
     .footer-text {
-        margin: 10px;
+        font-size: 8pt
     }
 }
 
@@ -473,20 +515,39 @@ button {
         font-size: 42pt;
     }
 
-    .nav-title{
+    .nav-title {
         grid-column: 4 / -1;
         text-decoration: underline;
     }
 
     .nav-title, .nav-element, .nav-selected {
-        font-size: 14pt
+        font-size: 13pt
     }
 
     .saved-nav {
         width: 80vw;
     }
 
+    .light-footer, .dark-footer {
+        padding-bottom: 20px
+    }
+
     .footer-text {
-        font-size: 11px
+        font-size: 11px;
+        margin: 0 3px
+    }
+
+    .signature {
+        margin-top: -10
+    }
+
+    .theme-button, .dark-theme-button {
+        margin-top: 2px
+    }
+}
+
+@media only screen and (max-width: 360px){
+    .nav-title, .nav-element, .nav-selected {
+        font-size: 12pt
     }
 }

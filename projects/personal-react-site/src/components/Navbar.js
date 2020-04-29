@@ -22,7 +22,7 @@ function Navbar(props){
             </Link>
             <Link 
                 className={props.location.pathname === "/saved/read" || props.location.pathname === "/saved/unread" ? "nav-selected" : `${theme} ${theme}-element nav-element`} 
-                to="/saved/read"
+                to="/saved/unread"
             >
             My Books
             </Link>

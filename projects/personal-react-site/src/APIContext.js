@@ -6,122 +6,120 @@ dotENV.config()
 export const APIContext = React.createContext()
 
 export default function APIContextProvider(props){
-    const [bookData, setBookData] = useState([])
-    const [search, setSearch] = useState(localStorage.getItem("search") || "")
-    const [genre, setGenre] = useState("")
-    const [sort, setSort] = useState("")
-    const [page, setPage] = useState(0)
-    const [lastPage, setLastPage] = useState(0)
-    const [read, setRead] = useState([])
-    const [unread, setUnread] = useState([])
-    const [theme, setTheme] = useState("light")
-    // const [inputs, setInputs] = useState({
-    //     search: '',
-    //     genre: '',
-    //     sort: '',
-    //     theme: ''
-    // })
+    const initialInputs = {
+        bookData: [],
+        search: localStorage.getItem('search') || "",
+        genre: "",
+        sort: "",
+        page: 0,
+        read: [],
+        unread: [],
+        theme: "light"
+    }
+    const [inputs, setInputs] = useState(initialInputs)
+    const {search, genre, sort, page} = inputs
 
-    // setInputs(prev => {
-    //     return {
-    //         ...prev,
-    //         genre: 'new category'
-    //     }
-    // })
     const apiKey = process.env.REACT_APP_API_KEY
 
     useEffect(() => {
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=${search}${genre}${sort}&key=${apiKey}&startIndex=${page}&maxResults=12`)
-            .then(response => response.data)
-            .then(data => {
-                setBookData(data.items)
-                setLastPage(data.totalItems)
+            .then(response => {
+                setInputs(prevInputs => ({
+                    ...prevInputs,
+                    bookData: response.data.items
+                }))
+                setInputs(prevInputs => ({
+                    ...prevInputs,
+                    lastPage: response.data.totalItems
+                }))
             })
     }, [search, genre, sort, page, apiKey])
-    
-    // useEffect(() => {
-    //     return () => {
-    //       setSearch("")
-    //     };
-    //   }, [search])
 
     function searchChange(e){
         const value = e.target.value
         localStorage.setItem("search", value)
-        setSearch(value)
+        setInputs(prevInputs => ({
+            ...prevInputs,
+            search: value,
+            page: 0
+        }))
     }
 
     function genreChange(e){
         const value = e.target.value
-        setGenre(value)
+        setInputs(prevInputs => ({
+            ...prevInputs,
+            genre: value
+        }))
     }
 
     function sortChange(e){
         const value = e.target.value
-        setSort(value)
+        setInputs(prevInputs => ({
+            ...prevInputs,
+            sort: value
+        }))
     }
 
     function handlePageChange(e){
         window.scrollTo(0, 0)
-        setPage(prevPage => {
-            if(e === "decrement"){
-                return prevPage - 12
-            } else if(e === "increment"){
-                return prevPage += 12
-            } else{
-                return 0
-            }
-        })
+        setInputs(prevInputs => ({
+            ...prevInputs,
+            page: e === "decrement" ? prevInputs.page - 12 : e === "increment" ? prevInputs.page += 12 : 0
+        }))
     }
 
     function handleRead(item){
-        const thisBook = read.find(book => book.id === item.id) 
+        const thisBook = inputs.read.find(book => book.id === item.id) 
         if(thisBook){
             alert("Already saved in 'read'!")
         } else {
             alert("Book saved in 'read'!")
-            setRead([...read, item])
+            setInputs(prevInputs => ({
+                ...prevInputs,
+                read: [...prevInputs.read, item]
+            }))
         }
     }
 
     function handleUnread(item){
-        const thisBook = unread.find(book => book.id === item.id) 
+        const thisBook = inputs.unread.find(book => book.id === item.id) 
         if(thisBook){
             alert("Already saved in 'want to read'!")
         } else {
             alert("Book saved in 'want to read'!")
-            setUnread([...unread, item])
+            setInputs(prevInputs => ({
+                ...prevInputs,
+                unread: [...prevInputs.unread, item]
+            }))
         }
     }
 
     function handleDeleteRead(item){
-        setRead(read.filter(book => {
-            return book.id !== item.id
+        setInputs(prevInputs => ({
+            ...prevInputs,
+            read: prevInputs.read.filter(book => book.id !== item.id)
         }))
     }
 
     function handleDeleteUnread(item){
-        setUnread(unread.filter(book => {
-            return book.id !== item.id
+        setInputs(prevInputs => ({
+            ...prevInputs,
+            unread: prevInputs.unread.filter(book => book.id !== item.id)
         }))
     }
 
     function switchTheme(){
-        setTheme(prevTheme => prevTheme === "light" ? "dark" : "light")
+        setInputs(prevInputs => ({
+            ...prevInputs,
+            theme: prevInputs.theme === "light" ? "dark" : "light"
+        }))
     }
 
     return(
         <APIContext.Provider value=
             {{
-            bookData, 
-            search, 
-            genre, 
-            sort, 
-            page, 
-            lastPage,
-            read, 
-            unread,
-            theme,
+            ...inputs,
             searchChange, 
             genreChange, 
             sortChange, 
