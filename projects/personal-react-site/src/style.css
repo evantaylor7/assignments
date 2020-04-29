@@ -371,6 +371,10 @@ button {
         margin-right: 8px
     }
 
+    .start-button {
+        font-size: 16pt;
+    }
+
     .detail-right {
         width: 400px
     }
@@ -420,6 +424,7 @@ button {
     }
 
     .theme-button, .dark-theme-button {
+        font-size: 12pt;
         margin-top: -5px;
         margin-left: -10px;
         grid-column: 2 / -1;
@@ -460,7 +465,7 @@ button {
     }
 
     .theme-button, .dark-theme-button {
-        font-size: 12pt;
+        font-size: 10pt;
         width: 120px
     }
 }
@@ -501,7 +506,6 @@ button {
     }
 
     .theme-button, .dark-theme-button {
-        font-size: 11pt;
         width: 110px;
         margin-left: -2px
     }
