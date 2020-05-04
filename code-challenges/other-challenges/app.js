@@ -140,4 +140,29 @@ function vowelsOnly(str){
     return vowels
 }
 
-console.log(vowelsOnly("hello world")) //=> "eoo"
+// console.log(vowelsOnly("hello world")) //=> "eoo"
+
+
+// 5/4/20
+// Given an array of integers, find the pair of adjacent elements that has the largest product and return that  product. For inputArray = [3, 6, -2, -5, 7, 3], the output should be adjacentElementsProduct(inputArray) = 21. 7 and 3 produce the largest product.
+
+const adjacentElementsProduct = numArr => {
+    // define new array
+    let productsArr = []
+    // iterate through array
+    for(let i = 0; i < numArr.length - 1; i++){
+        // multiply adjacent numbers together and add them to new array
+        productsArr.push(numArr[i] * numArr[i + 1])
+    }
+    // filter out largest number and return it
+    return Math.max(...productsArr)
+}
+
+// Tests:
+console.log(adjacentElementsProduct([3, 6, -2, -5, 7, 3])) // => 21
+console.log(adjacentElementsProduct([-1, -2])) // => 2
+console.log(adjacentElementsProduct([5, 1, 2, 3, 1, 4])) // => 6
+console.log(adjacentElementsProduct([1, 2, 3, 0])) // => 6
+console.log(adjacentElementsProduct([9, 5, 10, 2, 24, -1, -48])) // => 50
+console.log(adjacentElementsProduct([5, 6, -4, 2, 3, 2, -23])) // => 30
+console.log(adjacentElementsProduct([-23, 4, -3, 8, -12])) // => -12
