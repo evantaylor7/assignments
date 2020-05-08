@@ -200,9 +200,20 @@ function parseUrl(url){
     return queryObj
 }
 
-console.log(parseUrl("http://localhost:8080/monkeys?color=black&species=howler"))
+// console.log(parseUrl("http://localhost:8080/monkeys?color=black&species=howler"))
+
 // returns
 // {
 //     color: "black",
 //     species: "howler"
 // }
+
+
+// randomizing an array:
+// myArr = [1, 2, 3, 4, 5, 6, 7]
+const myArr = ['hey', 'yeah', 'third', 'fourth'].sort(() => Math.random() - 0.5)
+console.log(myArr)
+
+// const shuffle = array => array.sort(() => Math.random() - 0.5)
+
+// console.log(shuffle(myArr))
