@@ -159,10 +159,50 @@ const adjacentElementsProduct = numArr => {
 }
 
 // Tests:
-console.log(adjacentElementsProduct([3, 6, -2, -5, 7, 3])) // => 21
-console.log(adjacentElementsProduct([-1, -2])) // => 2
-console.log(adjacentElementsProduct([5, 1, 2, 3, 1, 4])) // => 6
-console.log(adjacentElementsProduct([1, 2, 3, 0])) // => 6
-console.log(adjacentElementsProduct([9, 5, 10, 2, 24, -1, -48])) // => 50
-console.log(adjacentElementsProduct([5, 6, -4, 2, 3, 2, -23])) // => 30
-console.log(adjacentElementsProduct([-23, 4, -3, 8, -12])) // => -12
+// console.log(adjacentElementsProduct([3, 6, -2, -5, 7, 3])) // => 21
+// console.log(adjacentElementsProduct([-1, -2])) // => 2
+// console.log(adjacentElementsProduct([5, 1, 2, 3, 1, 4])) // => 6
+// console.log(adjacentElementsProduct([1, 2, 3, 0])) // => 6
+// console.log(adjacentElementsProduct([9, 5, 10, 2, 24, -1, -48])) // => 50
+// console.log(adjacentElementsProduct([5, 6, -4, 2, 3, 2, -23])) // => 30
+// console.log(adjacentElementsProduct([-23, 4, -3, 8, -12])) // => -12
+
+
+// 5/8/20
+// Write a function that takes a string URL and a query object and returns the URL with a query string added.
+
+function stringifyUrl(url, query){
+    const keys = Object.keys(query)
+    const values = Object.values(query)
+    const queryString = keys.map((key, i) => `${key}=${values[i]}`).join('&')
+    return `${url}?${queryString}`
+}
+
+const url = "http://localhost:8080/monkeys"
+const query = {
+    color: "black",
+    species: "howler"
+}
+
+// console.log(stringifyUrl(url, query)) 
+// returns "http://localhost:8080/monkeys?color=black&species=howler"
+
+// Extra credit:
+// Write a function that does the opposite from above: given a valid URL with a query string attached, return a query object.
+
+function parseUrl(url){
+    const query = url.split('?')[1].split('&')
+    let queryObj = {}
+    for(let i = 0; i < query.length; i++){
+        const keyValue = query[i].split('=')
+        queryObj[keyValue[0]] = `${keyValue[1]}`
+    }
+    return queryObj
+}
+
+console.log(parseUrl("http://localhost:8080/monkeys?color=black&species=howler"))
+// returns
+// {
+//     color: "black",
+//     species: "howler"
+// }
