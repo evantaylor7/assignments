@@ -23,21 +23,19 @@ class UglyCard extends React.Component{
     }
 
     render(){
-        const {title, url, description, showEdit, handleDelete, handleEdit, _id} = this.props
+        const {title, url, description, handleDelete, handleEdit, _id} = this.props
         return(
             <div className="uglyCard">
                 <h1>{title}</h1>
                 <img src={`${url}`}/>
                 <p>{description}</p>
                 <br/>
-                <button onClick={() => this.editToggle(_id)}>{showEdit ? "Close" : "Edit"}</button>
+                <button onClick={() => this.editToggle()}>{this.state.showEdit ? "Close" : "Edit"}</button>
                 <form style={{display: this.state.showEdit ? 'block' : 'none'}} onSubmit={(e) => {
                     handleEdit(e, _id, this.state)
                     this.editToggle()
                 }}
                 >
-                {/* what I had previously: */}
-                {/* style={showEdit ? {display: "none"} : {display: "block"}} */}
                     <label>Title:</label>
                     <input 
                         value={this.state.title}

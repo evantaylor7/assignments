@@ -40,17 +40,10 @@ class ListContext extends React.Component {
             <Provider 
                 value={{
                     ...this.state,
-                    // what I had previously:
-                    // title: this.state.title, 
-                    // url: this.state.url, 
-                    // description: this.state.description,
-                    // savedCards: this.state.savedCards,
                     handleSubmit: this.handleSubmit,
                     handleChange: this.handleChange,
                     handleDelete: this.handleDelete,
-                    // editToggle: this.editToggle,
                     handleEdit: this.handleEdit
-                    // showEdit: this.showEdit
                 }}>
                 {this.props.children}
             </Provider>
