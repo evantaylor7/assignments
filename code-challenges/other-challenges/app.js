@@ -212,8 +212,46 @@ function parseUrl(url){
 // randomizing an array:
 // myArr = [1, 2, 3, 4, 5, 6, 7]
 const myArr = ['hey', 'yeah', 'third', 'fourth'].sort(() => Math.random() - 0.5)
-console.log(myArr)
+// console.log(myArr)
 
 // const shuffle = array => array.sort(() => Math.random() - 0.5)
 
 // console.log(shuffle(myArr))
+
+
+// 5/15/20
+// Write your own Math.max() function
+// Math.max() is a function that can take any amount of number arguments and will return the largest:
+    // Ex: Math.max(10, 20, 30, 40, 0, 100) // returns 100
+    // Ex: Math.max(10) // returns 10
+
+function myMathMax(...arr){
+    let max = arr[0]
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] > max){
+            max = arr[i]
+        }
+    }
+    return max
+}
+
+// Test cases:
+console.log(myMathMax(20, 300, 30, 10)) // should return 300
+console.log(myMathMax(100)) // should return 100
+// Extra: Write the Math.min() function!
+
+function myMathMin(...arr){
+    let min = arr[0]
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] < min){
+            min = arr[i]
+        }
+    }
+    return min
+}
+
+console.log(myMathMin(20, 300, 30, 10)) // should return 10
+console.log(myMathMin(100)) // should return 100
+console.log(myMathMin(-20, -10, 40, 12)) // should return -20
+
+// Extra Extra:  Can you do it without a rest operator?
