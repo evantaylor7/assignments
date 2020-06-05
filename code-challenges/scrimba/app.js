@@ -39,7 +39,107 @@ function addTwoDigits(num)  {
     return sum
 }
 
-console.log(addTwoDigits(29)) // --> 11
-console.log(addTwoDigits(295)) // --> 16
-console.log(addTwoDigits(85)) // --> 13
-console.log(addTwoDigits(4758992)) // --> 44
+// console.log(addTwoDigits(29)) // --> 11
+// console.log(addTwoDigits(295)) // --> 16
+// console.log(addTwoDigits(85)) // --> 13
+// console.log(addTwoDigits(4758992)) // --> 44
+
+
+// DAY 3: 
+// given an array of numbers, return the first duplicate in the set. if there are no duplicates return -1
+// ex: [3, 7, 3, 5, 8, 2, 7] should return 3, [5, 2, 4, 3, 2, 5] should return 2
+
+function firstDuplicate(nums) {
+    const checkedNums = []
+    const firstDup = []
+    for(let i = 0; i < nums.length; i++){
+        if(checkedNums.includes(nums[i])){
+            firstDup.push(nums[i])
+        }
+        checkedNums.push(nums[i])
+    }
+    if(firstDup.length > 0){
+        return firstDup[0]
+    } else {
+        return -1
+    }
+}
+
+// console.log(firstDuplicate([3, 7, 3, 5, 8, 2, 7])) // --> 3
+// console.log(firstDuplicate([5, 2, 4, 3, 2, 5])) // --> 2
+// console.log(firstDuplicate([2, 1, 3, 5, 3, 2])) // --> 3
+// console.log(firstDuplicate([2, 1, 3, 5, 4, 6])) // --> -1
+
+// better solution (cleaner, less code):
+function firstDuplicate2(nums) {
+    const firstDup = []
+    for(let i = 0; i < nums.length; i++){
+        if(firstDup.includes(nums[i])){
+            return nums[i]
+        } else {
+            firstDup.push(nums[i])
+        }
+    }
+    return -1
+}
+
+// console.log(firstDuplicate2([3, 7, 3, 5, 8, 2, 7])) // --> 3
+// console.log(firstDuplicate2([5, 2, 4, 3, 2, 5])) // --> 2
+// console.log(firstDuplicate2([2, 1, 3, 5, 3, 2])) // --> 3
+// console.log(firstDuplicate2([2, 1, 3, 5, 4, 6])) // --> -1
+
+
+// DAY 4:
+// sum all the prime numbers, up to and including the provided number
+// 10 should return 17, 977 should return 72179
+
+function sumAllPrimes(num) {
+    let primesTotal = 0
+    for(let i = 2; i < num; i++){
+        for(let j = 2; j <= i; j++){
+            if(i === j){
+                primesTotal += i
+            }
+            if(i % j === 0){
+                break
+            }
+        }
+    }
+    return primesTotal
+}
+
+// console.log(sumAllPrimes(10)) // --> 17
+// console.log(sumAllPrimes(977)) // --> 72179
+
+
+// DAY 5:
+// check if all digits of the given number are even
+// 248622 should return true, 642386 should return false
+
+function evenDigitsOnly(number) {
+    const splitNum = number.toString().split('')
+    for(let i = 0; i < splitNum.length; i++){
+        if(splitNum[i] % 2 !== 0){
+            return false
+        }
+    }
+    return true
+}
+
+// console.log(evenDigitsOnly(248622)) // --> true
+// console.log(evenDigitsOnly(642386)) // --> false
+
+// alternate solution using every() and parseInt()
+function evenDigitsOnly2(number){
+    const splitNum = number.toString().split('')
+    return splitNum.every(num => parseInt(num) % 2 === 0)
+}
+
+// console.log(evenDigitsOnly2(248622)) // --> true
+// console.log(evenDigitsOnly2(642386)) // --> false
+
+// super elegant one liner:
+const evenDigitsOnly3 = number => number.toString().split('').every(num => parseInt(num) % 2 === 0)
+
+console.log(evenDigitsOnly3(248622)) // --> true
+console.log(evenDigitsOnly3(642386)) // --> false
