@@ -141,5 +141,25 @@ function evenDigitsOnly2(number){
 // super elegant one liner:
 const evenDigitsOnly3 = number => number.toString().split('').every(num => parseInt(num) % 2 === 0)
 
-console.log(evenDigitsOnly3(248622)) // --> true
-console.log(evenDigitsOnly3(642386)) // --> false
+// console.log(evenDigitsOnly3(248622)) // --> true
+// console.log(evenDigitsOnly3(642386)) // --> false
+
+
+// DAY 6:
+// given an array of numbers, return the count of numbers that are missing from a consecutive list
+// [6, 2, 3, 8] should return 3, [7, 9, 4, 2] should return 4
+
+function makeArrayConsecutive(nums) {
+    let missingNums = 0
+    const sortedNums = nums.sort((a, b) => a - b)
+    for(let i = 0; i < sortedNums.length - 1; i++){
+        const difference = nums[i + 1] - nums[i]
+        if(difference > 1){
+            missingNums += difference - 1
+        }
+    }
+    return missingNums
+}
+
+console.log(makeArrayConsecutive([6, 2, 3, 8])) // --> 3
+console.log(makeArrayConsecutive([7, 9, 4, 2])) // --> 4
