@@ -161,5 +161,20 @@ function makeArrayConsecutive(nums) {
     return missingNums
 }
 
-console.log(makeArrayConsecutive([6, 2, 3, 8])) // --> 3
-console.log(makeArrayConsecutive([7, 9, 4, 2])) // --> 4
+// console.log(makeArrayConsecutive([6, 2, 3, 8])) // --> 3
+// console.log(makeArrayConsecutive([7, 9, 4, 2])) // --> 4
+
+
+// DAY 7:
+// return the given string with the correct capitalization for a proper noun: first letter uppercase and the rest of the letters lowercase. 'pARiS' should return 'Paris', 'John' should return 'John'
+
+function properNounCorrection(str) {
+    newStr = str.toLowerCase().split('')
+    const firstLetter = newStr[0].toUpperCase()
+    newStr.splice(0, 1, firstLetter)
+    return newStr.join('')
+}
+
+console.log(properNounCorrection('pARiS')) // --> 'Paris'
+console.log(properNounCorrection('John')) // --> 'John'
+console.log(properNounCorrection('jACObsON')) // --> 'Jacobson'
