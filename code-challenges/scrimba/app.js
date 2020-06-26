@@ -175,6 +175,22 @@ function properNounCorrection(str) {
     return newStr.join('')
 }
 
-console.log(properNounCorrection('pARiS')) // --> 'Paris'
-console.log(properNounCorrection('John')) // --> 'John'
-console.log(properNounCorrection('jACObsON')) // --> 'Jacobson'
+// console.log(properNounCorrection('pARiS')) // --> 'Paris'
+// console.log(properNounCorrection('John')) // --> 'John'
+// console.log(properNounCorrection('jACObsON')) // --> 'Jacobson'
+
+
+
+// JAVASCRIPT 10-DAY CHALLENGE! (scrimba JS challenges part 2) -->
+// DAY 1:
+// Write a functions that returns the sum of all numbers regardless of the number of parameters.
+
+function add(param1, param2, ...rest) {
+    const params = [param1, param2, ...rest]
+    let sum = 0
+    params.forEach(param => sum += param)
+    return sum
+}
+
+console.log(add(4, 2, 3)) // --> 9
+console.log(add(1, 5, 3, 2, 6)) // --> 17
