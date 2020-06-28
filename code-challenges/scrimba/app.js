@@ -192,5 +192,44 @@ function add(param1, param2, ...rest) {
     return sum
 }
 
-console.log(add(4, 2, 3)) // --> 9
-console.log(add(1, 5, 3, 2, 6)) // --> 17
+// console.log(add(4, 2, 3)) // --> 9
+// console.log(add(1, 5, 3, 2, 6)) // --> 17
+
+
+// DAY 2:
+// Given an array of strings, return another array with the longest strings
+
+function allLongestStrings(array) {
+    let longestLength = 0
+    for(let i = 0; i < array.length; i++){
+        if(array[i].length > longestLength){
+            longestLength = array[i].length
+        }
+    }
+    return array.filter(str => str.length === longestLength)
+}
+
+// console.log(allLongestStrings(["aba", "aa", "ad", "vcd", "aba", "a"])) // ['aba', 'vcd', 'aba']
+// console.log(allLongestStrings(["sjdj", "d", "asdf", "as", "ds", "fkfj"])) // ['sjdj', 'asdf', 'fkfj']
+
+
+// DAY 3:
+// Given an array of numbers, return an array of the sum of evenly indexed numbers (i = 0/2/4) and the sum of oddly indexed numbers (i = 1/3/5). ex: [50, 60, 60, 45, 70] should return [180, 105].
+
+function alternatingSums(array) {
+    evensIndexSum = 0
+    oddsIndexSum = 0
+    for(let i = 0; i < array.length; i++){
+        if(i % 2 === 0){
+            evensIndexSum += array[i]
+        } else {
+            oddsIndexSum += array[i]
+        }
+    }
+    let finalArray = []
+    finalArray.push(evensIndexSum, oddsIndexSum)
+    return finalArray
+}
+
+console.log(alternatingSums([50, 60, 60, 45, 70])) // [180, 105]
+console.log(alternatingSums([3, 5, 2, 4, 3, 9, 6])) // [14, 18]
