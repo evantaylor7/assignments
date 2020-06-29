@@ -226,10 +226,20 @@ function alternatingSums(array) {
             oddsIndexSum += array[i]
         }
     }
-    let finalArray = []
-    finalArray.push(evensIndexSum, oddsIndexSum)
-    return finalArray
+    return [evensIndexSum, oddsIndexSum]
 }
 
-console.log(alternatingSums([50, 60, 60, 45, 70])) // [180, 105]
-console.log(alternatingSums([3, 5, 2, 4, 3, 9, 6])) // [14, 18]
+// console.log(alternatingSums([50, 60, 60, 45, 70])) // [180, 105]
+// console.log(alternatingSums([3, 5, 2, 4, 3, 9, 6])) // [14, 18]
+
+
+// DAY 4:
+// Given an array of integers, replace all occurances of elemToReplace with substitutionElem.
+// ex: For inputArray = [1, 2, 1], elemToReplace = 1 and substitutionElem = 3, the output should be arrayReplace(inputArray, elemToReplace, substitutionElem) = [3, 2, 3]
+
+function arrayReplace(array, elemToReplace, substitutionElem) {
+    return array.map(num => num === elemToReplace ? substitutionElem : num)
+}
+
+console.log(arrayReplace([1, 2, 1], 1, 3)) // --> [3, 2, 3]
+console.log(arrayReplace([3, 6, 4], 4, 9)) // --> [3, 6, 9]
