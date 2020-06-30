@@ -241,5 +241,16 @@ function arrayReplace(array, elemToReplace, substitutionElem) {
     return array.map(num => num === elemToReplace ? substitutionElem : num)
 }
 
-console.log(arrayReplace([1, 2, 1], 1, 3)) // --> [3, 2, 3]
-console.log(arrayReplace([3, 6, 4], 4, 9)) // --> [3, 6, 9]
+// console.log(arrayReplace([1, 2, 1], 1, 3)) // --> [3, 2, 3]
+// console.log(arrayReplace([3, 6, 4], 4, 9)) // --> [3, 6, 9]
+
+
+// DAY 5:
+// Case insensitive palindrome: given a string, check if it can become a palindrome after case change.
+
+function caseInsensitivePalindrome(str) {
+    return str.toLowerCase() === str.toLowerCase().split('').reverse().join('')
+}
+
+console.log(caseInsensitivePalindrome('AaBaa')) // --> true
+console.log(caseInsensitivePalindrome('abac')) // --> false
