@@ -252,5 +252,16 @@ function caseInsensitivePalindrome(str) {
     return str.toLowerCase() === str.toLowerCase().split('').reverse().join('')
 }
 
-console.log(caseInsensitivePalindrome('AaBaa')) // --> true
-console.log(caseInsensitivePalindrome('abac')) // --> false
+// console.log(caseInsensitivePalindrome('AaBaa')) // --> true
+// console.log(caseInsensitivePalindrome('abac')) // --> false
+
+
+// DAY 6:
+// given a string, enclose it in parenthesis 
+
+function encloseInBrackets(str) {
+    // return '(' + str + ')'
+    return `(${str})`
+}
+
+console.log(encloseInBrackets('Yo')) // --> '(Yo)'
