@@ -260,8 +260,26 @@ function caseInsensitivePalindrome(str) {
 // given a string, enclose it in parenthesis 
 
 function encloseInBrackets(str) {
-    // return '(' + str + ')'
-    return `(${str})`
+    const solution1 = '(' + str + ')'
+    const solution2 = `(${str})`
+    const solution3 = '('.concat(str, ')')
+
+    return solution3
 }
 
-console.log(encloseInBrackets('Yo')) // --> '(Yo)'
+// console.log(encloseInBrackets('Yo')) // --> '(Yo)'
+
+
+// DAY 7:
+// return  the factorial of the provided integer
+
+const factorialNumber = num => {
+    let multiplier = 1
+    for(let i = 1; i <= num; i++){
+        multiplier *= i
+    }
+    return multiplier
+}
+
+console.log(factorialNumber(5)) // --> 120
+console.log(factorialNumber(9)) // --> 362880
