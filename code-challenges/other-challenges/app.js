@@ -236,8 +236,9 @@ function myMathMax(...arr){
 }
 
 // Test cases:
-console.log(myMathMax(20, 300, 30, 10)) // should return 300
-console.log(myMathMax(100)) // should return 100
+// console.log(myMathMax(20, 300, 30, 10)) // should return 300
+// console.log(myMathMax(100)) // should return 100
+
 // Extra: Write the Math.min() function!
 
 function myMathMin(...arr){
@@ -250,8 +251,38 @@ function myMathMin(...arr){
     return min
 }
 
-console.log(myMathMin(20, 300, 30, 10)) // should return 10
-console.log(myMathMin(100)) // should return 100
-console.log(myMathMin(-20, -10, 40, 12)) // should return -20
+// console.log(myMathMin(20, 300, 30, 10)) // should return 10
+// console.log(myMathMin(100)) // should return 100
+// console.log(myMathMin(-20, -10, 40, 12)) // should return -20
 
 // Extra Extra:  Can you do it without a rest operator?
+
+
+// V SCHOOL CHALLENGES:
+
+// Write a function that takes a string and reverses it
+const reverseString = str => {
+    return str.split('').reverse().join('')
+}
+
+// console.log(reverseString("code challenge's 4 lyfe")) 
+
+
+// Write a function that takes an array of numbers and a number. This function will return an array of the strings of the numbers that are more than the second argument. 
+const returnHigherNumbers = (numbers, benchmark) => {
+    return numbers.filter(number => number > benchmark).map(number => number && number.toString())
+}
+
+// console.log(returnHigherNumbers([3, 5, 6, 3, 5, 6, 2, 8, 5, 5], 4)) // --> ['5', '6', '5', '6', '8', '5', '5']
+// console.log(returnHigherNumbers([3, 2, 8, 3, 4, 9, 7], 4)) // --> ['8', '9', '7']
+
+
+// re-write .map
+const mapItems = items => {
+    for(let i = 0; i < items.length; i++){
+        console.log(`<h1>${items[i]}</h1>`)
+    }
+    return 'yeah'
+}
+
+console.log(mapItems(["roses", "chocolate", "hearts"]))
