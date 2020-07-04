@@ -281,5 +281,39 @@ const factorialNumber = num => {
     return multiplier
 }
 
-console.log(factorialNumber(5)) // --> 120
-console.log(factorialNumber(9)) // --> 362880
+// console.log(factorialNumber(5)) // --> 120
+// console.log(factorialNumber(9)) // --> 362880
+
+
+// DAY 8:
+// return the first number in a given string
+
+function firstDigit(str) {
+    const splitStr = str.split('')
+    for(let i = 0; i < splitStr.length; i++){
+        console.log(splitStr[i])
+        if(parseInt(splitStr[i])){
+            return splitStr[i]
+        }
+    }
+}
+
+// console.log(firstDigit("var_1__Int2")) // --> '1'
+// console.log(firstDigit("q2q-q")) // --> '2'
+
+
+// DAY 9:
+// largest number: return the largest number possible given the number of integers (kind of confusing)
+// 1 would be 9, 2 would be 99, 3 would be 999
+
+function largestNumber(num) {
+    let array = []
+    for(let i = 0; i < num; i++){
+        array.push(9)
+    }
+    return parseInt(array.join(''))
+}
+
+console.log(largestNumber(1)) // --> 9
+console.log(largestNumber(2)) // --> 99
+console.log(largestNumber(5)) // --> 99999
