@@ -314,6 +314,22 @@ function largestNumber(num) {
     return parseInt(array.join(''))
 }
 
-console.log(largestNumber(1)) // --> 9
-console.log(largestNumber(2)) // --> 99
-console.log(largestNumber(5)) // --> 99999
+// console.log(largestNumber(1)) // --> 9
+// console.log(largestNumber(2)) // --> 99
+// console.log(largestNumber(5)) // --> 99999
+
+
+// DAY 10: 
+// given a divisor and a boundary, return the largest number that is divisible by the divisor, less than or equal to the boundary, and greater than 0
+
+function maxMultiple(divisor, bound) {
+    for(let i = bound; i > 0; i--){
+        if(i % divisor === 0){
+            return i
+        }
+    }
+}
+
+console.log(maxMultiple(3, 10)) // --> 9
+console.log(maxMultiple(5, 57)) // --> 55
+console.log(maxMultiple(4, 19)) // --> 16
