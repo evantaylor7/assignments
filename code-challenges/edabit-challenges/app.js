@@ -398,4 +398,26 @@ const validate2 = (REGEXP2) => {
 }
 const testExp2 = validate2(REGEXP2)
 
-console.log(testExp2(str)) // -> ["...", "....."]
+// console.log(testExp2(str)) // -> ["...", "....."]
+
+// 7/15/20
+// Create a function that returns the characters from an array or string r on odd or even positions, depending on the specifier s. The specifier will be "odd" for items on odd positions (1, 3, 5, ...) and "even" for items on even positions (2, 4, 6, ...).
+
+function charAtPos(r, s) {
+	const specifier = s === 'even' ? 0 : 1
+	const result = []
+	for(let i = 0; i < r.length; i++){
+		(i + 1) % 2 === specifier && result.push(r[i])
+	}
+	if(typeof r === 'string'){
+		return result.join('')
+	} else {
+		return result
+	}
+}
+
+console.log(charAtPos([2,4,6,8,10], "even")) // --> [4,8]
+console.log(charAtPos([1,2,3,4,5,6,7,8,9,10], "odd")) // --> [1,3,5,7,9]
+console.log(charAtPos("EDABIT", "even")) // --> "DBT"
+console.log(charAtPos("EDABIT", "odd")) // --> "EAI"
+console.log(charAtPos(["A","R","B","I","T","R","A","R","I","L","Y"], "odd")) // --> ["A","B","T","A","I","Y"]
