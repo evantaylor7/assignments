@@ -347,6 +347,7 @@ const xmasItems = n => (n * (n + 1) * (n + 2)) / 6
 // console.log(xmasItems(13)) // -> 455
 // console.log(xmasItems(19)) // -> 1330
 
+
 // 2/22/20
 // Write a function that takes an integer i and returns an integer with the integer backwards followed by the original integer.
 function reverseAndNot(i){
@@ -400,6 +401,7 @@ const testExp2 = validate2(REGEXP2)
 
 // console.log(testExp2(str)) // -> ["...", "....."]
 
+
 // 7/15/20
 // Create a function that returns the characters from an array or string r on odd or even positions, depending on the specifier s. The specifier will be "odd" for items on odd positions (1, 3, 5, ...) and "even" for items on even positions (2, 4, 6, ...).
 
@@ -416,8 +418,28 @@ function charAtPos(r, s) {
 	}
 }
 
-console.log(charAtPos([2,4,6,8,10], "even")) // --> [4,8]
-console.log(charAtPos([1,2,3,4,5,6,7,8,9,10], "odd")) // --> [1,3,5,7,9]
-console.log(charAtPos("EDABIT", "even")) // --> "DBT"
-console.log(charAtPos("EDABIT", "odd")) // --> "EAI"
-console.log(charAtPos(["A","R","B","I","T","R","A","R","I","L","Y"], "odd")) // --> ["A","B","T","A","I","Y"]
+// console.log(charAtPos([2,4,6,8,10], "even")) // --> [4,8]
+// console.log(charAtPos([1,2,3,4,5,6,7,8,9,10], "odd")) // --> [1,3,5,7,9]
+// console.log(charAtPos("EDABIT", "even")) // --> "DBT"
+// console.log(charAtPos("EDABIT", "odd")) // --> "EAI"
+// console.log(charAtPos(["A","R","B","I","T","R","A","R","I","L","Y"], "odd")) // --> ["A","B","T","A","I","Y"]
+
+
+// 7/17/20
+// challenge: EXPERT
+
+function inverter(str, type) {
+	if (type === "P"){
+		let newStr = str.split(' ').reverse().join(' ').toLowerCase()
+		return newStr[0].toUpperCase().concat(newStr.slice(1))
+	} else {
+		let splitStr = str.split(' ')
+		let revStr = splitStr.map(word => word.split('').reverse().join('').toLowerCase()).join(' ')
+		return revStr[0].toUpperCase().concat(revStr.slice(1))
+	}
+}
+
+console.log(inverter("This is Valhalla", "P")) // --> "Valhalla is this"
+console.log(inverter("One fine day to start", "W")) // --> "Eno enif yad ot trats"
+console.log(inverter("Division by powers of two", "P")) // --> "Two of powers by division"
+console.log(inverter("Excellence is achievable", "W")) // --> "Ecnellecxe si elbaveihca"
