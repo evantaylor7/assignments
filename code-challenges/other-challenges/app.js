@@ -285,4 +285,26 @@ const mapItems = items => {
     return 'yeah'
 }
 
-console.log(mapItems(["roses", "chocolate", "hearts"]))
+// console.log(mapItems(["roses", "chocolate", "hearts"]))
+
+
+// 7/20/20
+// challenge from CodeWars: 5kyu
+// Complete the function scramble(str1, str2) that returns true if a portion of str1 characters can be rearranged to match str2, otherwise returns false.
+
+function scramble(str1, str2) {
+    const str2Arr = str2.split('')
+    for(let i = 0; i < str2Arr.length; i++){
+        if(!str1.includes(str2Arr[i])){
+        return false
+        } else {
+        str1 = str1.replace(str2Arr[i], '')
+        }
+    }
+    return true
+}
+
+console.log(scramble('rkqodlw','world')) // --> true
+console.log(scramble('cedewaraaossoqqyt','codewars')) // --> true
+console.log(scramble('katas','steak')) // --> false
+console.log(scramble('jscripts','javascript')) // --> false
