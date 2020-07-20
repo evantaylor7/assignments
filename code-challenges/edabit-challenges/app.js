@@ -439,7 +439,40 @@ function inverter(str, type) {
 	}
 }
 
-console.log(inverter("This is Valhalla", "P")) // --> "Valhalla is this"
-console.log(inverter("One fine day to start", "W")) // --> "Eno enif yad ot trats"
-console.log(inverter("Division by powers of two", "P")) // --> "Two of powers by division"
-console.log(inverter("Excellence is achievable", "W")) // --> "Ecnellecxe si elbaveihca"
+// console.log(inverter("This is Valhalla", "P")) // --> "Valhalla is this"
+// console.log(inverter("One fine day to start", "W")) // --> "Eno enif yad ot trats"
+// console.log(inverter("Division by powers of two", "P")) // --> "Two of powers by division"
+// console.log(inverter("Excellence is achievable", "W")) // --> "Ecnellecxe si elbaveihca"
+
+
+// 7/18/20
+// challenge: MEDIUM
+
+const getLength = arr => arr.toString().replace(/,/g, '').length
+
+// console.log(getLength([1, [2,3]])) // --> 3
+// console.log(getLength([1, [2, [3, 4]]])) // --> 4
+// console.log(getLength([1, [2, [3, [4, [5, 6]]]]])) // --> 6
+// console.log(getLength([1, 7, 8])) // --> 3
+
+
+// 7/19/20
+// challenge: HARD
+
+// Create a function that returns the total number of boomerangs in an array. A boomerang is a V-shaped sequence that is either upright or upside down. Specifically, a boomerang can be defined as: sub-array of length 3, with the first and last digits being the same and the middle digit being different.
+
+function countBoomerangs(arr) {
+	let count = 0
+	for(let i = 0; i < arr.length; i++){
+		if(arr[i] === arr[i + 2] && arr[i + 1] !== arr[i]){
+			count += 1
+		}
+	}
+	return count
+}
+
+console.log(countBoomerangs([9, 5, 9, 5, 1, 1, 1])) // --> 2
+console.log(countBoomerangs([5, 6, 6, 7, 6, 3, 9])) // --> 1
+console.log(countBoomerangs([4, 4, 4, 9, 9, 9, 9])) // --> 0
+console.log(countBoomerangs([5, 9, 5, 9, 5])) // --> 3
+console.log(countBoomerangs([4, 4, 4, 8, 4, 8, 4])) // --> 3
