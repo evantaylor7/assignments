@@ -304,7 +304,7 @@ function scramble(str1, str2) {
     return true
 }
 
-console.log(scramble('rkqodlw','world')) // --> true
-console.log(scramble('cedewaraaossoqqyt','codewars')) // --> true
-console.log(scramble('katas','steak')) // --> false
-console.log(scramble('jscripts','javascript')) // --> false
+// console.log(scramble('rkqodlw','world')) // --> true
+// console.log(scramble('cedewaraaossoqqyt','codewars')) // --> true
+// console.log(scramble('katas','steak')) // --> false
+// console.log(scramble('jscripts','javascript')) // --> false
