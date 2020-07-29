@@ -507,14 +507,36 @@ function numThenChar(arr) {
 	return finalArrs
 }
 
-console.log(numThenChar([[1, 2, 4, 3, "a", "b"], [6, "c", 5], [7, "d"], ["f", "e", 8]])) 
-// --> [[1, 2, 3, 4, 5, 6], [7, 8, 'a'], ['b', 'c'], ['d', 'e', 'f']]
+// console.log(numThenChar([[1, 2, 4, 3, "a", "b"], [6, "c", 5], [7, "d"], ["f", "e", 8]])) 
+// // --> [[1, 2, 3, 4, 5, 6], [7, 8, 'a'], ['b', 'c'], ['d', 'e', 'f']]
 
-console.log(numThenChar([[1, 2, 4.4, "f", "a", "b"], [0], [0.5, "d","X",3,"s"], ["f", "e", 8], ["p","Y","Z"], [12,18]])) 
-// --> [[0, 0.5, 1, 2, 3, 4.4], [8], [12, 18, 'X', 'Y', 'Z'], ['a', 'b', 'd'], ['e', 'f', 'f'], ['p', 's']]
+// console.log(numThenChar([[1, 2, 4.4, "f", "a", "b"], [0], [0.5, "d","X",3,"s"], ["f", "e", 8], ["p","Y","Z"], [12,18]])) 
+// // --> [[0, 0.5, 1, 2, 3, 4.4], [8], [12, 18, 'X', 'Y', 'Z'], ['a', 'b', 'd'], ['e', 'f', 'f'], ['p', 's']]
 
-console.log(numThenChar([[10, 2],["a",3],[2.2, "d","h",6,"s",14,1],["f", "e"],["p","y","z","V"],[5]]))
-// --> [[1, 2], [2.2, 3], [5, 6, 10, 14, 'V', 'a', 'd'], ['e', 'f'], ['h', 'p', 's', 'y'], ['z']]
+// console.log(numThenChar([[10, 2],["a",3],[2.2, "d","h",6,"s",14,1],["f", "e"],["p","y","z","V"],[5]]))
+// // --> [[1, 2], [2.2, 3], [5, 6, 10, 14, 'V', 'a', 'd'], ['e', 'f'], ['h', 'p', 's', 'y'], ['z']]
 
-console.log(numThenChar([[10, 2,6,6.5,8.1,"q","w","a","s"],["f",4],[2, 3,"h",6,"x",1,0],["g"],["p",7,"j","k","l"],[5,"C","A","B"],["L",9]])) 
+// console.log(numThenChar([[10, 2,6,6.5,8.1,"q","w","a","s"],["f",4],[2, 3,"h",6,"x",1,0],["g"],["p",7,"j","k","l"],[5,"C","A","B"],["L",9]])) 
 // --> [[0, 1, 2, 2, 3, 4, 5, 6, 6], [6.5, 7], [8.1, 9, 10, 'A', 'B', 'C', 'L'], ['a'], ['f', 'g', 'h', 'j', 'k'], ['l', 'p', 'q', 's'], ['w', 'x']]
+
+
+// 7/29/20
+// edabit challenge: MEDIUM
+// Create a function that takes an array of items, removes all duplicate items and returns a new array in the same sequential order as the old array (minus duplicates).
+
+function removeDups(arr) {
+	let newArr = []
+	for(let i = 0; i < arr.length; i++){
+		if(!newArr.includes(arr[i])){
+			newArr.push(arr[i])
+		}
+	}
+	return newArr
+}
+
+console.log(removeDups(['John', 'Taylor', 'John'])) // --> ['John', 'Taylor']
+console.log(removeDups(['John', 'Taylor', 'John', 'john'])) // --> ['John', 'Taylor', 'john']
+console.log(removeDups(['javascript', 'python', 'python', 'ruby', 'javascript', 'c', 'ruby'])) // --> ['javascript', 'python', 'ruby', 'c']
+console.log(removeDups([1, 2, 2, 2, 3, 2, 5, 2, 6, 6, 3, 7, 1, 2, 5])) // --> [1, 2, 3, 5, 6, 7]
+console.log(removeDups(['#', '#', '%', '&', '#', '$', '&'])) // --> ['#', '%', '&', '$']
+console.log(removeDups([3, 'Apple', 3, 'Orange', 'Apple'])) // --> [3, 'Apple', 'Orange']
